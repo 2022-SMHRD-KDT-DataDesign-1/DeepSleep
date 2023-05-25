@@ -129,10 +129,11 @@
 		
 		<!-- Spring에서 DataBase에 연결하기 위한 DriverAPI추가 -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.42</version>
+    		<groupId>mysql</groupId>
+   			<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.33</version>
 		</dependency>
+
 		<!-- Spring에서 JDBC를 사용하기위한 API추가 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
