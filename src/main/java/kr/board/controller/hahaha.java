@@ -1,4 +1,4 @@
-package kr.board.controller;
+package kr.model.controller;
 
 public class hahaha {
 
