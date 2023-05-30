@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
@@ -39,7 +42,6 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -187,7 +189,17 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	
+	<!-- 로그인 모달창을 위한 라이브러리  -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script>
+	 	function openLoginModal(){
+	 		$("#loginModal .modal-content").load("/member/loginForm.jsp"); 
+	 	}
+	 
+	 </script>
 	</head>
 	<body>
 	<header role="banner" id="fh5co-header">
@@ -208,6 +220,14 @@
 		            <li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
 		            <li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
 		            <li><a href="#" data-nav-section="press"><span>Press</span></a></li>
+				    
+				    <!-- 상단바 - 로그인 -->
+				    <c:if test="${empty mvo}">
+		            <li><a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Login</a></li>
+					</c:if>
+					<c:if test="${not empty mvo}">
+		            <li><a href="${contextPath}/logout.do">${mvo.nickname}</a></li>
+					</c:if>      
 		          </ul>
 		        </div>
 			    </nav>
@@ -715,6 +735,25 @@
 	</div>
 	<!-- End demo purposes only -->
 
+	<!-- 로그인 모달창 -->
+						  <div class="modal" id="loginModal" role="dialog">
+						   <div class="modal-dialog">
+						    <div class="modal-content">
+						     <div class="modal-header">
+						      <button type="button" class="close" data-dismiss="modal">×</button>
+						     </div>
+						     <div class="modal-body">
+						      <jsp:include page="member/loginForm.jsp"></jsp:include>
+						     </div>
+						     <div class="modal-footer">
+						     	<a href= "${contextPath}/forgetPw">Forget password?</a>
+						     </div>
+						    </div>
+						   </div>
+						  </div>
+					 </li>
+		          </ul>
+		        </div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

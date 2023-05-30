@@ -1,11 +1,22 @@
 package kr.board.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.logging.Logger;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.board.entity.Member;
@@ -13,38 +24,107 @@ import kr.board.mapper.MemberMapper;
 
 @Controller
 public class MemberController {
-	
-	
+
 	@Autowired
 	private MemberMapper memberMapper;
-	
-	// 로그인 페이지로 이동
-	@GetMapping("loginForm.do")
-	public String loginForm() {
-		return "member/loginForm";
-	}
-	
-	// 로그인 기능
-	@PostMapping("login.do")
-	public String login(Member m,HttpSession session) {
-		
-		Member mvo = memberMapper.login(m);
-		
-		if(mvo != null) {
-			session.setAttribute("mvo", mvo);
-			System.out.println(mvo.toString());
-			
-			return "redirect:/";
-		}else {
-			
-			return "redirect:/loginForm.do";
-		}
-		
-	}
-	
+
 	// index
 	@GetMapping("index")
 	public String index() {
 		return "index";
 	}
+	
+	// 회원가입 페이지 이동
+	@GetMapping("signUpForm")
+	public String signUpForm() {
+		return "member/signUpForm";
+	}
+	
+	// 비밀번호 변경 페이지 이동
+	@GetMapping("forgetPwForm")
+	public String forgetPwForm() {
+		return "member/forgetPwForm";
+	}
+	
+	// 회원가입 기능
+	@PostMapping("SignUp.do")
+	public String SignUp(Member m, HttpSession session) {
+		if (m.getEmail() == null || m.getEmail().equals("") 
+				|| m.getNickname() == null || m.getNickname().equals("")
+				|| m.getPassword() == null || m.getPassword().equals("")) {
+			System.out.println("실패");
+			return "redirect:signUpForm";
+		}else {
+			int cnt = memberMapper.SignUp(m);
+			
+			if(cnt == 1) {
+				session.setAttribute("mvo", m);
+				return "redirect:index";
+			} else {
+				return "return:forgetPwForm";
+			}
+		}
+			
+	}
+
+	// 로그인 기능
+	@PostMapping("login.do") // AJAX : 일반 로그인
+	public String login(Member m, HttpSession session) {
+
+		Member mvo = memberMapper.login(m);
+
+		if (mvo != null) {
+			session.setAttribute("mvo", mvo);
+			System.out.println(mvo.toString());
+			return "redirect:index";
+		} else {
+			return "redirect:index";
+		}
+
+	}
+
+	// 회원 인증 기능
+	@GetMapping("registerCheck.do")
+	public @ResponseBody int registerCheck(@RequestParam("email") String email) {
+
+		Member m = memberMapper.registerCheck(email);
+
+		if (email.equals("") || m == null) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+	
+	
+
+	// 비밀번호 변경 기능
+	@PostMapping("forgetPw.do")
+	public String forgetPw(Member m, HttpSession session) {
+
+		if (m.getEmail() == null || m.getEmail().equals("") || m.getPassword() == null || m.getPassword().equals("")) {
+			System.out.println("실패");
+			return "redirect:forgetPwForm";
+
+		} else {
+			int cnt = memberMapper.forgetPw(m);
+
+			if (cnt > 0) {
+				session.setAttribute("mvo", m);
+				System.out.println(m.toString());
+				return "redirect:index";
+
+			} else {
+				return "redirect:forgetPwForm";
+			}
+		}
+	}
+
+	// 로그아웃 기능
+	@GetMapping("logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:index";
+	}
+
 }
