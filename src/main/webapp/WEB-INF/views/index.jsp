@@ -14,6 +14,9 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
+	<!-- header/footer css  -->
+	<link rel="stylesheet" href="css/headerfooter.css">
+	
   <!-- 
 	//////////////////////////////////////////////////////
 
@@ -75,6 +78,7 @@
 	<!-- End demo purposes only -->
 
 
+	
 	<style>
 	/* For demo purpose only */
 	
@@ -202,38 +206,7 @@
 	 </script>
 	</head>
 	<body>
-	<header role="banner" id="fh5co-header">
-			<div class="container">
-				<!-- <div class="row"> -->
-			    <nav class="navbar navbar-default">
-		        <div class="navbar-header">
-		        	<!-- Mobile Toggle Menu Button -->
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		          	<a class="navbar-brand" href="index.html">Crew</a> 
-		        </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-		            <li><a href="#" data-nav-section="about"><span>About</span></a></li>
-		            <li><a href="#" data-nav-section="services"><span>Services</span></a></li>
-		            <li><a href="#" data-nav-section="features"><span>Features</span></a></li>
-		            <li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
-		            <li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
-		            <li><a href="#" data-nav-section="press"><span>Press</span></a></li>
-				    
-				    <!-- 상단바 - 로그인 -->
-				    <c:if test="${empty mvo}">
-		            <li><a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Login</a></li>
-					</c:if>
-					<c:if test="${not empty mvo}">
-		            <li><a href="${contextPath}/logout.do">${mvo.nickname}</a></li>
-					</c:if>      
-		          </ul>
-		        </div>
-			    </nav>
-			  <!-- </div> -->
-		  </div>
-	</header>
+	<%@ include file="./header/header.jsp"%>
 
 	<div id="slider" data-section="home">
 		<div class="owl-carousel owl-carousel-fullwidth">
@@ -693,47 +666,7 @@
 		</div>
 	</div>
 	
-
-	<footer id="footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-bottom-padded-sm">
-				<div class="col-md-12">
-					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Crew</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp;  <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<ul class="social social-circle">
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-youtube"></i></a></li>
-						<li><a href="#"><i class="icon-pinterest"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-instagram"></i></a></li>
-						<li><a href="#"><i class="icon-dribbble"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-	
-	
-	<!-- For demo purposes Only ( You may delete this anytime :-) -->
-	<div id="colour-variations">
-		<a class="option-toggle"><i class="icon-gear"></i></a>
-		<h3>Preset Colors</h3>
-		<ul>
-			<li><a href="javascript: void(0);" data-theme="style"></a></li>
-			<li><a href="javascript: void(0);" data-theme="pink"></a></li>
-			<li><a href="javascript: void(0);" data-theme="blue"></a></li>
-			<li><a href="javascript: void(0);" data-theme="turquoise"></a></li>
-			<li><a href="javascript: void(0);" data-theme="orange"></a></li>
-			<li><a href="javascript: void(0);" data-theme="lightblue"></a></li>
-			<li><a href="javascript: void(0);" data-theme="brown"></a></li>
-			<li><a href="javascript: void(0);" data-theme="green"></a></li>
-		</ul>
-	</div>
-	<!-- End demo purposes only -->
+	<%@ include file="./header/footer.jsp"%>
 
 	<!-- 로그인 모달창 -->
 						  <div class="modal" id="loginModal" role="dialog">
@@ -768,22 +701,6 @@
 
 	<!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
 	<script src="js/jquery.style.switcher.js"></script>
-	<script>
-	$(function(){
-		$('#colour-variations ul').styleSwitcher({
-			defaultThemeId: 'theme-switch',
-			hasPreview: false,
-			cookie: {
-	          	expires: 30,
-	          	isManagingLoad: true
-	      	}
-		});	
-		$('.option-toggle').click(function() {
-			$('#colour-variations').toggleClass('sleep');
-		});
-	});
-	</script>
-	<!-- End demo purposes only -->
 
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
