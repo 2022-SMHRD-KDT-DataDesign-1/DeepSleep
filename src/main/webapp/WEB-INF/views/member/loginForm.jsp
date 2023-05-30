@@ -12,35 +12,67 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style type="text/css">
- 	body{background-color: #dbdbdb6e;}
 	
-	.LoginForm{overflow:hidden; display:block; height: 900px; margin-top:-60px}
+	.LoginForm{overflow:hidden; display:block; height: 775px; margin-top:-60px}
 	
-	.LF{ background-color: #ffffff ;width: 50%; transform: translateX(554px) translateY(230px); padding: 100px; height:770px;}
+	.LF{ background-color: #ffffff ;width: 120%; transform: translateX(-50px) translateY(230px); padding: 100px; height:770px;}
 
-	.LF h1{text-align:left; font-weight: bold; font-size: 60px; margin: 25px 0px 40px 0px;}	
+	.LF h1{text-align:left; font-weight: bold; font-size: 60px; margin: -200px 0px 0px 0px;}	
 	
 	.LF label{color: #d3d3d3}
 	
 	.form-group{margin-top:80px ; margin-bottom: -35px;}
-	.form-group p{margin-top: 35px; color: #d3d3d3}
 	
-	#fp{margin-left:256px; color: #d3d3d3 }
+	.memberinfo{margin-top: 40px}
+	.memberinfo p{margin-top: 5px; color: #d3d3d3}
 	
-	#ju{margin-left: 15px;  color: #a55eff}
 	
+	#fl{margin-left:210px;}
+	
+	#ju{margin-left: 15px;  color: #6173f4}
+	
+	#fp{color: #d3d3d3}
 	
 	#memID{width: 100%; height: 35px}
 	#memPW{width: 100%; height: 35px}
-	.LoginBtn{background-color: #a55eff ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 35px; margin: 30px 0px 0px 0px }
+	.LoginBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: -10px 0px 0px 0px }
 	
-	.LI img{margin: -539px 0px 0px -15px ; width:50%; height: 769px;}
-	
-	.LI h3{font-size: 53px ; margin: -505px 0px 0px 39px; color: #ffffff;}
-	
-	.LI p{font-size: 30px  ;margin: -1px 0px 0px 41px; color: #ffffff; line-height: 45px;}
+	.google{width: 100%; height:40px; border-radius:10px; margin-top:50px;}
+  
+  	#logo{width: 8%; margin: 0px 0px 0px -80px;}
   </style>
-
+  <script type="text/javascript" src="https://ajax.googleapis.com.ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  	/* 로그인 */
+  	/* function login() {
+  		var email = $("#email").val();
+  		var password = $("#password").val();
+  		
+  		$.ajax({
+  			url : "${contextPath}/login.do",
+  			type : "post",
+  			data : {"email" : email, "password" : password},
+  			dataType : "json",
+  			success : function(data){
+			  	$("#fl").css("display", "none");
+  				if(data == "success"){ 
+  					location.href = "index";
+ 				
+  				} else if(data == "fail") {
+  					$("#fl").css("display","block")
+  					$("#fl").text("아이디 또는 패스워드가 틀렸습니다.")
+  					console.log("fail")
+  				}
+  			},
+  			error : function(){
+  					console.log("연결 오류.")  				
+  			}
+  		})
+  	} */
+  	
+	
+		</script>
 </head>
 
 
@@ -52,8 +84,7 @@
 		<div class="LoginForm">
 		<div class="LF">
 			<h1 align="center">Login</h1>
-			<jsp:include page=""></jsp:include>
-			<form action="${contextPath}/login.do" method="post">				
+			<form action="${contextPath}/login.do" method="post">		
 				<div class="form-group">
 					<label for="email">Email</label> 
 					<input type="text" name="email" id="email" class="form-control" placeholder="Enter Email" maxlength="20">
@@ -63,20 +94,26 @@
 					<input type="password" name="password" id="password" class="form-control" placeholder="Enter password" maxlength="20">
 				</div>
 				<div class="form-group">
-				<a id="fp" href="#">Forget password?</a>
+					<span id='fl' style="color:red;"></span>
+				</div>
+				<div class="form-group">
 					<button type="submit" class="LoginBtn">Start</button>
-				<p>New User? <a id="ju" href="#">SignUP</a></p>
+				</div>
+				 <div class="login_api">
+                	<a href="/api/v1/oauth2/google"><button class="google"><img src="${contextPath}/resources/images/google_logo.png" id="logo">
+                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign in with Google</button></a>
+          		 </div>
+				<div class="memberinfo">
+				<a id="fp" href= "${contextPath}/forgetPwForm">Forget password?</a>
+				<p>New User? <a id="ju" href="${contextPath}/signUpForm">SignUP</a></p>
+				</div>
+				
 				</div>
 			</form>
 		</div>
-		<div class="LI">
-			<img src="${contextPath}/resources/images/login.png">
-			<h3>Welcome!</h3>
-			<p>Please login to
-			<br> your account.</p>
-		</div>
 		</div>
 	</div>
-
+	<script src="js/jquery.min.js"></script>
 </body>
+
 </html>
