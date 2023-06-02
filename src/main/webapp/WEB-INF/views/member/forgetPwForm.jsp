@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style type="text/css">
 	
-	body{background-color: whitesmoke}
+	body{background-color: #0f0f0f}
 	
 	.forgetPwForm{border:ridge ; background-color: #ffffff; overflow:hidden; display:block; width:50% ; height: 800px; margin:60px 0px 0px 250px}
 	
@@ -41,9 +41,19 @@
 	.ChangeBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: 10px 0px 0px 0px }
 	.MemCk{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 40%; height: 40px; margin: 0px 0px 0px 290px}
 	.memberinfo{margin:70px 0px 0px 0px}
+	
   </style>
   <script type="text/javascript">
 	
+	  $(document).ready(function(){
+	      if(${not empty msgType}){
+	         if(${msgType eq "실패 메세지"}){
+	            $("#messageType").attr("class", "modal-content panel-warning");
+	         }
+	         $("#myMessage").modal("show");
+	      }
+	   });
+  
   	/* 회원인증  */
   	function registerCheck(){
 		var email = $("#email").val();
@@ -77,18 +87,20 @@
   		
   	}
   	
+    
+  	
   </script>
 </head>
 <body>
 
 	<div class="container">
 		
-		<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
+	<%--   <jsp:include page="../header/header.jsp"></jsp:include> --%>
 		<div class="forgetPwForm">
 		<div class="LF">
 			<h1 align="center">Forget Password?</h1>
 			<form action="${contextPath}/forgetPw.do" method="post">
-			<input type="hidden" id="password" name="password" value="">				
+			<input type="hidden" id="password" name="password" value="">
 				<div class="form-group">
 					<label for="email">Email</label> 
 					<input type="text" name="email" id="email" class="form-control" placeholder="Enter Email" maxlength="20">
@@ -113,7 +125,6 @@
 				<div class="form-group">
 					<button type="submit" class="ChangeBtn" >Change Password</button>
 				</div>
-				 
 				<div class="memberinfo">
 				<a id="fp" href= "${contextPath}/index">되돌아가기</a>
 				<p>New User? <a id="ju" href="${contextPath}/signUpForm">SignUP</a></p>
@@ -121,9 +132,34 @@
 				
 				</div>
 			</form>
+			
 		</div>
 		</div>
+		
+		  <%-- <jsp:include page="../header/footer.jsp"></jsp:include> --%>
 	</div>
+			  <!-- Modal -->
+			<div class="modal fade" id="myMessage" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div id="messageType" class="modal-content panel-info">
+						<div class="modal-header panel-heading">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">${msgType}</h4>
+						</div>
+						<div class="modal-body">
+							<p id="">${msg}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
 
 </body>
 

@@ -23,7 +23,7 @@
 			            	<li><a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Login</a></li>
 						</c:if>
 						<c:if test="${not empty mvo}">
-			            	<li><a href="${contextPath}/logout.do">${mvo.nickname}</a></li>
+			            	<li><a href="${contextPath}/logout.do">🤗${mvo.nickname}</a></li>
 						</c:if>
                     </ul>
                 </div>

@@ -61,7 +61,7 @@ public class MemberController {
 				session.setAttribute("mvo", m);
 				return "redirect:index";
 			} else {
-				return "return:forgetPwForm";
+				return "redirect:signUpForm";
 			}
 		}
 			
@@ -100,18 +100,25 @@ public class MemberController {
 
 	// 비밀번호 변경 기능
 	@PostMapping("forgetPw.do")
-	public String forgetPw(Member m, HttpSession session) {
+	public String forgetPw(Member m,HttpSession session, RedirectAttributes rttr) {
 
-		if (m.getEmail() == null || m.getEmail().equals("") || m.getPassword() == null || m.getPassword().equals("")) {
+		if (m.getEmail() == null || m.getEmail().equals("") 
+				|| m.getPassword() == null || m.getPassword().equals("")) {
 			System.out.println("실패");
-			return "redirect:forgetPwForm";
+			
+			rttr.addFlashAttribute("msgType", "실패 메세지");
+			rttr.addFlashAttribute("msg", "모든 내용을 입력하세요");
 
+			return "redirect:forgetPwForm";
 		} else {
 			int cnt = memberMapper.forgetPw(m);
 
 			if (cnt > 0) {
-				session.setAttribute("mvo", m);
 				System.out.println(m.toString());
+				
+				rttr.addFlashAttribute("msgType", "성공 메세지");
+				rttr.addFlashAttribute("msg", "비밀번호 변경 성공. 다시 로그인 하세요");
+				
 				return "redirect:index";
 
 			} else {

@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style type="text/css">
 	
-	body{background-color: whitesmoke}
+	body{background-color: #0f0f0f}
 	
 	.signUpForm{border:ridge ; background-color: #ffffff; overflow:hidden; display:block; width:50% ; height: 800px; margin:60px 0px 0px 250px}
 	
@@ -82,8 +82,8 @@
 <body>
 
 	<div class="container">
+	<%-- <jsp:include page="${contextPath}/header.jsp"></jsp:include> --%>
 		
-		<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
 		<div class="signUpForm">
 		<div class="LF">
 			<h1 align="center">SignUp</h1>
@@ -126,8 +126,8 @@
 			</form>
 		</div>
 		</div>
+	<%-- <jsp:include page="${contextPath}/footer.jsp"></jsp:include> --%>
 	</div>
-
 </body>
 
 </html>

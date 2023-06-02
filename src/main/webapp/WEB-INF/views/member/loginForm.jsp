@@ -71,7 +71,6 @@
   		})
   	} */
   	
-	
 		</script>
 </head>
 
@@ -80,7 +79,7 @@
 
 	<div class="container">
 		
-		<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
+		
 		<div class="LoginForm">
 		<div class="LF">
 			<h1 align="center">Login</h1>
@@ -97,7 +96,7 @@
 					<span id='fl' style="color:red;"></span>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="LoginBtn">Start</button>
+					<button type="submit" class="LoginBtn" >Start</button>
 				</div>
 				 <div class="login_api">
                 	<a href="/api/v1/oauth2/google"><button class="google"><img src="${contextPath}/resources/images/google_logo.png" id="logo">
@@ -112,6 +111,9 @@
 			</form>
 		</div>
 		</div>
+		
+		
+		
 	</div>
 	<script src="js/jquery.min.js"></script>
 </body>
