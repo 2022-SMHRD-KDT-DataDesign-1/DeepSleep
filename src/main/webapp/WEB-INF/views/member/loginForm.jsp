@@ -35,11 +35,8 @@
 	
 	#memID{width: 100%; height: 35px}
 	#memPW{width: 100%; height: 35px}
-	.LoginBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: -10px 0px 0px 0px }
-	
-	.google{width: 100%; height:40px; border-radius:10px; margin-top:50px;}
+	.LoginBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: -10px 0px 60px 0px }
   
-  	#logo{width: 8%; margin: 0px 0px 0px -80px;}
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com.ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -98,10 +95,6 @@
 				<div class="form-group">
 					<button type="submit" class="LoginBtn" >Start</button>
 				</div>
-				 <div class="login_api">
-                	<a href="/api/v1/oauth2/google"><button class="google"><img src="${contextPath}/resources/images/google_logo.png" id="logo">
-                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign in with Google</button></a>
-          		 </div>
 				<div class="memberinfo">
 				<a id="fp" href= "${contextPath}/forgetPwForm">Forget password?</a>
 				<p>New User? <a id="ju" href="${contextPath}/signUpForm">SignUP</a></p>

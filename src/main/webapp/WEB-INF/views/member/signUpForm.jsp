@@ -15,11 +15,14 @@
 	
 	body{background-color: #0f0f0f}
 	
-	.signUpForm{border:ridge ; background-color: #ffffff; overflow:hidden; display:block; width:50% ; height: 800px; margin:60px 0px 0px 250px}
+	#back {margin: 13px 0px -35px 565px;}
+	#Aback { color: #cccccc}
 	
-	.LF{ width: 120%; transform: translateX(-50px) translateY(230px); padding: 100px; height:770px;}
+	.signUpForm{ background-color: #ffffff; overflow:hidden; display:block; width:52% ; height: 800px; margin:32px 0px 0px 280px ;border-radius:1%;}
+	
+	.LF{ width: 120%; transform: translateX(-33px) translateY(230px); padding: 100px; height:770px;}
 
-	.LF h1{text-align:left; font-weight: bold; font-size: 50px; margin: -200px 0px 0px 0px;}	
+	.LF h1{text-align:left; font-weight: bold; font-size: 55px; margin: -200px 0px 0px 5px;}	
 	
 	.LF label{color: #d3d3d3}
 	
@@ -29,17 +32,17 @@
 	.memberinfo p{margin-top: 5px; color: #d3d3d3}
 	
 	
-	#fl{margin-left:285px;}
+	#fl{margin-left:260px;}
 	
-	#fl2{margin-left:235px;}
+	#fl2{margin-left:225px;}
 	
 	#ju{margin-left: 15px;  color: #6173f4}
 	
 	#fp{color: #d3d3d3}
 	
-	.form-control{width: 100%; height: 35px}
-	.CreateBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: 10px 0px 0px 0px }
-	.MemCk{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 40%; height: 40px; margin: 0px 0px 0px 290px}
+	.form-control{width: 88%; height: 35px}
+	.CreateBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 90%; height: 40px; margin: 10px 0px 0px 0px }
+	.MemCk{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 40%; height: 40px; margin: 0px 0px 0px 250px}
 	.memberinfo{margin:70px 0px 0px 0px}
   </style>
   <script type="text/javascript">
@@ -85,8 +88,9 @@
 	<%-- <jsp:include page="${contextPath}/header.jsp"></jsp:include> --%>
 		
 		<div class="signUpForm">
+		<div id="back"><a id="Aback" href="${contextPath}/">✖</a></div>
 		<div class="LF">
-			<h1 align="center">SignUp</h1>
+			<h1 align="center">Sign Up</h1>
 			<form action="${contextPath}/SignUp.do" method="post">
 			<input type="hidden" id="password" name="password" value="">				
 				<div class="form-group">
@@ -119,7 +123,7 @@
 				</div>
 				 
 				<div class="memberinfo">
-				<a id="fp" href= "${contextPath}/index">되돌아가기</a>
+				<a id="fp" href= "${contextPath}/">되돌아가기</a>
 				</div>
 				
 				</div>

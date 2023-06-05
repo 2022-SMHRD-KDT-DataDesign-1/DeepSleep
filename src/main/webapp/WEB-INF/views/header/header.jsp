@@ -10,7 +10,7 @@
                 <div class="navbar-header">
                     <!-- Mobile Toggle Menu Button -->
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                    <img class="logo" src="images/logo.png"><a class="navbar-brand" href="index.html">Deep Sleep</a><!-- 브랜드명 수정  -->
+                    <img class="logo" src="images/logo.png"><a class="navbar-brand" href="${contextPath}/">Deep Sleep</a><!-- 브랜드명 수정  -->
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">

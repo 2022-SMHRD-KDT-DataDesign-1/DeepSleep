@@ -1,6 +1,7 @@
 package kr.board.controller;
 
 import java.io.IOException;
+import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.board.entity.Member;
 import kr.board.mapper.MemberMapper;
+import kr.security.service.UserSHA256;
 
 @Controller
 public class MemberController {
@@ -29,56 +31,67 @@ public class MemberController {
 	private MemberMapper memberMapper;
 
 	// index
-	@GetMapping("index")
+	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
-	
+
 	// 회원가입 페이지 이동
 	@GetMapping("signUpForm")
 	public String signUpForm() {
 		return "member/signUpForm";
 	}
-	
+
 	// 비밀번호 변경 페이지 이동
 	@GetMapping("forgetPwForm")
 	public String forgetPwForm() {
 		return "member/forgetPwForm";
 	}
-	
+
+
 	// 회원가입 기능
 	@PostMapping("SignUp.do")
 	public String SignUp(Member m, HttpSession session) {
-		if (m.getEmail() == null || m.getEmail().equals("") 
-				|| m.getNickname() == null || m.getNickname().equals("")
+
+		if (m.getEmail() == null || m.getEmail().equals("") || m.getNickname() == null || m.getNickname().equals("")
 				|| m.getPassword() == null || m.getPassword().equals("")) {
 			System.out.println("실패");
 			return "redirect:signUpForm";
-		}else {
+		} else {
+
+			// 암호 확인
+			System.out.println("첫번째:" + m.getPassword());
+			// 비밀번호 암호화 (sha256)
+			String encryPassword = UserSHA256.encrypt(m.getPassword());
+			m.setPassword(encryPassword);
+			System.out.println("두번째:" + m.getPassword());
+
 			int cnt = memberMapper.SignUp(m);
-			
-			if(cnt == 1) {
+
+			if (cnt == 1) {
 				session.setAttribute("mvo", m);
-				return "redirect:index";
+				return "redirect:/";
 			} else {
 				return "redirect:signUpForm";
 			}
 		}
-			
+
 	}
 
 	// 로그인 기능
 	@PostMapping("login.do") // AJAX : 일반 로그인
 	public String login(Member m, HttpSession session) {
-
+		
+		String encryPassword = UserSHA256.encrypt(m.getPassword());
+		m.setPassword(encryPassword);
 		Member mvo = memberMapper.login(m);
 
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 			System.out.println(mvo.toString());
-			return "redirect:index";
+			return "redirect:/";
 		} else {
-			return "redirect:index";
+			return "redirect:/";
 		}
 
 	}
@@ -95,31 +108,35 @@ public class MemberController {
 			return 1;
 		}
 	}
-	
-	
 
 	// 비밀번호 변경 기능
 	@PostMapping("forgetPw.do")
-	public String forgetPw(Member m,HttpSession session, RedirectAttributes rttr) {
+	public String forgetPw(Member m, HttpSession session, RedirectAttributes rttr) {
 
-		if (m.getEmail() == null || m.getEmail().equals("") 
-				|| m.getPassword() == null || m.getPassword().equals("")) {
+		if (m.getEmail() == null || m.getEmail().equals("") || m.getPassword() == null || m.getPassword().equals("")) {
 			System.out.println("실패");
-			
+
 			rttr.addFlashAttribute("msgType", "실패 메세지");
 			rttr.addFlashAttribute("msg", "모든 내용을 입력하세요");
 
 			return "redirect:forgetPwForm";
 		} else {
+
+			// 암호 확인
+			System.out.println("첫번째:" + m.getPassword());
+			// 비밀번호 암호화 (sha256)
+			String encryPassword = UserSHA256.encrypt(m.getPassword());
+			m.setPassword(encryPassword);
+			System.out.println("두번째:" + m.getPassword());
 			int cnt = memberMapper.forgetPw(m);
 
 			if (cnt > 0) {
 				System.out.println(m.toString());
-				
+
 				rttr.addFlashAttribute("msgType", "성공 메세지");
 				rttr.addFlashAttribute("msg", "비밀번호 변경 성공. 다시 로그인 하세요");
-				
-				return "redirect:index";
+
+				return "redirect:/";
 
 			} else {
 				return "redirect:forgetPwForm";
@@ -131,7 +148,7 @@ public class MemberController {
 	@GetMapping("logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:index";
+		return "redirect:/";
 	}
 
 }
