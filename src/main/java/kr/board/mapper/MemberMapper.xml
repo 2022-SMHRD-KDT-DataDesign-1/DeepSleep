@@ -3,19 +3,19 @@
 <mapper namespace="kr.board.mapper.MemberMapper">
    
    <insert id="SignUp" parameterType="kr.board.entity.Member">
-   		insert into t_user (email, password, nickname) values (#{email}, #{password}, #{nickname}) 
+   		insert into user (email, password, nickname) values (#{email}, #{password}, #{nickname}) 
    </insert>
    
    <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
-		   select * from t_user where email=#{email} and password=#{password}
+		   select * from user where email=#{email} and password=#{password}
    </select>
 
    <select id="registerCheck" parameterType="String" resultType="kr.board.entity.Member">
-   			select * from t_user where email=#{email}
+   			select * from user where email=#{email}
    </select>
    
    <update id="forgetPw" parameterType="kr.board.entity.Member">
-   		update t_user set password=#{password} where email=#{email}
+   		update user set password=#{password} where email=#{email}
    </update>
     
    

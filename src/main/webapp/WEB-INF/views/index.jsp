@@ -199,10 +199,19 @@
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	 <script>
+	  $(document).ready(function(){
+	      if(${not empty msgType}){
+	         if(${msgType eq "실패 메세지"}){
+	            $("#messageType").attr("class", "modal-content panel-warning");
+	         }
+	         $("#myMessage").modal("show");
+	      }
+	   });
+	 
 	 	function openLoginModal(){
 	 		$("#loginModal .modal-content").load("/member/loginForm.jsp"); 
 	 	}
-	 
+	 	
 	 </script>
 	</head>
 	<body>
@@ -678,15 +687,34 @@
 						     <div class="modal-body">
 						      <jsp:include page="member/loginForm.jsp"></jsp:include>
 						     </div>
-						     <div class="modal-footer">
-						     	<a href= "${contextPath}/forgetPw">Forget password?</a>
-						     </div>
 						    </div>
 						   </div>
 						  </div>
 					 </li>
 		          </ul>
 		        </div>
+		        
+			  <!-- Modal -->
+			<div class="modal fade" id="myMessage" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div id="messageType" class="modal-content panel-info">
+						<div class="modal-header panel-heading">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">${msgType}</h4>
+						</div>
+						<div class="modal-body">
+							<p id="">${msg}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

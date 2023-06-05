@@ -13,13 +13,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style type="text/css">
 	
-	body{background-color: whitesmoke}
+	body{background-color: #0f0f0f}
 	
-	.forgetPwForm{border:ridge ; background-color: #ffffff; overflow:hidden; display:block; width:50% ; height: 800px; margin:60px 0px 0px 250px}
+	#back {margin: 13px 0px -35px 565px;}
+	#Aback { color: #cccccc}
 	
-	.LF{ width: 120%; transform: translateX(-50px) translateY(230px); padding: 100px; height:770px;}
+	.forgetPwForm{ background-color: #ffffff; overflow:hidden; display:block; width:52% ; height: 800px; margin:32px 0px 0px 280px ;border-radius:1%}
+	
+	.LF{ width: 120%; transform: translateX(-33px) translateY(230px); padding: 100px; height:770px;}
 
-	.LF h1{text-align:left; font-weight: bold; font-size: 50px; margin: -200px 0px 0px 0px;}	
+	.LF h1{text-align:left; font-weight: bold; font-size: 52px; margin: -200px 0px 0px 5px;}	
 	
 	.LF label{color: #d3d3d3}
 	
@@ -29,21 +32,31 @@
 	.memberinfo p{margin-top: 5px; color: #d3d3d3}
 	
 	
-	#fl{margin-left:325px;}
+	#fl{margin-left:340px;}
 	
-	#fl2{margin-left:235px;}
+	#fl2{margin-left:225px;}
 	
 	#ju{margin-left: 15px;  color: #6173f4}
 	
 	#fp{color: #d3d3d3}
 	
-	.form-control{width: 100%; height: 35px}
-	.ChangeBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 100%; height: 40px; margin: 10px 0px 0px 0px }
-	.MemCk{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 40%; height: 40px; margin: 0px 0px 0px 290px}
+	.form-control{width: 88%; height: 35px}
+	.ChangeBtn{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 90%; height: 40px; margin: 10px 0px 0px 0px }
+	.MemCk{background-color: #6173f4 ; color: #ffffff;  border: none; border-radius:10px; width: 40%; height: 40px; margin: 0px 0px 0px 250px}
 	.memberinfo{margin:70px 0px 0px 0px}
+	
   </style>
   <script type="text/javascript">
 	
+	  $(document).ready(function(){
+	      if(${not empty msgType}){
+	         if(${msgType eq "실패 메세지"}){
+	            $("#messageType").attr("class", "modal-content panel-warning");
+	         }
+	         $("#myMessage").modal("show");
+	      }
+	   });
+  
   	/* 회원인증  */
   	function registerCheck(){
 		var email = $("#email").val();
@@ -54,7 +67,7 @@
 			success : function(data){
 				console.log(data);
 				if(data == 1){
-					$("#fl").html("회원이 인증되셨습니다.").css("color","blue");
+					$("#fl").html("인증되셨습니다.").css("color","blue");
 				}else{
 					$("#fl").html("없는 회원입니다.").css("color","red");
 				}
@@ -77,18 +90,21 @@
   		
   	}
   	
+    
+  	
   </script>
 </head>
 <body>
 
 	<div class="container">
 		
-		<%-- <jsp:include page="../common/header.jsp"></jsp:include> --%>
+	<%--   <jsp:include page="../header/header.jsp"></jsp:include> --%>
 		<div class="forgetPwForm">
+		<div id="back"><a id="Aback" href="${contextPath}/">✖</a></div>
 		<div class="LF">
 			<h1 align="center">Forget Password?</h1>
 			<form action="${contextPath}/forgetPw.do" method="post">
-			<input type="hidden" id="password" name="password" value="">				
+			<input type="hidden" id="password" name="password" value="">
 				<div class="form-group">
 					<label for="email">Email</label> 
 					<input type="text" name="email" id="email" class="form-control" placeholder="Enter Email" maxlength="20">
@@ -113,17 +129,41 @@
 				<div class="form-group">
 					<button type="submit" class="ChangeBtn" >Change Password</button>
 				</div>
-				 
 				<div class="memberinfo">
-				<a id="fp" href= "${contextPath}/index">되돌아가기</a>
+				<a id="fp" href= "${contextPath}/">되돌아가기</a>
 				<p>New User? <a id="ju" href="${contextPath}/signUpForm">SignUP</a></p>
 				</div>
 				
 				</div>
 			</form>
+			
 		</div>
 		</div>
+		
+		  <%-- <jsp:include page="../header/footer.jsp"></jsp:include> --%>
 	</div>
+			  <!-- Modal -->
+			<div class="modal fade" id="myMessage" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div id="messageType" class="modal-content panel-info">
+						<div class="modal-header panel-heading">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">${msgType}</h4>
+						</div>
+						<div class="modal-body">
+							<p id="">${msg}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
 
 </body>
 

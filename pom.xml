@@ -173,7 +173,14 @@
 		    <artifactId>cos</artifactId>
 		    <version>09May2002</version>
 		</dependency>
-		      
+		
+		<!-- 비밀번호 암호화(SHA256) -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.10</version>
+		</dependency>      
+		
 	</dependencies>
     <build>
         <plugins>
