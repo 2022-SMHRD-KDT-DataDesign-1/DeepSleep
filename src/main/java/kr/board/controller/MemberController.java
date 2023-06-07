@@ -29,11 +29,17 @@ public class MemberController {
 
 	@Autowired
 	private MemberMapper memberMapper;
-
-	// index
+	
+	// index 테스트용
+		@GetMapping("index")
+		public String index() {
+			return "index";
+		}
+	
+	// main
 	@GetMapping("/")
-	public String index() {
-		return "index";
+	public String main() {
+		return "main";
 	}
 
 	// 회원가입 페이지 이동

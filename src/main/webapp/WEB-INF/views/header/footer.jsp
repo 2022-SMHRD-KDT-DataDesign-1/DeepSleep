@@ -21,18 +21,18 @@
 	</footer>
     
     <!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="js1/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js1/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js1/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js1/jquery.waypoints.min.js"></script>
 	<!-- Owl Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="js1/owl.carousel.min.js"></script>
 
 	<!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
-	<script src="js/jquery.style.switcher.js"></script>
+	<script src="js1/jquery.style.switcher.js"></script>
 	<script>
 	$(function(){
 		$('#colour-variations ul').styleSwitcher({
