@@ -4,7 +4,16 @@
   text-align: center;
 }
 
+.addInput{
+  text-align: center;
+}
 
+#inputstyle{
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  background-color: #8ec5fc;
+}
 
 
 * {

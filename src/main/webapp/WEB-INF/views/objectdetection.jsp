@@ -153,6 +153,7 @@
                                 </svg>
                                 Object Detection
                             </div>
+                            <form action = "${contextPath}/downLoad.do">
                             <div class="card-body" id="upload">
 
                                 <!-- 라벨링 결과 -->
@@ -200,11 +201,12 @@
                             
                             <!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
                         <div class="btnsty">
-                            <button type="button" class="btn btn-outline-primary"  onclick="keyWord()">다운로드</button>
-                            <button type="button" class="btn btn-outline-primary">보관함 저장</button>  
+                            <button type="button" class="btn btn-outline-primary">다운로드</button>
+                            <button type="submit" class="btn btn-outline-primary"  onclick="download()">보관함 저장</button>  
                         </div>    
 
                             </div>
+                            </form>
                             
                         </div>
                     </div>

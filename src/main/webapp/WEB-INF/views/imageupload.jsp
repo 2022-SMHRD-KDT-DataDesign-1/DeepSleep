@@ -172,9 +172,13 @@
                                 </div>
                                 <!-- 버튼 -->
                                 <div class="btnsty">
-                                <button type="button" class="btn btn-outline-primary"  onclick="keyWord()">키워드 입력</button>
+                                <button type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
                                 <button type="button" class="btn btn-outline-primary">전체 객체</button>
                                 </div>
+                                <div class="addInput">
+                                
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -196,7 +200,11 @@
         </div>
         <!-- gsap 애니메이션 js보다 위에 둘 것 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<!-- 업로드 js -->
+        <script src="./js/upload.js"></script>
+		
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
@@ -206,7 +214,6 @@
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
         <!-- 위에 부트스트랩 5버전 적용시키면 드랍다운 토글 안먹음 주의 -->
 
-        <!-- 업로드 js -->
-        <script src="./js/upload.js"></script>
+        
     </body>
 </html>
