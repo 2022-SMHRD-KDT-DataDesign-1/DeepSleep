@@ -96,7 +96,7 @@ public class MemberController {
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 			System.out.println(mvo.toString());
-			return "redirect:/";
+			return "redirect:/index";
 		} else {
 			return "redirect:/";
 		}
