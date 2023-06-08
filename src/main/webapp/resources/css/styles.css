@@ -338,6 +338,8 @@ th {
 
 label {
   display: inline-block;
+  /* yj */
+  margin: 0px 0px 0px 80px;
 }
 
 button {
@@ -2006,7 +2008,15 @@ progress {
           appearance: none;
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  /* margin - yj */
+  margin: 0px 60px 0px -80px;
 }
+
+/* yj */
+#btnNavbarSearch{
+  margin: 0px 5px 0px -60px
+}
+
 @media (prefers-reduced-motion: reduce) {
   .form-control, .datatable-input {
     transition: none;
@@ -11094,6 +11104,8 @@ body {
 
 .datatable-bottom {
   padding: 0;
+  /* yj */
+  margin: 20px 80px 7px 80px;
 }
 
 .datatable-top > nav:first-child,
@@ -11154,6 +11166,11 @@ body {
 /* TABLE */
 .datatable-table {
   border-collapse: collapse;
+  /* yj */
+  border-collapse: collapse;
+  text-align: center;
+  width: 90%;
+  margin: 0px 0px 0px 80px; 
 }
 
 .datatable-table > tbody > tr > td,
@@ -11162,7 +11179,8 @@ body {
 .datatable-table > tfoot > tr > th,
 .datatable-table > thead > tr > td,
 .datatable-table > thead > tr > th {
-  vertical-align: top;
+  /* yj - top을 middle로 변경 */
+  vertical-align: middle;
   padding: 0.5rem 0.5rem;
 }
 

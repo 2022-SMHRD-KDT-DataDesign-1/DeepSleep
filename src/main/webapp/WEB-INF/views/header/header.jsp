@@ -17,7 +17,7 @@
                         <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
                         <li><a href="#" data-nav-section="about"><span>About</span></a></li>
                         <li><a href="#" data-nav-section="services"><span>Services</span></a></li>
-                        <li><a href="#" data-nav-section="mypage"><span>MyPage</span></a></li>
+                        <li><a href="${contextPath}/tables" data-nav-section="mypage"><span>MyPage</span></a></li>
                         <!-- 상단바 - 로그인 -->
 					    <c:if test="${empty mvo}">
 			            	<li><a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Login</a></li>

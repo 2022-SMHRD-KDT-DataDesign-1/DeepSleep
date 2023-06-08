@@ -35,6 +35,11 @@ public class MemberController {
 		public String index() {
 			return "index";
 		}
+		@GetMapping("objectdetection")
+		public String objectdetection() {
+			return "objectdetection";
+		}
+	
 	
 	// main
 	@GetMapping("/")
