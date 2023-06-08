@@ -10,16 +10,16 @@
 }
 
 
-#thpic1+#thpic2{
+/* .pic_size{
 	width:100%;
 	height: 200px;
 	border-radius: 10px;
-}
+} */
 
 .yjbt {
 	resize: none;
 	border: none;
-	overfloww: hidden;
+	overflow: hidden;
 	background-color: transparent;
 	font-size: 15px ;
 }
