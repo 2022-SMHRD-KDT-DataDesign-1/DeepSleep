@@ -1,10 +1,14 @@
 @charset "UTF-8";
 
-footer,
-header{
+footer,header{
 	display: block;
 }
 
+.logo {
+	float: left;
+	margin-top: -7px;
+	padding-right: 10px;
+} 
 
 #fh5co-header {
     position: absolute;
@@ -107,7 +111,7 @@ header{
   transform: scaleX(1);
 }
 #fh5co-header .navbar-brand {
-  float: left;
+  overflow:hidden;
   display: block;
   font-size: 30px;
   font-weight: 700;
@@ -180,7 +184,7 @@ header{
 
 #footer {
     padding: 25px 0;
-    background-color: #e8e8e8;
+    background-color: #fff;
     color: #000;
     font-size: 20px;
     display: block;
@@ -191,6 +195,3 @@ header{
   padding-bottom: 0;
 }
 
-.logo {
-	margin-top: 10px;
-} 
