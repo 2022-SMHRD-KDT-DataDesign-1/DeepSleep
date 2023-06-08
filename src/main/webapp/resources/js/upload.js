@@ -1,10 +1,11 @@
 // 키워드 입력 함수
-function keyWord() {
-    let text;
-    let user = prompt("원하는 키워드를 입력해주세요 :)");
-    
-    
-  };
+$(document).ready (function () {
+  $('#key1').one('click', function() {
+    $('.addInput').append(
+      '<input type="text" value="" id="inputstyle"><input type="button" value="입력" class="btn btn-outline-primary" id = "key">'
+    );
+  });
+});
 //  
 
 const droppable = document.querySelector(".droppable");
