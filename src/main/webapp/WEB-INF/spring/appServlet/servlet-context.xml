@@ -22,7 +22,9 @@
 	
 	<resources mapping="/css1/**" location="/resources/css1/" />
 	<resources mapping="/js1/**" location="/resources/js1/" />
-	<resources mapping="/assets/**" location="/resources/assets/demo/" />
+	<resources mapping="/assets/**" location="/resources/assets/" />
+	<resources mapping="/demo/**" location="/resources/assets/demo/" />
+	<resources mapping="/demo/**" location="/resources/assets/img/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

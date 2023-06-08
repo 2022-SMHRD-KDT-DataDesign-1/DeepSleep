@@ -35,6 +35,7 @@ public class MemberController {
 		public String index() {
 			return "index";
 		}
+
 	
 	// main
 	@GetMapping("/")
