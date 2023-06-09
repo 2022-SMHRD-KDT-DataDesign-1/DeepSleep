@@ -75,11 +75,21 @@ list.addEventListener("dragleave", e => {
   dragtl.reverse();
 });
 
+
+let fileArr = new Array(); // 업로드 이미지 정보 담는 배열
+
+// 이미지 드래그 완료 이벤트
 list.addEventListener("drop", e => {
   e.preventDefault();
   let sadly = 0;
   const { offsetX, offsetY } = e;
   const { files } = e.dataTransfer;
+  
+  // fileArr에 fileData 추가하기
+  fileArr[fileArr.length] = files[0];
+
+  console.log(files[0])
+  
   reader.readAsDataURL(files[0]);
 
   reader.addEventListener("load", () => {
@@ -224,4 +234,40 @@ const deleteItem = e => {
       { height: 0, paddingTop: 0, paddingBottom: 0, duration: 0.5 },
       "-=.15"
     );
+    
+    // 삭제 했을 때 fileArr에서 삭제.. 어케함 
+    console.log('삭제 ck')
+    
+    
+    // fileArr = fileArr.filter((element) => element !== e.target.dataTransfer[0]);
+    
 };
+
+
+// 전체 객체 - 이미지 파일 보내기
+let allDetection = () => {
+  console.log("전체 객체 ck")
+  var formdata = new FormData();
+  
+  for(var i = 0; i<fileArr.length; i++){
+      console.log(fileArr[i])
+      formdata.append('uploadFile[]',fileArr[i])
+    }
+
+  $.ajax({
+      url: "http://127.0.0.1:5000/objectDetectionModel",
+      type: "POST",
+      enctype: 'multipart/form-data',
+      processData: false,
+      contentType: false,
+      data: formdata,
+      success: function(){
+          window.location.href = "/objectdetection"; // 결과확인 페이지로 이동
+      },
+      error: function(e){
+          console.log("에러")
+      }
+  });
+
+
+}

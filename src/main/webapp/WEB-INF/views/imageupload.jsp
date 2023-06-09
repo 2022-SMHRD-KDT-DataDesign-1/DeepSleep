@@ -218,7 +218,7 @@
                                 <!-- 버튼 -->
                                 <div class="btnsty">
                                 <button type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
-                                <button type="button" class="btn btn-outline-primary">전체 객체</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="allDetection()">전체 객체</button>
                                 </div>
                                 <div class="addInput">
                                 
