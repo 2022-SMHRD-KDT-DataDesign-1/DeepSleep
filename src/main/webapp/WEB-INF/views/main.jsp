@@ -89,7 +89,7 @@
 			            					<a class="btn btn-primary btn-lg" data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Start</a>
 										</c:if>
 										<c:if test="${not empty mvo}">
-			            					<a class="btn btn-primary btn-lg" href="${contextPath}/logout.do">🤗${mvo.nickname}</a>
+			            					<a class="btn btn-primary btn-lg" href="${contextPath}/logout.do">${mvo.nickname}</a>
 										</c:if>
 									</p>
 						    	</div>

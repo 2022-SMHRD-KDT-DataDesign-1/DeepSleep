@@ -39,22 +39,24 @@
   
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com.ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
   <script type="text/javascript">
   
   	/* 로그인 */
-  	/* function login() {
+  	 function login() {
   		var email = $("#email").val();
   		var password = $("#password").val();
   		
   		$.ajax({
-  			url : "${contextPath}/login.do",
+  			url : "${contextPath}/login",
   			type : "post",
   			data : {"email" : email, "password" : password},
-  			dataType : "json",
+  			dataType : "text",
   			success : function(data){
-			  	$("#fl").css("display", "none");
-  				if(data == "success"){ 
-  					location.href = "index";
+				$("#fl").css("display", "none");
+  				
+				if(data == "success"){ 
+  					location.href = "${contextPath}/index";
  				
   				} else if(data == "fail") {
   					$("#fl").css("display","block")
@@ -65,8 +67,8 @@
   			error : function(){
   					console.log("연결 오류.")  				
   			}
-  		})
-  	} */
+  		});
+  	} 
   	
 		</script>
 </head>
@@ -93,7 +95,7 @@
 					<span id='fl' style="color:red;"></span>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="LoginBtn" >Start</button>
+					<button onclick="login()" type="button" class="LoginBtn">Start</button>
 				</div>
 				<div class="memberinfo">
 				<a id="fp" href= "${contextPath}/forgetPwForm">Forget password?</a>
