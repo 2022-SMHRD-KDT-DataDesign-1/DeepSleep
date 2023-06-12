@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	$('#key1').one('click', function() {
 		$('.addInput').append(
-			'<input type="text" value="" id="inputstyle"><button type="submit" value="입력" class="btn btn-outline-primary" id = "key">입력</button>'
+			'<input type="text" value="" id="inputstyle"><button type="submit" value="입력" class="btn btn-outline-primary" id = "key" onclick="keywordInput()">입력</button>'
 		);
 	});
 });
@@ -253,11 +253,11 @@ let allDetection = () => {
 	for (var i = 0; i < fileArr.length; i++) {
 		formdata.append('uploadFile[]', fileArr[i]) // 업로드 이미지명 담아주기
 	}
-	
+
 	// 결과 로딩 모션 추가할 것
-	
+
 	$.ajax({
-		url: "http://127.0.0.1:5000/objectDetectionModel", // 모델링 돌아가는 플라스크 서버
+		url: "http://127.0.0.1:5000/objectDetectionModel", // 모델링 돌아가는 플라스크 서버 (전체 객체)
 		type: "POST",
 		enctype: 'multipart/form-data',
 		processData: false,
@@ -276,3 +276,39 @@ let allDetection = () => {
 }
 
 
+// 키워드 입력 버튼 ck
+// 이미지와 키워드 전송
+let keywordInput = () => {
+	console.log("제출 버튼 ck")
+	let keyword = $('#inputstyle').val() // 입력 키워드
+
+	var formdata = new FormData(); // 업로드 이미지명 담을 객체 생성
+
+	for (var i = 0; i < fileArr.length; i++) {
+		formdata.append('uploadFile[]', fileArr[i]) // 업로드 이미지명 담아주기
+	}
+	formdata.append('keyword', keyword) // 키워드 담아주기
+
+	// 결과 로딩 모션 추가할 것
+
+	$.ajax({
+		url: "http://127.0.0.1:5000/keywordModel", // 모델링 돌아가는 플라스크 서버 (키워드)
+		type: "POST",
+		enctype: 'multipart/form-data',
+		processData: false,
+		contentType: false,
+		data: formdata,
+		success: function(r) {
+			console.log(r)
+			// window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
+		},
+		error: function(e) {
+			console.log("에러")
+			// 에러났을 때 모션 추가할 것
+		}
+	});
+
+
+
+
+}
