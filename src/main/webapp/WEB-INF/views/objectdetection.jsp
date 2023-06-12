@@ -14,6 +14,7 @@
         <title>Tables - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
         <!-- 부트스트랩 -->
@@ -21,6 +22,8 @@
 
         <!-- flickity -->
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <!-- 라벨링 결과 -->
+        <link href="./css/obj.css" rel="stylesheet">
     </head>
     <body class="sb-nav-fixed">
        <!-- nav 시작  -->
@@ -201,11 +204,10 @@
                             <form action = "${contextPath}/downLoad.do">
                             <div class="card-body" id="upload">
 
-                                <!-- 라벨링 결과 -->
-                                <link href="./css/obj.css" rel="stylesheet">
+                                
 
                             <!-- 이미지 슬라이드 for문으로 만들기 -->
-                            <div class="celldiv">
+                          <div class="celldiv">
                                 <div class="gallery js-flickity"
                                 data-flickity-options='{ "wrapAround": true }'>
                                 <div class="gallery-cell"></div>
@@ -214,20 +216,22 @@
                                 <div class="gallery-cell"></div>
                                 <div class="gallery-cell"></div>
                                 </div>     
-                            </div>
+                            </div> 
                             <!--  -->
 
                             <div class="celldiv">
                                 <!-- 분리 어케하누 -->
-                                <div class="gallery js-flickity"
+                                <div id="resDiv" class="gallery js-flickity"
                                     data-flickity-options='{ "wrapAround": true }'>
                                         <div class="gallery-cell">
                                             <input type="checkbox" id="myCheckbox1" />
                                             <label for="myCheckbox1"><img src="./assets/img/윈터13.jpg"></label>
                                         </div>
-                                        <div class="gallery-cell">
+                                        
+                                        
+                                        <!-- <div class="gallery-cell">
                                             <input type="checkbox" id="myCheckbox2" />
-                                            <label for="myCheckbox2"><img src="./assets/img/포켓몬18.jpg"></label>
+                                            <label for="myCheckbox2"><img id="resImg" src=""></label>
                                         </div>
                                         <div class="gallery-cell">
                                             <input type="checkbox" id="myCheckbox3" />
@@ -240,9 +244,11 @@
                                         <div class="gallery-cell">
                                             <input type="checkbox" id="myCheckbox5" />
                                             <label for="myCheckbox5"></label>
-                                        </div>
+                                        </div> -->
                                     </div>  
-                            </div>  
+                            </div>
+                            
+                            
                             
                             <!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
                         <div class="btnsty">
@@ -288,6 +294,6 @@
 
         
         <!-- 이미지 슬라이드 -->
-        <script src="./js/obj.js"></script>
+        <script src="./js/objectdetection.js"></script>
     </body>
 </html>
