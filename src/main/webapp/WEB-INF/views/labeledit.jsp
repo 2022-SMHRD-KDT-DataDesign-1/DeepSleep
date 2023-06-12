@@ -21,6 +21,24 @@
 
         <!-- flickity -->
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <style>
+			.btnsty{
+			  display: inline-block;
+			  width: 100%; 
+			  text-align: center;
+			}
+			
+			.addInput{
+			  text-align: center;
+			}
+			
+			#inputstyle{
+			  border: 0;
+			  border-radius: 5px;
+			  outline: none;
+			  background-color: #8ec5fc;
+			}
+		</style>
     </head>
     <body class="sb-nav-fixed">
        <!-- nav 시작  -->
@@ -186,14 +204,14 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">라벨링 결과</h1>
+                        <h1 class="mt-4">라벨 수정</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">라벨링 결과</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                라벨링된 객체를 저장하고 싶으시면 원하는 이미지를 선택 후 다운로드, 보관함에 저장하려면 보관함 저장을 누르세요.
+                                라벨링이 잘못된 이미지를 선택하고 라벨을 수정해주세요. 수정된 데이터는 관리자에게 전송됩니다.
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -245,9 +263,12 @@
                             
                             <!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
                         <div class="btnsty">
-                            <button type="button" class="btn btn-outline-primary">다운로드</button>
-                            <button type="submit" class="btn btn-outline-primary"  onclick="download()">보관함 저장</button>  
+                            <button type="button" class="btn btn-outline-primary" id="key1">라벨 수정</button>
+                            
                         </div>    
+                        <div class="addInput">
+                                
+                        </div>
 
                             </div>
                             </form>
@@ -272,14 +293,20 @@
         </div>
         <!-- gsap 애니메이션 js보다 위에 둘 것 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
         <!-- flickity js -->
 	    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="./js/edit.js"></script>
+        
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
 
         <!-- 부트스트랩 -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
@@ -287,6 +314,7 @@
 
         
         <!-- 이미지 슬라이드 -->
-        <script src="./js/obj.js"></script>
+        
+        
     </body>
 </html>

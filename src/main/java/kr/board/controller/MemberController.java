@@ -55,6 +55,11 @@ public class MemberController {
 		return "member/forgetPwForm";
 	}
 
+	// 로그인 페이지 이동
+		@GetMapping("loginForm")
+		public String loginForm() {
+			return "member/loginForm";
+		}
 
 	// 회원가입 기능
 	@PostMapping("SignUp.do")
@@ -86,8 +91,8 @@ public class MemberController {
 	}
 
 	// 로그인 기능
-	@PostMapping("login.do") // AJAX : 일반 로그인
-	public String login(Member m, HttpSession session) {
+	@PostMapping("login") // AJAX : 일반 로그인
+	public @ResponseBody String login(Member m, HttpSession session) {
 		
 		String encryPassword = UserSHA256.encrypt(m.getPassword());
 		m.setPassword(encryPassword);
@@ -96,9 +101,10 @@ public class MemberController {
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 			System.out.println(mvo.toString());
-			return "redirect:/";
+			return "success";
 		} else {
-			return "redirect:/";
+			System.out.println("실패");
+			return "fail";
 		}
 
 	}

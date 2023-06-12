@@ -86,6 +86,8 @@ label img {
 
 :checked + label {
   border-color: #ddd;
+  
+  margin : 6px 0px;
 }
 
 :checked + label:before {

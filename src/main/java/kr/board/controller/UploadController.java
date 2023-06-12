@@ -31,6 +31,12 @@ public class UploadController {
 		return "objectdetection";
 	}
 	
+	// 라벨 수정 페이지
+		@GetMapping("labeledit")
+		public String labeledit() {
+			return "labeledit";
+		}
+	
 	// DB에 이미지 저장
 	@GetMapping("downLoad.do")
 	public void downLoad(Member m, Repository r) {
