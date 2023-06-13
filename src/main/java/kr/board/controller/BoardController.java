@@ -27,6 +27,21 @@ public class BoardController {
 	private BoardMapper boardmapper;
 
 	// 보관 리스트 전체보기
+	/*
+	 * @GetMapping("tables") public String boardList(Model model,Member
+	 * m,HttpSession session) { System.out.println("게시글 전체보기 실행");
+	 * 
+	 * int mvo = 0;
+	 * 
+	 * if(session.getAttribute("mvo") != null) {
+	 * 
+	 * int user_idx = ((Member)session.getAttribute("mvo")).getId();
+	 * System.out.println("user_idx : "+ user_idx); List<Board> list =
+	 * boardmapper.boardList(user_idx); model.addAttribute("list", list); }
+	 * 
+	 * return "tables"; }
+	 */
+	
 	@GetMapping("tables")
 	public String boardList(Model model,Member m,HttpSession session) {
 		System.out.println("게시글 전체보기 실행");
@@ -37,8 +52,13 @@ public class BoardController {
 			
 			int user_idx = ((Member)session.getAttribute("mvo")).getId();
 			System.out.println("user_idx : "+ user_idx);
-			List<Board> list = boardmapper.boardList(user_idx);
-			model.addAttribute("list", list);
+				if(user_idx != 9) {
+					List<Board> list = boardmapper.boardList(user_idx);
+					model.addAttribute("list", list);
+				}else {
+					List<Board> list = boardmapper.adminList();
+					model.addAttribute("list", list);
+				}
 		}
 		
 		return "tables";
