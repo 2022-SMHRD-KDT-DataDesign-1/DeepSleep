@@ -18,6 +18,34 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 <!-- 부트스트랩 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		
+		<!-- loading -->                   
+        <script>	
+			$(function(){ 
+				  $(".addInput").click(function(){
+				    $(".modalLoading").fadeIn();
+				     setTimeout(function () {
+		                // 결과값 계산 완료 후 결과 페이지로 이동
+		                window.location.href = '${contextPath}/objectdetection';
+		            	}, 15000);	 			    
+				  });
+				  
+				  $(".addInput2").click(function(){
+					    $(".modalLoading").fadeIn();
+					    setTimeout(function () {
+			                // 결과값 계산 완료 후 결과 페이지로 이동
+			                window.location.href = '${contextPath}/objectdetection';
+			            	}, 15000); 				    
+					  });
+				  
+				  $(".modal_contentLoading").click(function(){
+				    $(".modalLoading").fadeOut();
+				  });
+				  
+				});
+		</script>
+		<!-- loading -->
+		
 </head>
 <body class="sb-nav-fixed">
        <!-- nav 시작  -->
@@ -218,18 +246,17 @@
                                 </div>
                                 <!-- 버튼 -->
                                 <div class="btnsty">
-                                <button type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
-                                <button type="button" class="btn btn-outline-primary" onclick="allDetection()">전체 객체</button>
+                                	<button type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
+                                	<button type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
                                 </div>
-                                <div class="addInput">
-                                
+                                <div class="addInput" onclick="keyDetection()">
+
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
-                    
                 </main>
+                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -244,6 +271,28 @@
                 </footer>
             </div>
         </div>
+        
+		<!-- loading -->
+		<div class="modalLoading">
+		    <div id="modalCon" class="modal_contentLoading" title="클릭하면 창이 닫힙니다.">
+		  	    <div id="load">
+				    <div>G</div>
+			  	    <div>N</div>
+				    <div>I</div>
+				    <div>D</div>
+				    <div>A</div>
+				    <div>O</div>
+				    <div>L</div>
+				</div>
+				  
+				<div class="loadText">
+		  	    	<span>ILEM에서 제공하는 객체탐지 키워드는 20가지 입니다.</span><br>
+		        	<span>자세한 내용은 메인페이지에서 확인할 수 있습니다.</span>
+		    	</div>
+		    </div>
+		</div>
+		<!-- loading -->
+
         <!-- gsap 애니메이션 js보다 위에 둘 것 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 		
@@ -259,6 +308,13 @@
         <!-- 부트스트랩 -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
         <!-- 위에 부트스트랩 5버전 적용시키면 드랍다운 토글 안먹음 주의 -->
+        
+        <!-- loading -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <!-- loading -->
+        
+        
+       
 
         
     </body>
