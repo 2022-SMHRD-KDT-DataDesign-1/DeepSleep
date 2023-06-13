@@ -18,8 +18,8 @@
    		update user set password=#{password} where email=#{email}
    </update>
     
-   <insert id = "download" parameterType="kr.board.entity.Member">
-   		insert into repository values (#{category}, #{detected_object}, #{image_path}, #{result_path}, sysdate, #{user_idx})
+   <insert id = "downLoad" parameterType="kr.board.entity.Repository">
+   		insert into repository (category, detected_object, image_path, result_path, date, user_idx) values (#{category}, #{detected_object}, #{image_path}, #{result_path}, now(), #{user_idx})
    </insert>
    
 </mapper>

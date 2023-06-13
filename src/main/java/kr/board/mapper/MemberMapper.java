@@ -16,6 +16,6 @@ public interface MemberMapper {
 
 	public int SignUp(Member m);
 	
-	public Repository downLoad(Repository r);
+	public int downLoad(Repository r);
 	
 	}

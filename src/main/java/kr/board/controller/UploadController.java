@@ -2,7 +2,6 @@ package kr.board.controller;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,14 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import kr.board.entity.Member;
 import kr.board.entity.Repository;
 import kr.board.mapper.MemberMapper;
-import kr.security.service.UserSHA256;
 
 @Controller
 public class UploadController {
@@ -49,6 +47,29 @@ public class UploadController {
 
 		memberMapper.downLoad(r);
 
-	}	
+	}
+	
+	// repository 저장
+	@ResponseBody
+	@PostMapping("repositorySave")
+	public String repositorySave(@RequestBody List<HashMap<String, Object>> param, HttpSession session) {
+		System.out.println("통신 o");
+		System.out.println(param);
+		
+		int user_idx = ((Member)session.getAttribute("mvo")).getId();
+		System.out.println("세션값: " + user_idx);
+		
+		Gson gson = new Gson();
+		for(HashMap<String, Object> i : param) {
+			Repository r = gson.fromJson(i.toString(), Repository.class);
+			r.setUser_idx(user_idx);
+			System.out.println(r.toString());
+			memberMapper.downLoad(r);
+		}
+		
+		
+		return "tables";
+	}
+	
 	
 }
