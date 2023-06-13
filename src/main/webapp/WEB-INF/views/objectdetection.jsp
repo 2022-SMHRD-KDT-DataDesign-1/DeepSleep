@@ -16,14 +16,15 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.15/plugins/export/libs/FileSaver.js/FileSaver.min.js"></script>
         <!-- 부트스트랩 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
         <!-- flickity -->
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <!-- 라벨링 결과 -->
-        <link href="./css/obj.css" rel="stylesheet">
+        <link href="./css/obj.css" rel="stylesheet" title="objCss">
     </head>
     <body class="sb-nav-fixed">
        <!-- nav 시작  -->
@@ -207,53 +208,19 @@
                                 
 
                             <!-- 이미지 슬라이드 for문으로 만들기 -->
-                          <div class="celldiv">
-                                <div class="gallery js-flickity"
-                                data-flickity-options='{ "wrapAround": true }'>
-                                <div class="gallery-cell"></div>
-                                <div class="gallery-cell"></div>
-                                <div class="gallery-cell"></div>
-                                <div class="gallery-cell"></div>
-                                <div class="gallery-cell"></div>
-                                </div>     
-                            </div> 
-                            <!--  -->
 
-                            <div class="celldiv">
+                            <div id="cellDiv" class="celldiv">
                                 <!-- 분리 어케하누 -->
-                                <div id="resDiv" class="gallery js-flickity"
-                                    data-flickity-options='{ "wrapAround": true }'>
-                                        <div class="gallery-cell">
-                                            <input type="checkbox" id="myCheckbox1" />
-                                            <label for="myCheckbox1"><img src="./assets/img/윈터13.jpg"></label>
-                                        </div>
-                                        
-                                        
-                                        <!-- <div class="gallery-cell">
-                                            <input type="checkbox" id="myCheckbox2" />
-                                            <label for="myCheckbox2"><img id="resImg" src=""></label>
-                                        </div>
-                                        <div class="gallery-cell">
-                                            <input type="checkbox" id="myCheckbox3" />
-                                            <label for="myCheckbox3"></label>
-                                        </div>
-                                        <div class="gallery-cell">
-                                            <input type="checkbox" id="myCheckbox4" />
-                                            <label for="myCheckbox4"></label>
-                                        </div>        
-                                        <div class="gallery-cell">
-                                            <input type="checkbox" id="myCheckbox5" />
-                                            <label for="myCheckbox5"></label>
-                                        </div> -->
-                                    </div>  
+                                <!-- 결과 받아와서 동적 생성 -->
                             </div>
                             
                             
                             
                             <!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
                         <div class="btnsty">
-                            <button type="button" class="btn btn-outline-primary">다운로드</button>
-                            <button type="submit" class="btn btn-outline-primary"  onclick="download()">보관함 저장</button>  
+                        	
+                            <button id="downloadBtn" type="button" class="btn btn-outline-primary"><a onclick="alert('클릭이벤트 발생')"; id="hiddenA" href="" download>다운로드</a></button>
+                            <button type="submit" class="btn btn-outline-primary">보관함 저장</button>  
                         </div>    
 
                             </div>

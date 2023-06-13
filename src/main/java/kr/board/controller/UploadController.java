@@ -44,5 +44,5 @@ public class UploadController {
 		memberMapper.downLoad(r);
 
 	}	
-
+	
 }
