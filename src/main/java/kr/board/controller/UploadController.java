@@ -1,5 +1,6 @@
 package kr.board.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -45,11 +46,11 @@ public class UploadController {
 	@GetMapping("downLoad.do")
 	public void downLoad(Member m, Repository r) {
 
-		memberMapper.downLoad(r);
+		// memberMapper.downLoad(r);
 
 	}
 	
-	// repository 저장
+	// repository DB 저장
 	@ResponseBody
 	@PostMapping("repositorySave")
 	public String repositorySave(@RequestBody List<HashMap<String, Object>> param, HttpSession session) {
@@ -60,15 +61,18 @@ public class UploadController {
 		System.out.println("세션값: " + user_idx);
 		
 		Gson gson = new Gson();
+		List<Repository> list = new ArrayList<>();
 		for(HashMap<String, Object> i : param) {
 			Repository r = gson.fromJson(i.toString(), Repository.class);
 			r.setUser_idx(user_idx);
 			System.out.println(r.toString());
-			memberMapper.downLoad(r);
+			
+			list.add(r);
 		}
 		
+		memberMapper.downLoad(list);
 		
-		return "tables";
+		return "repository 성공";
 	}
 	
 	

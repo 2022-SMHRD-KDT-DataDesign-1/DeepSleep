@@ -18,8 +18,11 @@
    		update user set password=#{password} where email=#{email}
    </update>
     
-   <insert id = "downLoad" parameterType="kr.board.entity.Repository">
-   		insert into repository (category, detected_object, image_path, result_path, date, user_idx) values (#{category}, #{detected_object}, #{image_path}, #{result_path}, now(), #{user_idx})
+   <insert id = "downLoad" parameterType="java.util.List">
+   		insert into repository (category, detected_object, image_path, result_path, date, user_idx) values
+   		<foreach collection="list" item="item" separator=",">
+   			(#{item.category}, #{item.detected_object}, #{item.image_path}, #{item.result_path}, now(), #{item.user_idx})
+   		</foreach>
    </insert>
    
 </mapper>

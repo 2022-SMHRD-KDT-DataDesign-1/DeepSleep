@@ -24,15 +24,15 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
 /* 로드 시 결과 추가 */
 
 // 임시 데이터 (나중에 삭제할 것)
-let test1 = `<div id="resDiv${1}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`
+/*let test1 = `<div id="resDiv${1}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`
 $('#cellDiv').append(test1).trigger("create");
 let test2 = '<div class="gallery-cell"><input type="checkbox" class="optionCheck" id="myCheckbox2" /><label for="myCheckbox2"><img id="resImg2" src="/filepath/new_20230609095127/person1.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox3" /><label for="myCheckbox3"><img id="resImg3" src="/filepath/new_20230609095127/person2.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox4" /><label for="myCheckbox4"><img id="resImg4" src="/filepath/new_20230609095127/person3.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox5" /><label for="myCheckbox5"><img id="resImg5" src="/filepath/new_20230609095127/person4.jpg"></label></div>'
-$('#resDiv1').append(test2).trigger("create");
+$('#resDiv1').append(test2).trigger("create");*/
 /////
 
 let a = 1; // 겉 태그 아이디값
 let b = 1; // 안 태그 아이디값 
-/*jsonRes.forEach(k => {
+jsonRes.forEach(k => {
 	let imageArr = k.images // 결과 json에서 images 담겨 있는 배열
 	let annoArr = k.annotations // 결과 json에서 annotations 담겨 있는 배열
 	let resImageName; // 결과 이미지 이름
@@ -57,7 +57,7 @@ let b = 1; // 안 태그 아이디값
 
 	a++;
 
-});*/
+});
 
 /* 선택된 이미지 id값 가져오는 함수 */
 function checkedImg() {
@@ -120,7 +120,7 @@ let repository = () => {
 		dataType: "text",
 		data: JSON.stringify(repJsonArr),
 		success: function(d) {
-			console.log("성공")
+			console.log(d)
 		},
 		error: function(e) {
 			console.log("실패")
@@ -135,22 +135,23 @@ let repository = () => {
 	
 	let repJsonArr = [];
 	
-	let repJson = new Object();
-	repJson.category = localStorage.getItem('cate')
-	repJson.detected_object = "cat"
-	repJson.image_path = "test1"
-	repJson.result_path = "test1"
-	repJson.user_idx = 0
+	let repJson1 = new Object();
+	let repJson2 = new Object();
+	repJson1.category = localStorage.getItem('cate')
+	repJson1.detected_object = "cat"
+	repJson1.image_path = "test1"
+	repJson1.result_path = "test1"
+	repJson1.user_idx = 0
 	
-	repJsonArr.push(repJson);
+	repJsonArr.push(repJson1);
 	
-	repJson.category = localStorage.getItem('cate')
-	repJson.detected_object = "dog"
-	repJson.image_path = "test2"
-	repJson.result_path = "test2"
-	repJson.user_idx = 0
+	repJson2.category = localStorage.getItem('cate')
+	repJson2.detected_object = "dog"
+	repJson2.image_path = "test2"
+	repJson2.result_path = "test2"
+	repJson2.user_idx = 0
 	
-	repJsonArr.push(repJson);
+	repJsonArr.push(repJson2);
 	
 	console.log(JSON.stringify(repJsonArr))
 	
