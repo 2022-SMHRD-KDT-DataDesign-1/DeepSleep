@@ -13,7 +13,7 @@ document.getElementById('downloadBtn').addEventListener('click', () =>{
 		}
 	}
 
-	console.log(getDataUrl(img))
+	// console.log(getDataUrl(img))
 
 	// 체크된 이미지 다운로드
 	 checkArr.forEach(e => {
@@ -32,7 +32,7 @@ document.getElementById('downloadBtn').addEventListener('click', () =>{
 
 /* 로드 시 결과 추가 */
 let jsonRes = JSON.parse(localStorage.getItem('jsonRes')); // 로컬스토리지에 저장된 결과 json 불러오기
-
+console.log(jsonRes)
 let test1 = `<div id="resDiv${1}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`
 $('#cellDiv').append(test1).trigger("create");
 let test2 = '<div class="gallery-cell"><input type="checkbox" class="optionCheck" id="myCheckbox2" /><label for="myCheckbox2"><img id="resImg2" src="/filepath/new_20230609095127/person1.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox3" /><label for="myCheckbox3"><img id="resImg3" src="/filepath/new_20230609095127/person2.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox4" /><label for="myCheckbox4"><img id="resImg4" src="/filepath/new_20230609095127/person3.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox5" /><label for="myCheckbox5"><img id="resImg5" src="/filepath/new_20230609095127/person4.jpg"></label></div>'

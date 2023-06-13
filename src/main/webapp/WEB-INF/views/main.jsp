@@ -92,15 +92,6 @@
 			            					<a class="btn btn-primary btn-lg" href="${contextPath}/logout.do">${mvo.nickname}</a>
 										</c:if>
 									</p>
-									
-									<%-- <p class="to-animate-2_re">
-										<c:if test="${empty mvo}">
-			            					<a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">Start</a>
-										</c:if>
-										<c:if test="${not empty mvo}">
-			            					<a href="${contextPath}/logout.do">🤗${mvo.nickname}</a>
-										</c:if>
-									</p> --%>
 						    	</div>
 						    </div>
 					    </div>
@@ -478,7 +469,7 @@
 					<h2 class="to-animate">오토라벨링이 필요한 이유</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 to-animate">
-							<h3>오토라벨링은 정확하고 빠른 데이터 처리를 달성해 인공지능<br>모델의 학습 품질을 높이고,
+							<h3 style="color:#fff;">오토라벨링은 정확하고 빠른 데이터 처리를 달성해 인공지능<br>모델의 학습 품질을 높이고,
 							    인력과 비용 부담을 줄여 성능<br>향상과 효율성 극대화에 기여합니다.
 							</h3>
 						</div>
@@ -657,7 +648,7 @@
 			<div class="content-wrapper">
 				<div class="news-card">
 					<a href="https://youtu.be/iNFR7tUDj6c" target="_blank" data-title="Boss: Demon Firesage" data-width="1024" data-toggle="lightbox" data-gallery="youtubevideos" class="news-card__card-link">
-						<button type="button" class="btn btn-play">
+						<button type="button" class="btn btn-play"; >
 							<span class="glyphicon glyphicon-play" aria-label="Play"></span>
 						</button>
 						<img src="//i1.ytimg.com/vi/iNFR7tUDj6c/mqdefault.jpg" class="img-responsive">
