@@ -247,6 +247,7 @@ const deleteItem = e => {
 // 전체 객체 버튼 ck
 // 전체 객체 - 이미지 파일 보내기
 let allDetection = () => {
+	let jsonRes;
 
 	var formdata = new FormData(); // 업로드 이미지명 담을 객체 생성
 
@@ -264,7 +265,11 @@ let allDetection = () => {
 		contentType: false,
 		data: formdata,
 		success: function(r) {
-			console.log(r)
+			jsonRes = JSON.stringify(r)
+			console.log(jsonRes)
+			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
+			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
+
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
 		error: function(e) {
@@ -279,6 +284,7 @@ let allDetection = () => {
 // 키워드 입력 버튼 ck
 // 이미지와 키워드 전송
 let keywordInput = () => {
+	let jsonRes;
 	console.log("제출 버튼 ck")
 	let keyword = $('#inputstyle').val() // 입력 키워드
 
@@ -299,8 +305,12 @@ let keywordInput = () => {
 		contentType: false,
 		data: formdata,
 		success: function(r) {
-			console.log(r)
-			// window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
+			jsonRes = JSON.stringify(r)
+			console.log(jsonRes)
+			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
+			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
+
+			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
 		error: function(e) {
 			console.log("에러")
