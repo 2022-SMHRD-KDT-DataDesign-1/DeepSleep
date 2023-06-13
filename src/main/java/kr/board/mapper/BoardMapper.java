@@ -15,6 +15,13 @@ public interface BoardMapper {
 
 	public void boardDelete(int id);
 
+	public List<Board> adminList();
+
+	
+
+
+
+
 	
 
 
