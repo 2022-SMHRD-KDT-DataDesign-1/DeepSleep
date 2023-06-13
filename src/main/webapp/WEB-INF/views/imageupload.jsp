@@ -287,7 +287,7 @@
 				  
 				<div class="loadText">
 		  	    	<span>ILEM에서 제공하는 객체탐지 키워드는 20가지 입니다.</span><br>
-		        	<span>자세한 내용은 메인페이지에서 확인할 수 있습니다.</span>
+		        	<span>자세한 내용은 메인페이지에서 확인할 수 있습니다</span>
 		    	</div>
 		    </div>
 		</div>
