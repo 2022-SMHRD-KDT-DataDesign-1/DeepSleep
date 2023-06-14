@@ -18,34 +18,6 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 <!-- 부트스트랩 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-		
-		<!-- loading -->                   
-        <script>	
-			$(function(){ 
-				  $(".addInput").click(function(){
-				    $(".modalLoading").fadeIn();
-				     setTimeout(function () {
-		                // 결과값 계산 완료 후 결과 페이지로 이동
-		                window.location.href = '${contextPath}/objectdetection';
-		            	}, 15000);	 			    
-				  });
-				  
-				  $(".addInput2").click(function(){
-					    $(".modalLoading").fadeIn();
-					    setTimeout(function () {
-			                // 결과값 계산 완료 후 결과 페이지로 이동
-			                window.location.href = '${contextPath}/objectdetection';
-			            	}, 15000); 				    
-					  });
-				  
-				  $(".modal_contentLoading").click(function(){
-				    $(".modalLoading").fadeOut();
-				  });
-				  
-				});
-		</script>
-		<!-- loading -->
-		
 </head>
 <body class="sb-nav-fixed">
        <!-- nav 시작  -->

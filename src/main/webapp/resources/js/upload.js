@@ -273,6 +273,14 @@ let allDetection = () => {
 			
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
+		beforeSend: function(){
+         // 로딩 중 모달창 띄우기
+           $(".modalLoading").fadeIn();    
+      },
+      	complete: function(){
+         // 로딩 중 모달창 없애기
+         $(".modalLoading").fadeOut(); 
+      },
 		error: function(e) {
 			console.log("에러")
 			// 에러났을 때 모션 추가할 것
@@ -314,6 +322,14 @@ let keywordInput = () => {
 
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
+		beforeSend: function(){
+         // 로딩 중 모달창 띄우기
+           $(".modalLoading").fadeIn();    
+      },
+      	complete: function(){
+         // 로딩 중 모달창 없애기
+         $(".modalLoading").fadeOut(); 
+      },
 		error: function(e) {
 			console.log("에러")
 			// 에러났을 때 모션 추가할 것
