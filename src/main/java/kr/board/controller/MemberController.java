@@ -117,8 +117,10 @@ public class MemberController {
 
 		if (email.equals("") || m == null) {
 			return 0;
-		} else {
+		} else if(email.equals("admin")) {
 			return 1;
+		} else {
+			return 2;
 		}
 	}
 
@@ -126,11 +128,11 @@ public class MemberController {
 	@PostMapping("forgetPw.do")
 	public String forgetPw(Member m, HttpSession session, RedirectAttributes rttr) {
 
-		if (m.getEmail() == null || m.getEmail().equals("") || m.getPassword() == null || m.getPassword().equals("")) {
+		if (m.getEmail() == null || m.getEmail().equals("") || m.getPassword() == null || m.getPassword().equals("") || m.getEmail().equals("admin")) {
 			System.out.println("실패");
 
 			rttr.addFlashAttribute("msgType", "실패 메세지");
-			rttr.addFlashAttribute("msg", "모든 내용을 입력하세요");
+			rttr.addFlashAttribute("msg", "비어있거나 잘못된 입력하셨습니다.");
 
 			return "redirect:forgetPwForm";
 		} else {

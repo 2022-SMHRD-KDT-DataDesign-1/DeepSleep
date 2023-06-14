@@ -182,10 +182,10 @@
 			<main>
 				<div class="container-fluid px-4">
 					
-					<c:if test="${empty mvo}">
-						<h1 class="mt-4">My Page</h1>				
-					</c:if>
 					<c:choose>
+						<c:when test="${empty mvo}">
+						<h1 class="mt-4">My Page</h1>				
+						</c:when>
 						<c:when test="${mvo.email eq 'admin'}">
 							<h1 class="mt-4">Admin Page</h1>				
 						</c:when>
@@ -202,17 +202,18 @@
 					<div class="card mb-4">
 						<div class="card-header">Auto Label</div>
 						<div class="card-body">
-							<c:if test="${empty mvo}">
+							<c:choose>
+							<c:when test="${empty mvo}">
 								<p>
 									"<a href="${contextPath}/">로그인</a> 하세요."
 								</p>
-							</c:if>
-							<c:choose>
+							</c:when>
 							<c:when test="${mvo.email eq 'admin'}">
 								<table id="datatablesSimple">
 									<thead>
 										<tr>
 											<th class='table__th' id="thNum">No.↓</th>
+											<th class='table__th' id="thpic1">Original Image</th>
 											<th class='table__th' id="thpic2">Result Image</th>
 											<th class='table__th'>Detected Object(Before)</th>
 											<th class='table__th'>Detected Object(After)</th>
@@ -222,6 +223,9 @@
 										<c:forEach var="vo" items="${list}" varStatus="s">
 											<tr>
 												<td>${s.count}</td>
+												<td><img class="pic_size"
+													src="${contextPath}/resources/images/${vo.image_path}"
+													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><img class="pic_size"
 													src="${contextPath}/resources/images/${vo.result_path}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>

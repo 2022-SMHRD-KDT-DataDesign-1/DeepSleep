@@ -66,9 +66,11 @@
 			data : {"email":email},
 			success : function(data){
 				console.log(data);
-				if(data == 1){
+				if(data == 2){
 					$("#fl").html("인증되셨습니다.").css("color","blue");
-				}else{
+				} else if(data == 1){
+					$("#fl").html("변경할수 없습니다.").css("color","red");
+				} else{
 					$("#fl").html("없는 회원입니다.").css("color","red");
 				}
 			},

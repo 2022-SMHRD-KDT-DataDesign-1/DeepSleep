@@ -14,4 +14,20 @@
 		delete from repository where id = #{id}
 	</delete>
 	
+	<select id="chartMonth" parameterType="int" resultType="kr.board.entity.Board">
+		select month(date) as month, count(month(date)) as mnt from repository where user_idx =#{user_idx} and year(date) = 2023 group by month(date) order by month;
+	</select>
+	
+	<select id="chartDay" parameterType="int" resultType="kr.board.entity.Board">
+		select day(date) as day, count(day(date)) as dnt from repository  where user_idx=#{user_idx} and date between date_sub(now(),interval 7 day) and now() group by day(date) order by day;
+	</select>
+	
+	<select id="allChartMonth" resultType="kr.board.entity.Board">
+		select month(date) as month, count(month(date)) as mnt from repository where year(date) = 2023 group by month(date) order by month;
+	</select>
+	
+	<select id="allChartDay" resultType="kr.board.entity.Board">
+		select day(date) as day, count(day(date)) as dnt from repository  where date between date_sub(now(),interval 7 day) and now() group by day(date) order by day;
+	</select>
+	
 </mapper>

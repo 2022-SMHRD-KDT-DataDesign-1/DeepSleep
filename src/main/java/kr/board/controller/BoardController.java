@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -71,6 +72,39 @@ public class BoardController {
 		System.out.println("게시판 id : " + id);
 		return "redirect:/tables";
 	}
+	
+	// 월별 업로드 기능
+		@RequestMapping("chartMonth.do")
+		public @ResponseBody List<Board> chartMonth(@RequestParam("id") int id, Model model, Board vo) {
+			List<Board> list = boardmapper.chartMonth(id);
+			model.addAttribute("list", list);
+			return list;
+		}
+
+		// 일별 업로드 기능
+		@RequestMapping("chartDay.do")
+		public @ResponseBody List<Board> chartDay(@RequestParam("id") int id, Model model, Board vo) {
+			List<Board> list = boardmapper.chartDay(id);
+			model.addAttribute("list", list);
+			return list;
+		}
+
+		// 전체 사용자 월별 업로드 기능
+		@RequestMapping("allChartMonth.do")
+		public @ResponseBody List<Board> allChartMonth(Model model, Board vo) {
+			List<Board> list = boardmapper.allChartMonth();
+			model.addAttribute("list", list);
+			return list;
+		}
+
+		// 전체 사용자 일별 업로드 기능
+		@RequestMapping("allChartDay.do")
+		public @ResponseBody List<Board> allChartDay(Model model, Board vo) {
+			List<Board> list = boardmapper.allChartDay();
+			model.addAttribute("list", list);
+			return list;
+		}
+
 	
 
 }
