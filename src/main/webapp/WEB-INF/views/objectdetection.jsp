@@ -216,7 +216,7 @@
                                 </svg>
 							Object Detection
 						</div>
-						<form action="${contextPath}/downLoad.do">
+						
 							<div class="card-body" id="upload">
 								<!-- 이미지 슬라이드 for문으로 만들기 -->
 								<div id="cellDiv" class="celldiv">
@@ -228,12 +228,12 @@
 										class="btn btn-outline-primary">
 										<a id="hiddenA" download>다운로드</a>
 									</button>
-									<button type="submit" class="btn btn-outline-primary"
-										onclick="download()">보관함 저장</button>
+									<button type="button" class="btn btn-outline-primary"
+										onclick="repository()">보관함 저장</button>
 								</div>
 
 							</div>
-						</form>
+	
 
 					</div>
 				</div>
