@@ -181,7 +181,19 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">My Page</h1>
+					
+					<c:choose>
+						<c:when test="${empty mvo}">
+						<h1 class="mt-4">My Page</h1>				
+						</c:when>
+						<c:when test="${mvo.email eq 'admin'}">
+							<h1 class="mt-4">Admin Page</h1>				
+						</c:when>
+						<c:when test="${mvo.email ne 'admin'}">
+							<h1 class="mt-4">My Page</h1>				
+						</c:when>
+					</c:choose>
+					
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
 						<li class="breadcrumb-item active">Tables</li>
@@ -190,12 +202,41 @@
 					<div class="card mb-4">
 						<div class="card-header">Auto Label</div>
 						<div class="card-body">
-							<c:if test="${empty mvo}">
+							<c:choose>
+							<c:when test="${empty mvo}">
 								<p>
 									"<a href="${contextPath}/">로그인</a> 하세요."
 								</p>
-							</c:if>
-							<c:if test="${not empty mvo}">
+							</c:when>
+							<c:when test="${mvo.email eq 'admin'}">
+								<table id="datatablesSimple">
+									<thead>
+										<tr>
+											<th class='table__th' id="thNum">No.↓</th>
+											<th class='table__th' id="thpic1">Original Image</th>
+											<th class='table__th' id="thpic2">Result Image</th>
+											<th class='table__th'>Detected Object(Before)</th>
+											<th class='table__th'>Detected Object(After)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="vo" items="${list}" varStatus="s">
+											<tr>
+												<td>${s.count}</td>
+												<td><img class="pic_size"
+													src="${contextPath}/resources/images/${vo.image_path}"
+													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
+												<td><img class="pic_size"
+													src="${contextPath}/resources/images/${vo.result_path}"
+													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
+												<td><p>${vo.result_label}</p></td>
+												<td><p>${vo.edit_label}</p></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</c:when>
+							<c:when test="${mvo.email ne 'admin'}">
 								<table id="datatablesSimple">
 									<thead>
 										<tr>
@@ -209,15 +250,15 @@
 										</tr>
 									</thead>
 									<tbody>
-
 										<c:forEach var="vo" items="${list}" varStatus="s">
 											<tr>
 												<td>${s.count}</td>
-												<td><img class="pic_size"
-													src="${contextPath}/resources/images/${vo.image_path}"
+												<td>
+													<img class="pic_size"
+													src="/filepath/${vo.image_path}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><img class="pic_size"
-													src="${contextPath}/resources/images/${vo.result_path}"
+													src="/filepath/${vo.result_path1}/${vo.result_path2}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><p>${vo.detected_object}</p></td>
 												<td><p>${vo.category}</p></td>
@@ -226,11 +267,11 @@
 													onclick="if(confirm('삭제하시겠습니까?')){location.href=this.href}return false;"
 													href="boardDelete.do?id=${vo.id}">🗑︎</a></td>
 											</tr>
-
 										</c:forEach>
 									</tbody>
 								</table>
-							</c:if>
+							</c:when>
+							</c:choose>
 						</div>
 					</div>
 				</div>

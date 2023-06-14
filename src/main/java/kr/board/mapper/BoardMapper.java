@@ -15,7 +15,16 @@ public interface BoardMapper {
 
 	public void boardDelete(int id);
 
-	
+	public List<Board> adminList();
+
+	public List<Board> chartMonth(int id);
+
+	public List<Board> chartDay(int id);
+
+	public List<Board> allChartMonth();
+
+	public List<Board> allChartDay();
+
 
 
 }

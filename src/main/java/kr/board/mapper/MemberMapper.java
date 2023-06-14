@@ -1,5 +1,7 @@
 package kr.board.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.board.entity.Member;
@@ -16,6 +18,6 @@ public interface MemberMapper {
 
 	public int SignUp(Member m);
 	
-	public Repository downLoad(Repository r);
+	public int downLoad(List<Repository> list);
 	
 	}

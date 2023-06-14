@@ -56,7 +56,7 @@
 				$("#fl").css("display", "none");
   				
 				if(data == "success"){ 
-					$("#fl").text("")
+					$("#fl").text(" ")
   					location.href = "${contextPath}/index";
  				
   				} else if(data == "fail") {
