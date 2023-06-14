@@ -269,7 +269,7 @@ let allDetection = () => {
 			console.log(jsonRes)
 			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
 			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
-			localStorage.setItem('cate', "Keyword"); // 로컬스토리지에 카테고리
+			localStorage.setItem('cate', "Auto-Labeling"); // 로컬스토리지에 카테고리
 			
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
@@ -310,7 +310,7 @@ let keywordInput = () => {
 			console.log(jsonRes)
 			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
 			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
-			localStorage.setItem('cate', "Auto-Labeling"); // 로컬스토리지에 카테고리
+			localStorage.setItem('cate', "Keyword"); // 로컬스토리지에 카테고리
 
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
