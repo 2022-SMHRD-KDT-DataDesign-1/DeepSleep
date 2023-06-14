@@ -3,11 +3,12 @@
 <mapper namespace="kr.board.mapper.BoardMapper">
    	
    	<select id="boardList" parameterType="int" resultType="kr.board.entity.Board">
-		select * from repository where user_idx = #{user_idx} order by date	
+		<!-- select * from repository where user_idx = #{user_idx} order by date	 -->
+		select id,category,detected_object,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,date, user_idx from repository where user_idx = #{user_idx} order by date	; 
 	</select>
 	
 	<select id="adminList" resultType="kr.board.entity.Board">
-		select * from editLabel
+		select id,img_id,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,result_label,edit_label from repository order by date; 
 	</select>
 	
 	<delete id="boardDelete" parameterType="int">
