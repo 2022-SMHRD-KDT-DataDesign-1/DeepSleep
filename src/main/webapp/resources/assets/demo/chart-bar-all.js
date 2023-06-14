@@ -24,76 +24,30 @@ function getGraph4() {
 			for (let i = 0; i < data.length; i++) {
 				if(data[i].month == 1){
 					mntList.push(January += data[i].mnt);					
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 2){
+				} else if(data[i].month == 2){
 					mntList.push(February += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
+				} else if (data[i].month == 3){
+					mntList.push(March += data[i].mnt);
+				} else if (data[i].month == 4){
+					mntList.push(April += data[i].mnt);	
+				} else if (data[i].month == 5){
+					mntList.push(May += data[i].mnt);
+				} else if (data[i].month == 6){
+					mntList.push(June += data[i].mnt);
+				} else if (data[i].month == 7){
+					mntList.push(July += data[i].mnt);
+				} else if (data[i].month == 8){
+					mntList.push(August += data[i].mnt);
+				} else if (data[i].month == 9){
+					mntList.push(September += data[i].mnt);	
+				} else if (data[i].month == 10){
+					mntList.push(October += data[i].mnt);
+				} else if (data[i].month == 11){
+					mntList.push(November += data[i].mnt);
+				} else if (data[i].month == 12){
+					mntList.push(December += data[i].mnt);
 				}
-				
-				if(data[i].month == 3){
-					mntList.push(March += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 4){
-					mntList.push(April += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 5){
-					mntList.push(May += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 6){
-					mntList.push(June += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 7){
-					mntList.push(July += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 8){
-					mntList.push(August += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 9){
-					mntList.push(September += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 10){
-					mntList.push(October += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 11){
-					mntList.push(November += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 12){
-					mntList.push(December += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-			}	
+			}
 			console.log(monthList);
 			console.log(mntList);
 			
