@@ -224,10 +224,10 @@
 											<tr>
 												<td>${s.count}</td>
 												<td><img class="pic_size"
-													src="${contextPath}/resources/images/${vo.image_path}"
+													src="/filepath/${vo.image_path}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><img class="pic_size"
-													src="${contextPath}/resources/images/${vo.result_path}"
+													src="/filepath/${vo.result_path1}/${vo.result_path2}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><p>${vo.result_label}</p></td>
 												<td><p>${vo.edit_label}</p></td>
