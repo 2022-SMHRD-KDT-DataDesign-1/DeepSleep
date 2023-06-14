@@ -66,8 +66,8 @@ function getGraph3() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 10,
-								maxTicksLimit: 5
+								max: 50,
+								maxTicksLimit: 10
 							},
 							gridLines: {
 								color: "rgba(0, 0, 0, .125)",
