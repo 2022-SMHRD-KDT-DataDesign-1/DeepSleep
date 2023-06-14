@@ -182,10 +182,10 @@
 			<main>
 				<div class="container-fluid px-4">
 					
-					<c:if test="${empty mvo}">
-						<h1 class="mt-4">My Page</h1>				
-					</c:if>
 					<c:choose>
+						<c:when test="${empty mvo}">
+						<h1 class="mt-4">My Page</h1>				
+						</c:when>
 						<c:when test="${mvo.email eq 'admin'}">
 							<h1 class="mt-4">Admin Page</h1>				
 						</c:when>
@@ -202,12 +202,12 @@
 					<div class="card mb-4">
 						<div class="card-header">Auto Label</div>
 						<div class="card-body">
-							<c:if test="${empty mvo}">
+							<c:choose>
+							<c:when test="${empty mvo}">
 								<p>
 									"<a href="${contextPath}/">로그인</a> 하세요."
 								</p>
-							</c:if>
-							<c:choose>
+							</c:when>
 							<c:when test="${mvo.email eq 'admin'}">
 								<table id="datatablesSimple">
 									<thead>
