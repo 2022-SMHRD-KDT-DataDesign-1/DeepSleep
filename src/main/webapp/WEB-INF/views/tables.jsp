@@ -213,6 +213,7 @@
 									<thead>
 										<tr>
 											<th class='table__th' id="thNum">No.↓</th>
+											<th class='table__th' id="thpic1">Original Image</th>
 											<th class='table__th' id="thpic2">Result Image</th>
 											<th class='table__th'>Detected Object(Before)</th>
 											<th class='table__th'>Detected Object(After)</th>
@@ -222,6 +223,9 @@
 										<c:forEach var="vo" items="${list}" varStatus="s">
 											<tr>
 												<td>${s.count}</td>
+												<td><img class="pic_size"
+													src="${contextPath}/resources/images/${vo.image_path}"
+													style="cursor: pointer;" onclick="doImgPop(src)" /></td>
 												<td><img class="pic_size"
 													src="${contextPath}/resources/images/${vo.result_path}"
 													style="cursor: pointer;" onclick="doImgPop(src)" /></td>

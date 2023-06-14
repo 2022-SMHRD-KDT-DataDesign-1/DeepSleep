@@ -24,4 +24,9 @@ public class Board {
 	
 	private String result_label;
 	private String edit_label;
+	
+	private String month;
+	private int mnt;
+	private String day;
+	private int dnt;
 }
