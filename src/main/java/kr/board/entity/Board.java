@@ -14,10 +14,9 @@ public class Board {
 	private int id;
 	private String category;
 	private String detected_object;
-	private String image_path;
-	
 	private String img_id;
 	
+	private String image_path;
 	private String result_path;
 	private String date;
 	private int user_idx;

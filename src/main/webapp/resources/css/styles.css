@@ -11269,8 +11269,8 @@ body {
 
 #footer {
     padding: 25px 0;
-    background-color: #f8f9fa;
-    color: #000;
+    background-color: #343a40;
+    color: #fff;
     font-size: 20px;
     display: block;
 }
@@ -11322,6 +11322,7 @@ body {
 }
 
 #load div {
+  font-size: 25px;
   position:absolute;
   width:20px;
   height:36px;
@@ -11495,4 +11496,14 @@ body {
 .addInput{
 	position: relative;
 	top:15px;	
+}
+
+.navuser{
+	position: relative !important;
+    right: -1575px !important;
+}
+
+.navuserSub{
+	right: -1575px !important;
+    top: 30px !important;
 }
