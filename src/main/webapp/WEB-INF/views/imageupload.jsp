@@ -42,39 +42,41 @@
 		</form>
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-					class="fas fa-user fa-fw"></i></a>
-				<ul class="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navuser" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-user fa-fw"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end"	aria-labelledby="navbarDropdown">
 					<li><a class="dropdown-item" href="#!">Settings</a></li>
 					<li><a class="dropdown-item" href="${contextPath}/tables">My Page</a></li>
 					<li><hr class="dropdown-divider" /></li>
 					<li><a class="dropdown-item" href="${contextPath}/logout.do">Logout</a></li>
-				</ul></li>
+				</ul>
+			</li>
 		</ul>
 	</nav>
 	<div id="layoutSidenav">
 		<div id="layoutSidenav_nav">
 			<nav class="sb-sidenav accordion sb-sidenav-dark"
 				id="sidenavAccordion">
+				
+				<!-- 사이드바 수정 -->
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Core</div>
+						<div class="sb-sidenav-menu-heading">오토라벨링</div>
 						<a class="nav-link" href="${contextPath}/imageupload">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
-							</div> Auto-Labeling
+							</div> 이미지업로드
 						</a>
 						
-						<div class="sb-sidenav-menu-heading">Interface</div>
+						<div class="sb-sidenav-menu-heading">오토라벨링??</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 							data-bs-target="#collapseLayouts" aria-expanded="false"
 							aria-controls="collapseLayouts">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-columns"></i>
-							</div> My Page
+							</div> 마이페이지
 							<div class="sb-sidenav-collapse-arrow">
 								<i class="fas fa-angle-down"></i>
 							</div>
@@ -83,12 +85,14 @@
 						<div class="collapse" id="collapseLayouts"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="${contextPath}/index">Storage</a>
-								<a class="nav-link" href="${contextPath}/objectdetection">Result</a>
+								<a class="nav-link" href="${contextPath}/index">보관함</a>
+								<a class="nav-link" href="${contextPath}/objectdetection">라벨링 결과</a>
 							</nav>
 						</div>
 					</div>
 				</div>
+				<!-- 사이드바 수정 -->				
+				
 				<div class="sb-sidenav-footer">
 					<div class="small">오늘도</div>
 					조흔 하루 되세용
@@ -101,7 +105,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">이미지 업로드</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li> -->
                             <li class="breadcrumb-item active">이미지 업로드</li>
                         </ol>
                         <div class="card mb-4">

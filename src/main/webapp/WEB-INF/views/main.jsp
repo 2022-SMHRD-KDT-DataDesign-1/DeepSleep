@@ -79,7 +79,8 @@
 		<div class="owl-carousel owl-carousel-fullwidth">
 			<!-- 배경1 -->
 		    <div class="item" style="background-image: url('images/imgM12.png'); background-repeat: repeat-x; background-size: 100%;">
-		    	<div class="container" style="position: relative;">
+		    	<!-- <div class="container conStyle" style="position: relative;"> -->
+		    	<div class="container conStyle">
 		    		<div class="row">
 					    <div class="col-md-8 col-md-offset-2 text-center">
 			    			<div class="fh5co-owl-text-wrap">
@@ -107,7 +108,7 @@
 		    </div>
 			<!-- 배경2  -->
 		    <div class="item" style="background-image: url('images/imgM22.png'); background-repeat: no-repeat; background-size: cover;">
-		    	<div class="container" style="position: relative;">
+		    	<div class="container conStyle">
 		    		<div class="row">
 		    			<div class="col-md-8 to-animate" style="position: relative; top: 100px; width:75%;">
 							<img src="images/samImg.gif" class="img-responsive img-rounded" style="width:65%;">
@@ -122,8 +123,7 @@
 		    </div>
 			<!-- 배경3  -->
 		    <div class="item" style="background-image: url('images/imgM33.jpg'); background-repeat: no-repeat; background-size: cover;">
-		    	<!-- <div class="overlay"></div> -->
-		    	<div class="container" style="position: relative;">
+		    	<div class="container conStyle">
 		    		<div class="row">
 		    			<div class="col-md-8 to-animate" style="position: relative; top: 100px; width:75%;">
 							<img src="images/dino2.png" class="img-responsive img-rounded" style="width:65%;">
@@ -162,13 +162,13 @@
 				</div>
 				<div class="col-md-4 to-animate">
 					<h2>How we got started</h2>
-					<p style="font-size: 16px;">
+					<p class="pstyle">
 						최근 몇 년 동안 인공지능 기술은 빠르게 발전하고 있으며 정부의 디지털 뉴딜 정책의 핵심이라 할 수 있는 AI 산업 육성을 위한 데이터 라벨링의 중요성이 부각되고 있습니다.
 					    데이터 라벨링은 AI 학습을 위한 원천 데이터에 값(라벨)을 붙이는 필수 작업으로, 비정형 데이터를 컴퓨터가 이해할 수 있는 형태로 변형하고 가공합니다. 
 					    딥러닝 기반 AI 개발에 들어가는 시간이 많은 소모되는 기업들은 빠르게 프로토타입을 생성하고 결과물을 시장에 내놓기를 원합니다. 
 					    오토 라벨링 서비스는 빠르게 데이터 셋을 생성하는데 필요한 라벨링 작업을 감소시켜 프로젝트 개발 및 진행 속도를 높이는 데 도움이 됩니다.
 					</p>
-					<p style="font-size: 16px;">
+					<p class="pstyle">
 						이러한 배경에서 오토 라벨링 서비스는 시간과 비용을 절약하며 훈련 데이터의 질을 높이고,
 						프로젝트 개발 속도를 높여 딥러닝 기반 AI 개발을 가속화하는 데 도움이 줄 수 있어 개발하였습니다.
 					</p>
@@ -354,35 +354,35 @@
 
 						<div class='cdpen_progress_inner__tabs'>
 							<div class='tab tab-0'>
-								<h1 style="position: relative;top: -12px;">Image Upload</h1>
+								<h1 class="sfstyle">Image Upload</h1>
 								<p>
 								   <strong>ILEM</strong>(Image Labeling Every Moment) 객체탐지와 오토라벨링 서비스에 사용할 라벨링이 되어있지 않은 이미지들을
 								   업로드 영역에 드래그&드롭을 하고 키워드 입력 또는 전체 객체 탐지를 실행합니다.
 								</p>
 							</div>
 							<div class='tab tab-1'>
-								<h1 style="position: relative;top: -12px;">Input Keyword</h1>
+								<h1 class="sfstyle">Input Keyword</h1>
 								<p>
 									객체탐지를 위해 원하는 키워드를 입력해주세요. <strong>ILEM</strong>(Image Labeling Every Moment)에서 지원하는 객체탐지 키워드는
 								 	20가지 입니다. 키워드에 설명은 서비스페이지에서 확인해주세요.
 								</p>
 							</div>
 							<div class='tab tab-2'>
-								<h1 style="position: relative;top: -12px;">Zero-Shot</h1>
+								<h1 class="sfstyle">Zero-Shot</h1>
 								<p>
 									<strong>Zero-shot</strong>은 사전에 라벨링되지 않은 새로운 클래스의 객체를 탐지할 수 있어 학습 모델이 객체 특징과 속성을 이해하고,
 									새로운 클래스를 예측하여 <strong>Grounding Dino</strong> Model에서 라벨링을 진행합니다.
 								</p>
 							</div>
 							<div class='tab tab-3'>
-								<h1 style="position: relative;top: -12px;">Object Detection</h1>
+								<h1 class="sfstyle">Object Detection</h1>
 								<p>
 									<strong>Grounding Dino</strong>를 통해 객체 탐지와 라벨링이 수행되면, 각각의 객체가 정확하게 식별되고, 위치와<br> 카테고리가 정해집니다.
 									<strong>SAM</strong> Model이 활용되어 각 객체별 이미지 분류 작업을 진행합니다. 
 								</p>
 							</div>
 							<div class='tab tab-4'>
-								<h1 style="position: relative;top: -12px;">Data</h1>
+								<h1 class="sfstyle">Data</h1>
 								<p>
 									<strong>Grounding Dino</strong> Model을 통해 이미지에서 객체 탐지와 라벨링 작업을 수행한 결과물을
 									<strong>SAM</strong> Model을 통해 객체 탐지 이미지들을 분류한 결과물이 출력되고 파일로 다운로드 할 수 있습니다.

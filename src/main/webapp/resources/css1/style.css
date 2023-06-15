@@ -1495,6 +1495,20 @@ button.btn-play .glyphicon {
 
 /* youtube 끝  */
 
+/* 직접 클래스 추가 */
+.conStyle{
+	position: relative;
+}
+
+.pstyle{
+	font-size: 16px !important;
+}
+
+.sfstyle{
+	position: relative;
+	top: -12px;
+}
+
 
 
 
