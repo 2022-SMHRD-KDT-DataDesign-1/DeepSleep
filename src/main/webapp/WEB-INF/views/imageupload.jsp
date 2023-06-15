@@ -37,10 +37,9 @@
 					<i class="fas fa-user fa-fw"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end navuserSub"	aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">Settings</a></li>
-					<li><a class="dropdown-item" href="${contextPath}/tables">My Page</a></li>
+					<li><a class="dropdown-item" href="${contextPath}/index">보관함</a></li>
 					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="${contextPath}/logout.do">Logout</a></li>
+					<li><a class="dropdown-item" href="${contextPath}/logout.do">로그아웃</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -84,8 +83,19 @@
 				<!-- 사이드바 수정 -->				
 				
 				<div class="sb-sidenav-footer">
-					<div class="small">오늘도</div>
-					조흔 하루 되세용
+					&nbsp;<br>
+					<div class="small"><strong>객체탐지 키워드 종류 20가지</strong></div>
+					01. tv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02. car<br>
+					03. bus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04. cat<br> 
+					05. dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06. bed<br>
+					07. ship&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08. bird<br>
+					09. tree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. train<br>
+					11. zebra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12. chair<br>
+					13. table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14. apple<br>
+					15. banana&nbsp;&nbsp;&nbsp;&nbsp;16. person<br>
+					17. giraffe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18. airplane<br>
+					19. elephant &nbsp;20. bicycle<br>
+					&nbsp;<br>
 				</div>
 			</nav>
 		</div>
@@ -165,7 +175,7 @@
 				  
 				<div class="loadText">
 		  	    	<span>ILEM에서 제공하는 객체탐지 키워드는 20가지 입니다.</span><br>
-		        	<span>자세한 내용은 메인페이지에서 확인할 수 있습니다</span>
+		        	<span>자세한 내용은 사이드바 하단에서 확인할 수 있습니다.</span>
 		    	</div>
 		    </div>
 		</div>

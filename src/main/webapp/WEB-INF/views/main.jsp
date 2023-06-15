@@ -85,7 +85,9 @@
 					    <div class="col-md-8 col-md-offset-2 text-center">
 			    			<div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
-						    		<h1 class="main-bg-s1"><a href="#" target="_blank">ILEM</a></h1>
+						    		<h1 class="main-bg-s1">
+						    			<a data-toggle="modal" href="#loginModal" onclick="openLoginModal()">ILEM</a>
+			            			</h1>
 									<h3 class="main-bg-sub-s1"><strong>I</strong>mage <strong>L</strong>abeling <strong>E</strong>very <strong></strong> Moment</h3>
 									<p class="to-animate-2re">
 										<c:if test="${empty mvo}">
@@ -93,7 +95,7 @@
 			            					   style="position: relative; bottom: -90px; font-size: 35px;">Start</a>
 										</c:if>
 										<c:if test="${not empty mvo}">
-			            					<a class="btn btn-primary btn-lg" href="${contextPath}/logout.do"
+			            					<a class="btn btn-primary btn-lg" href="${contextPath}/index"
 			            					   style="position: relative; bottom:-90px; font-size: 35px;">${mvo.nickname}</a>
 										</c:if>
 									</p>
