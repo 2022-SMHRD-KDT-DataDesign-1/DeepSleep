@@ -122,8 +122,8 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-area me-1"></i> Total User Daily
-											Upload
+											<i class="fas fa-chart-area me-1"></i> 총 사용자 일별 업로드 수
+											
 										</div>
 										<div class="card-body">
 											<canvas id="allAreaChart" width="100%" height="70"></canvas>
@@ -133,8 +133,8 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-bar me-1"></i> Total User Monthly
-											Upload
+											<i class="fas fa-chart-bar me-1"></i> 총 사용자 월별 업로드 수
+											
 										</div>
 										<div class="card-body">
 											<canvas id="allBarChart" width="100%" height="70"></canvas>
@@ -146,7 +146,7 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-area me-1"></i> Daily Upload
+											<i class="fas fa-chart-area me-1"></i> 일별 업로드 수
 										</div>
 										<div class="card-body">
 											<canvas id="myAreaChart" width="100%" height="70"></canvas>
@@ -156,7 +156,7 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-bar me-1"></i> Monthly Upload
+											<i class="fas fa-chart-bar me-1"></i> 월별 업로드 수
 										</div>
 										<div class="card-body">
 											<canvas id="myBarChart" width="100%" height="70"></canvas>
@@ -175,7 +175,7 @@
 						<c:choose>
 							<c:when test="${empty mvo}">
 								<div class="card mb-4">
-									<div class="card-header">Auto Label</div>
+									<div class="card-header">오토 라벨</div>
 									<div class="card-body">
 										<p>
 											"<a href="${contextPath}/">로그인</a> 하세요."
@@ -184,7 +184,7 @@
 							</c:when>
 							<c:when test="${mvo.email eq 'admin'}">
 								<div class="card mb-4">
-								<div class="card-header">Total User's Edit Label</div>
+								<div class="card-header">수정된 라벨</div>
 								<div class="card-body">
 									<table id="datatablesSimple">
 										<thead>
@@ -216,7 +216,7 @@
 							</c:when>
 							<c:when test="${mvo.email ne 'admin'}">
 								<div class="card mb-4">
-									<div class="card-header">Auto Label</div>
+									<div class="card-header">오토 라벨</div>
 									<div class="card-body">
 										<table id="datatablesSimple">
 											<thead>
