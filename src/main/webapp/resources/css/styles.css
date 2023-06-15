@@ -11498,6 +11498,11 @@ body {
 }
 
 .navuser{
-	position: relative;
-    right: -1595px;
+	position: relative !important;
+    right: -1575px !important;
+}
+
+.navuserSub{
+	right: -1575px !important;
+    top: 30px !important;
 }
