@@ -31,10 +31,9 @@ public class MemberController {
 	private MemberMapper memberMapper;
 	
 	// index 테스트용
-		@GetMapping("index")
-		public String index() {
-			return "index";
-		}
+	/*
+	 * @GetMapping("index") public String index() { return "index"; }
+	 */
 
 	
 	// main
