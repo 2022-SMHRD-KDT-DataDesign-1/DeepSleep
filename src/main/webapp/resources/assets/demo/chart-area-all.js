@@ -20,7 +20,6 @@ function getGraph3() {
 		dataType: "json",
 		success: function(data) {
 			
-			
 			for (let i = 0; i < data.length; i++) {
 				dayList.push(data[i].day);
 				dntList.push(data[i].dnt);
@@ -38,13 +37,32 @@ function getGraph3() {
 					datasets: [{
 						label: "업로드 수",
 						lineTension: 0.3,
-						backgroundColor: "rgba(2,117,216,0.2)",
-						borderColor: "rgba(2,117,216,1)",
+						backgroundColor: 'rgba( 255, 255, 255, 0.5 )',
+						borderColor: [
+							'rgba(255, 99, 132, 0.5)',
+							'rgba(54, 162, 235, 0.5)',
+							'rgba(255, 206, 86, 0.5)',
+							'rgba(75, 192, 192, 0.5)',
+							'rgba(153, 102, 255, 0.5)',
+							'rgba(255, 159, 64, 0.5)'],
+						boardWidth:2,
 						pointRadius: 5,
-						pointBackgroundColor: "rgba(2,117,216,1)",
+						pointBackgroundColor: [
+							'rgba(255, 99, 132, 0.5)',
+							'rgba(54, 162, 235, 0.5)',
+							'rgba(255, 206, 86, 0.5)',
+							'rgba(75, 192, 192, 0.5)',
+							'rgba(153, 102, 255, 0.5)',
+							'rgba(255, 159, 64, 0.5)'],
 						pointBorderColor: "rgba(255,255,255,0.8)",
 						pointHoverRadius: 5,
-						pointHoverBackgroundColor: "rgba(2,117,216,1)",
+						pointHoverBackgroundColor: [
+							'rgba(255, 99, 132, 0.5)',
+							'rgba(54, 162, 235, 0.5)',
+							'rgba(255, 206, 86, 0.5)',
+							'rgba(75, 192, 192, 0.5)',
+							'rgba(153, 102, 255, 0.5)',
+							'rgba(255, 159, 64, 0.5)'],
 						pointHitRadius: 50,
 						pointBorderWidth: 2,
 						data: dntList,	// y축
@@ -66,8 +84,8 @@ function getGraph3() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 50,
-								maxTicksLimit: 10
+								max: 10,
+								maxTicksLimit: 5
 							},
 							gridLines: {
 								color: "rgba(0, 0, 0, .125)",
