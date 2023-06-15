@@ -186,7 +186,7 @@
                             
                             <!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
                         <div class="btnsty">
-                            <button type="button" class="btn btn-outline-primary" id="key1" style="color:#fff; border-color:#fff;">라벨 수정</button>
+                            <button type="button" class="btn btn-outline-primary" id="key1" style="color:#fff; border-color:#fff;">수정 키워드</button>
                             
                         </div>    
                         <div class="addInput">

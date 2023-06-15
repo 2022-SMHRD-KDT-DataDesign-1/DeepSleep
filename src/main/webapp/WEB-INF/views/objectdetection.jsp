@@ -155,6 +155,8 @@
 									</button>
 									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
 										onclick="repository()">보관함 저장</button>
+									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
+										onclick="editLabel()">라벨 수정</button>
 								</div>
 							</div>
 
