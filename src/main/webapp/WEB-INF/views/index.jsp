@@ -59,7 +59,7 @@
 							</div> 이미지 업로드
 						</a>
 						
-						<div class="sb-sidenav-menu-heading">오토라벨링?</div>
+						<div class="sb-sidenav-menu-heading">오토라벨링??</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 							data-bs-target="#collapseLayouts" aria-expanded="false"
 							aria-controls="collapseLayouts">
