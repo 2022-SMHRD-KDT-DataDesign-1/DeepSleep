@@ -179,12 +179,12 @@
 			</div>
 			<div class="row" id="team">
 				<section>
-					<div class="container flow-content" data-section="teamMember">
+					<div class="container flow-content to-animate" data-section="teamMember">
 						<!-- <h2 class="section-title">Meet the team</h2> -->
 						<ul role="list" class="grid" data-columns="3">
 							<li>
-								<article class="card" data-visible="false">
-									<div data-card="front" class="card__front flow-content">
+								<article class="card to-animate" data-visible="false">
+									<div data-card="front" class="card__front flow-content to-animate">
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMjU1ODF8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
 											<p class="card__name">팀장 김영민</p>
@@ -208,7 +208,7 @@
 								</article>
 							</li>
 							<li>
-								<article class="card" data-visible="false">
+								<article class="card to-animate" data-visible="false">
 									<div data-card="front" class="card__front flow-content">
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMzAxNzB8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
@@ -233,7 +233,7 @@
 								</article>
 							</li>
 							<li>
-								<article class="card" data-visible="false">
+								<article class="card to-animate" data-visible="false">
 									<div data-card="front" class="card__front flow-content">
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMzAyODV8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
@@ -258,7 +258,7 @@
 								</article>
 							</li>
 							<li>
-								<article class="card" data-visible="false">
+								<article class="card to-animate" data-visible="false">
 									<div data-card="front" class="card__front flow-content">
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMjU1ODF8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
@@ -283,7 +283,7 @@
 								</article>
 							</li>
 							<li>
-								<article class="card" data-visible="false">
+								<article class="card to-animate" data-visible="false">
 									<div data-card="front" class="card__front flow-content">
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1552058544-f2b08422138a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMzAyMjl8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
@@ -329,8 +329,8 @@
 			<!-- <h1>Our Service</h1> -->
 			<div class="row">
 				<div class='cdpen_progress'>
-					<img class="flowimg" src="images/flow2.png">
-					<div class='cdpen_progress_inner'>
+					<img class="flowimg to-animate" src="images/flow2.png">
+					<div class='cdpen_progress_inner '>
 						<div class='cdpen_progress_inner__step'>
 							<label for='step-1'>Image Upload</label>
 						</div>
@@ -427,14 +427,14 @@
 			<!-- <h1>데이터 라벨링 중요성</h1> -->
 			<div class="row">
 				<div class="col-md-3 col-sm-6 ">
-					<div class="service-box">
-						<div class="service-icon yellow">
+					<div class="service-box ">
+						<div class="service-icon yellow ">
 							<div class="front-content">
 								<i class="fa fa-database"></i>
 								<h3>학습데이터 생성</h3>
 							</div>
 						</div>
-						<div class="service-content">
+						<div class="service-content ">
 							<h3>품질있는 학습데이터 생성</h3>
 							<p> 머신 러닝 모델의 성능은 학습 데이터의 품질에 크게 의존합니다. 정확한 라벨링 작업을 통해, 품질 높은 학습 데이터를 생성할 수 있으며, 이를 바탕으로 더 정한 예측 및 분석이 가능한 모델을 학습시킬 수 있습니다</p>
 						</div>
