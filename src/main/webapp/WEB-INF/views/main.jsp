@@ -132,7 +132,7 @@
 							<p style="position:relative; font-size: 25px; top:10px; color:#fff;">
 								 <strong>Grounding DINO</strong> can detect arbitrary objects with<br>
 								  human inputs such as category names or referring<br>
-								  expressions.
+								  expressions
 							</p>
 						</div>
 		    		</div>
