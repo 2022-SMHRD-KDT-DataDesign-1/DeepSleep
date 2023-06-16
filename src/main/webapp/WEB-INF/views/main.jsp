@@ -184,8 +184,8 @@
 						<ul role="list" class="grid" data-columns="3">
 							<li>
 								<article class="card to-animate" data-visible="false">
-									<div data-card="front" class="card__front flow-content to-animate">
-										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMjU1ODF8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
+									<div data-card="front" class="card__front flow-content">
+										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMzAxNzB8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
 											<p class="card__name">팀장 김영민</p>
 											<p class="card__position">Project Manager</p>
@@ -193,11 +193,12 @@
 									</div>
 									<div data-card="back" class="card__back flow-content">
 										<p class="card__name">팀장 김영민</p>
-										<p>	
-											[Project 총괄]<br>
-											- ???<br>
-											[Modeling]<br>
-											- ???
+										<p style="text-align: left;">
+											&#9634; Project 총괄<br>
+											&#9634; Modeling<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&#9654; Grounding Dino 및 SAM<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 활용한 객체 탐지 및<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 오토라벨링 기능 구현
 										</p>
 									</div>
 									<footer class="card__footer">
@@ -213,16 +214,16 @@
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMzAxNzB8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
 											<p class="card__name">부팀장 김예함</p>
-											<p class="card__position">Back-End Developer</p>
+											<p class="card__position">Full Stack Developer</p>
 										</div>
 									</div>
 									<div data-card="back" class="card__back flow-content">
 										<p class="card__name">부팀장 김예함</p>
-										<p>
-											[Back-End]<br>
-											- ???<br>
-											[Front-End]<br>
-											- ???
+										<p style="text-align: left;">
+											&#9634; 이미지 업로드 / 결과 페이지<br>
+											&nbsp;&nbsp;&nbsp;&nbsp; 구현<br>
+											&#9634; 반응형 웹페이지 구현<br>
+											&#9634; 페이지 유지보수
 										</p>
 									</div>
 									<footer class="card__footer">
@@ -243,11 +244,11 @@
 									</div>
 									<div data-card="back" class="card__back flow-content">
 										<p class="card__name">팀원 염혜정</p>
-										<p>
-											[DataBase]<br>
-											- ???<br>
-											[Back-End]<br>
-											- ???
+										<p style="text-align: left;">
+											&#9634; DataBase 설계<br>
+											&#9634; 이미지 업로드 및 결과 확인<br>
+											&nbsp;&nbsp;&nbsp;&nbsp; 기능 구현<br>
+											&#9634; Flask Server 구축 및 통신 구현
 										</p>
 									</div>
 									<footer class="card__footer">
@@ -263,16 +264,21 @@
 										<img class="card__img mx-auto" src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUwMjU1ODF8&ixlib=rb-4.0.3&q=80&w=400" alt="John Smith (from Unsplash)" />
 										<div class="flow-content" data-spacing="sm">
 											<p class="card__name">팀원 최유정</p>
-											<p class="card__position">Back-End Developer</p>
+											<p class="card__position">Full Stack Developer</p>
 										</div>
 									</div>
 									<div data-card="back" class="card__back flow-content">
 										<p class="card__name">팀원 최유정</p>
-										<p>
-											[Back-End]<br>
-											- ???<br>
-											[Front-End]<br>
-											- ???
+										<p style="text-align: left;">
+											&#9634; 회원가입, 로그인, 비밀번호<br>
+											&nbsp;&nbsp;&nbsp; 변경 페이지<br> 
+											&nbsp;&nbsp;&nbsp;&nbsp;&#9654; 비밀번호 암호화 기능 구현<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&#9654; 비밀번호 변경 성공/실패<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모달창 구현<br>
+											&#9634; 마이페이지 구현<br>
+									        &nbsp;&nbsp;&nbsp;&nbsp;&#9654; 이미지 보관함 기능 구현<br>
+									        &nbsp;&nbsp;&nbsp;&nbsp;&#9654; 업로드 수 데이터 시각화<br>
+									        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 기능 구현
 										</p>
 									</div>
 									<footer class="card__footer">
@@ -293,9 +299,13 @@
 									</div>
 									<div data-card="back" class="card__back flow-content">
 										<p class="card__name">팀원 고유빈</p>
-										<p>
-											[Front-End]<br>
-											- ???
+										<p style="text-align: left;">
+											&#9634; 팀 로고 제작<br>
+											&#9634; 전체 페이지 디자인<br>
+											&#9634; 메인페이지 구현<br>
+											&#9634; 서비스페이지 구현, 유지보수<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&#9654; 오토라벨링 로딩 모달창<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 구현
 										</p>
 									</div>
 									<footer class="card__footer">
