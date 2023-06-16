@@ -80,13 +80,8 @@
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 이미지 업로드
 						</a>
-
+						
 						<div class="sb-sidenav-menu-heading">마이페이지</div>
-						<a class="nav-link" href="${contextPath}/charts">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> 통계
-						</a>
 						<a class="nav-link" href="${contextPath}/index">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
