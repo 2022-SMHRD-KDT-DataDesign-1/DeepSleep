@@ -310,7 +310,7 @@ svg {
 
 /* yj */
 img{
-	width:100%;
+	width:auto; /*전체 수정x*/
   height: 200px;
   border-radius: 10px;
 }
