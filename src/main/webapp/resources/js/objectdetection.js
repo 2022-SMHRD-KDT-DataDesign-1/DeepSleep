@@ -3,7 +3,7 @@ console.log("js 연결")
 let jsonRes = JSON.parse(localStorage.getItem('jsonRes')); // 로컬스토리지에 저장된 결과 json 불러오기
 console.log(jsonRes)
 
-document.getElementById('downloadBtn').addEventListener('click', () => {
+/*document.getElementById('downloadBtn').addEventListener('click', () => {
 	// 체크된 이미지 목록 가져오기
 	checkArr = checkedInputImg();
 
@@ -18,21 +18,21 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
 		// $('#hiddenA').click();
 		console.log('다운로드 완료??')
 	})
-})
+})*/
 
 
 /* 로드 시 결과 추가 */
 
 // 임시 데이터 (나중에 삭제할 것)
-/*let test1 = `<div id="resDiv${1}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`
+let test1 = `<div id="resDiv${1}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`
 $('#cellDiv').append(test1).trigger("create");
 let test2 = '<div class="gallery-cell"><input type="checkbox" class="optionCheck" id="myCheckbox2" /><label for="myCheckbox2"><img id="resImg2" src="/filepath/new_20230609095127/person1.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox3" /><label for="myCheckbox3"><img id="resImg3" src="/filepath/new_20230609095127/person2.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox4" /><label for="myCheckbox4"><img id="resImg4" src="/filepath/new_20230609095127/person3.jpg"></label></div><div class="gallery-cell"><input class="optionCheck" type="checkbox" id="myCheckbox5" /><label for="myCheckbox5"><img id="resImg5" src="/filepath/new_20230609095127/person4.jpg"></label></div>'
-$('#resDiv1').append(test2).trigger("create");*/
+$('#resDiv1').append(test2).trigger("create");
 /////
 
 let a = 1; // 겉 태그 아이디값
 let b = 1; // 안 태그 아이디값 
-jsonRes.forEach(k => {
+/*jsonRes.forEach(k => {
    let imageArr = k.images // 결과 json에서 images 담겨 있는 배열
    let annoArr = k.annotations // 결과 json에서 annotations 담겨 있는 배열
    let resImageName; // 결과 이미지 이름
@@ -60,7 +60,7 @@ jsonRes.forEach(k => {
    a++;
 
 });
-
+*/
 /* 선택된 이미지 input태그 id값 가져오는 함수 */
 function checkedInputImg() {
 	let checkBox = $('.optionCheck') // 체크박스 클래스
@@ -98,6 +98,8 @@ let repository = () => {
 
 	let checkIdArr = checkedImgID(); // 체크 이미지 아이디값
 	console.log(checkIdArr)
+
+	let repJsonArr = []; // json 담을 배열 생성
 
 	checkIdArr.forEach(k => { // 체크 아이디 리스트
 
@@ -142,3 +144,96 @@ let repository = () => {
 
 	});
 }
+
+/* 이미지 zip 저장 요청 */
+let zipDownload = () => {
+
+	console.log("다운로드 ck")
+	// 선택된 이미지 가져오기
+	imgArr = checkedImgID();
+	console.log(imgArr)
+
+	let pathJson = new Object(); // 결과물 파일 경로 담을 json 객체 생성
+	let pathJsonArr = []; // json 담을 리스트 생성
+
+	imgArr.forEach(k => { // 체크 아이디 리스트
+
+		let pathJson = new Object(); // 결과물 파일 경로 담을 json 객체 생성
+
+		jsonRes.forEach(i => { // json 리스트
+			// 아이디 값이 일치하면 json에서 값 꺼내고 db로 보낼 json 생성하기
+			let imageArr = i.images
+			let annoArr = i.annotations
+
+			for (var j = 0; j < imageArr.length; j++) {
+				if (annoArr[j].original_id == k) {
+					console.log(annoArr[j].original_id)
+					pathJson.path = imageArr[j].file_name
+
+					pathJsonArr.push(pathJson); // 배열 추가
+				}
+			}
+		})
+	});
+
+	console.log(pathJsonArr)
+
+	$.ajax({
+		url: "downloadZipFile.do",
+		type: "post",
+		contentType: "application/json",
+		dataType: "text",
+		data: JSON.stringify(pathJsonArr),
+		success: function(d) {
+			console.log(d)
+
+			var downloadLink = document.createElement("a");
+			downloadLink.href = '/filepath/test.zip';
+			downloadLink.download = "test.zip";
+
+			document.body.appendChild(downloadLink);
+			downloadLink.click();
+			document.body.removeChild(downloadLink);
+
+
+		},
+		error: function(e) {
+			console.log("실패")
+			alert("저장 실패")
+		}
+
+	});
+}
+
+/* 수정라벨 페이지 이동 */
+// 선택된 사진에 대한 json 정보도 같이 넘어가야 함
+/*let editLabel = () => {
+	
+	imgArr = checkedImgID();
+
+	let editJson = new Object(); // 결과물 파일 경로 담을 json 객체 생성
+	let editJsonArr = []; // json 담을 리스트 생성
+
+	imgArr.forEach(k => { // 체크 아이디 리스트
+
+		let pathJson = new Object(); // 결과물 파일 경로 담을 json 객체 생성
+
+		jsonRes.forEach(i => { // json 리스트
+			// 아이디 값이 일치하면 json에서 값 꺼내고 db로 보낼 json 생성하기
+			let imageArr = i.images
+			let annoArr = i.annotations
+
+			for (var j = 0; j < imageArr.length; j++) {
+				if (annoArr[j].original_id == k) {
+					console.log(annoArr[j].original_id)
+
+					pathJsonArr.push(pathJson); // 배열 추가
+				}
+			}
+		})
+	});
+	
+	
+	
+	
+}*/
