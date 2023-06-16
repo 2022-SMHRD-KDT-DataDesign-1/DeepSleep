@@ -28,7 +28,7 @@
 	</select>
 	
 	<select id="allChartDay" resultType="kr.board.entity.Board">
-		select day(date) as day, count(day(date)) as dnt from repository  where date between date_sub(now(),interval 7 day) and now() group by day(date) order by day
+		select day(date) as day, count(day(date)) as dnt from repository  where date between date_sub(now(),interval 6 day) and now() group by day(date) order by day
 	</select>
 	
 </mapper>

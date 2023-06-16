@@ -44,7 +44,8 @@ function getGraph3() {
 							'rgba(255, 206, 86, 0.5)',
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
-							'rgba(255, 159, 64, 0.5)'],
+							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 000, 000, 0.5)'],
 						boardWidth:2,
 						pointRadius: 5,
 						pointBackgroundColor: [
@@ -53,7 +54,8 @@ function getGraph3() {
 							'rgba(255, 206, 86, 0.5)',
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
-							'rgba(255, 159, 64, 0.5)'],
+							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 000, 000, 0.5)'],
 						pointBorderColor: "rgba(255,255,255,0.8)",
 						pointHoverRadius: 5,
 						pointHoverBackgroundColor: [
@@ -62,7 +64,8 @@ function getGraph3() {
 							'rgba(255, 206, 86, 0.5)',
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
-							'rgba(255, 159, 64, 0.5)'],
+							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 000, 000, 0.5)'],
 						pointHitRadius: 50,
 						pointBorderWidth: 2,
 						data: dntList,	// y축
