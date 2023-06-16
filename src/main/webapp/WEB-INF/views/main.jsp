@@ -118,7 +118,7 @@
 							<p style="position:relative; font-size: 25px; top:10px; color:#fff;">
 								<strong>SAM</strong> is a promptable segmentation system with<br>
 								 zero-shot generalization to unfamiliar objects and<br>
-								 images without the need for additional training.
+								 images without the need for additional training
 							</p>
 						</div>
 		    		</div>
