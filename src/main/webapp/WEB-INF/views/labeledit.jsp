@@ -11,7 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Tables - SB Admin</title>
+        <title>Deep Sleep - Image Labeling Every Moment</title>
+		<link rel="shortcut icon" href="images/logo.png" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -60,10 +61,10 @@
 					<i class="fas fa-user fa-fw"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end navuserSub"	aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="${contextPath}/index">보관함</a></li>
+					<li><a class="dropdown-item" href="${contextPath}/index"><i class="fa-regular fa-hard-drive"></i> 보관함</a></li>
 
 					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="${contextPath}/logout.do">로그아웃</a></li>
+					<li><a class="dropdown-item" href="${contextPath}/logout.do"><i class="fa-solid fa-arrow-right-from-bracket"></i> 로그아웃</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -79,24 +80,24 @@
 						<div class="sb-sidenav-menu-heading">오토라벨링</div>
 						<a class="nav-link" href="${contextPath}/imageupload">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
+								<i class="fa-regular fa-image"></i>
 							</div> 이미지 업로드
 						</a>
-						
+
 						<div class="sb-sidenav-menu-heading">마이페이지</div>
 						<a class="nav-link" href="${contextPath}/index">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
+								<i class="fa-regular fa-hard-drive"></i>
 							</div> 보관함
 						</a>
 						<a class="nav-link" href="${contextPath}/labeledit">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
+								<i class="fa-solid fa-pencil"></i>
 							</div> 라벨링 수정
 						</a>
 						<a class="nav-link" href="${contextPath}/objectdetection">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
+								<i class="fa-solid fa-tags fa-rotate-270"></i>
 							</div> 라벨링 결과
 						</a>
 					</div>

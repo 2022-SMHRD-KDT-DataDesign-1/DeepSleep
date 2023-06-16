@@ -8,7 +8,8 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Crew &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Deep Sleep - Image Labeling Every Moment</title>
+	<link rel="shortcut icon" href="images/logo.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -446,7 +447,12 @@
 						</div>
 						<div class="service-content ">
 							<h3>품질있는 학습데이터 생성</h3>
-							<p> 머신 러닝 모델의 성능은 학습 데이터의 품질에 크게 의존합니다. 정확한 라벨링 작업을 통해, 품질 높은 학습 데이터를 생성할 수 있으며, 이를 바탕으로 더 정한 예측 및 분석이 가능한 모델을 학습시킬 수 있습니다</p>
+							<p style="text-align: left;">
+								머신 러닝 모델의 성능은 학습 데이터의 품질에 크게 의존합니다. 정확한<br>
+								라벨링 작업을 통해, 품질 높은 학습<br>
+								데이터를 생성할 수 있으며, 이를 바탕으로 더 정한 예측 및 분석이 가능한<br>
+								모델을 학습시킬 수 있습니다
+							</p>
 						</div>
 					</div>
 				</div>
@@ -460,7 +466,10 @@
 						</div>
 						<div class="service-content">
 							<h3>모델 성능 개선</h3>
-							<p>라벨링 작업은 모델의 성능에 직접적인 영향을 줍니다. 정확하게 라벨링된 데이터를 사용하여 모델을 학습시키면, 모델의 성능이 향상되며 일반화 능력이 높아집니다.</p>
+							<p style="text-align: left;">
+								라벨링 작업은 모델의 성능에 직접적인 영향을 줍니다. 정확하게 라벨링된<br>
+								데이터를 사용하여 모델을 학습시키면, 모델의 성능이 향상되며 일반화 능력이 높아집니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -474,7 +483,10 @@
 						</div>
 						<div class="service-content">
 							<h3>비용과 시간 절약</h3>
-							<p>정확하고 효율적인 라벨링 작업을 수행함으로써, 전체적인로젝트 진행 시간을 단축하고 비용을 절약할 수 있습니다. 이로 인해 더 많은 자원을 다른 중요한 과에 투자할 수 있게 됩니다.</p>
+							<p style="text-align: left;">
+								정확하고 효율적인 라벨링 작업을 수행함으로써, 전체적인로젝트 진행 시간을 단축하고 비용을 절약할 수 있습니다.
+								이로 인해 더 많은 자원을 다른 중요한 분야에 투자할 수 있게 됩니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -488,7 +500,12 @@
 						</div>
 						<div class="service-content">
 							<h3>적용 분야 확장</h3>
-							<p>정확한 라벨링 작업은 AI 및 ML 분야를 넘어 다양한 실제 산업 및 상황에서의 활용이 가능해집니다. 안정적인 라벨링을 통해 생성된 모델은 의료, 금융, 보안 등 다양한 분야에서 사용될 수 있습니다</p>
+							<p style="text-align: left;">
+								정확한 라벨링 작업은 AI 및 ML 분야를 넘어 다양한 실제 산업 및 상황에서의 활용이 가능해집니다.
+								안정적인 라벨링을 통해 생성된 모델은 의료, 금융,<br>
+								보안 등 다양한 분야에서 사용될 수<br>
+								있습니다
+							</p>
 						</div>
 					</div>
 				</div>
@@ -522,7 +539,13 @@
 						</div>
 						<div class="service-content">
 							<h3>대량의 데이터 처리</h3>
-							<p>딥러닝 및 다양한 데이터 분석 기법들은 대량의 데이터를 필요로 합니다. 오토라벨링 서비스를 통해, 사용자들은 대량의 데이터를 보다 효율적이고 빠르게 처리할 수 있습니다.</p>
+							<p style="text-align: left;">
+								딥러닝 및 다양한 데이터 분석 기법은<br>
+								대량의 데이터를 필요로 합니다. 오토<br>
+								라벨링 서비스를 통해, 사용자들은<br>
+								대량의 데이터를 보다 효율적이고<br>
+								빠르게 처리할 수 있습니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -536,7 +559,13 @@
 						</div>
 						<div class="service-content">
 							<h3>모델 개선</h3>
-							<p>오토라벨링의 결과를 통해 더 빨리 데이터를 확인하고, 개선사항을 찾아내어 딥러닝 모델의 성능을 개선할 수 있습니다. 또한, 빠른 데이터 라벨링 프로세스 덕분에 모델 개선 작업을 더 빠르게 할 수 있습니다.</p>
+							<p style="text-align: left;">
+								오토라벨링의 결과를 통해 더 빨리<br>
+								데이터를 확인하고, 개선사항을 찾아<br>
+								내어 딥러닝 모델의 성능을 개선할 수 있습니다. 또한, 빠른 데이터 라벨링<br>
+								프로세스 덕분에 모델 개선 작업을<br>
+								더 빠르게 할 수 있습니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -550,7 +579,10 @@
 						</div>
 						<div class="service-content">
 							<h3>비용과 시간 절감</h3>
-							<p>데이터 라벨링 작업은 전문가나 수작업이 필요하여 시간과 비용이 많이 소모되는 작업입니다. 오토라벨링을 사용하면, 좀 더 빠른 시간 내에 라벨링을 완료할 수 있으며, 인건비 절감 효과도 얻을 수 있습니다.</p>
+							<p style="text-align: left;">
+								데이터 라벨링 작업은 전문가나 수작업이 필요하여 시간과 비용이 많이 소모되는 작업입니다. 오토라벨링을 사용<br>
+								하면, 좀 더 빠른 시간 내에 라벨링을 완료할 수 있으며, 인건비 절감 효과도 얻을 수 있습니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -564,7 +596,11 @@
 						</div>
 						<div class="service-content">
 							<h3>높은 정확성 및 일관성</h3>
-							<p> AI 기반의 오토라벨링 서비스를 사용함으로써 한 번에 정확하고 일관된 라벨링 결과를 얻을 수 있습니다. 이를 통해, 데이터 분석 및 딥러닝 모델 학습에 좀 더 신뢰할 수 있는 데이터를 제공할 수 있습니다.</p>
+							<p style="text-align: left;">
+								AI 기반의 오토라벨링 서비스를 사용<br>
+								하여 한 번에 정확하고 일관된 라벨링 결과를 얻을 수 있습니다. 이를 통해,
+								데이터 분석 및 딥러닝 모델 학습에 좀 더 신뢰할 수 있는 데이터를 제공할 수 있습니다.
+							</p>
 						</div>
 					</div>
 				</div>
