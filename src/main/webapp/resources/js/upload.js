@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	$('#key1').one('click', function() {
 		$('.addInput').append(
-			'<input type="text" value="" id="inputstyle"><button type="submit" value="입력" class="btn btn-outline-primary" id = "key" onclick="keywordInput()">입력</button>'
+			'<input placeholder="  영어만 입력해주세요!" type="text" value="" id="inputstyle"><button type="submit" value="입력" class="btn btn-outline-primary" id = "key" onclick="keywordInput()">입력</button>'
 		);
 	});
 });
@@ -273,6 +273,14 @@ let allDetection = () => {
 			
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
+		beforeSend: function(){
+         // 로딩 중 모달창 띄우기
+           $(".modalLoading").fadeIn();    
+      },
+      	complete: function(){
+         // 로딩 중 모달창 없애기
+         $(".modalLoading").fadeOut(); 
+      },
 		error: function(e) {
 			console.log("에러")
 			// 에러났을 때 모션 추가할 것
@@ -314,6 +322,14 @@ let keywordInput = () => {
 
 			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
 		},
+		beforeSend: function(){
+         // 로딩 중 모달창 띄우기
+           $(".modalLoading").fadeIn();    
+      },
+      	complete: function(){
+         // 로딩 중 모달창 없애기
+         $(".modalLoading").fadeOut(); 
+      },
 		error: function(e) {
 			console.log("에러")
 			// 에러났을 때 모션 추가할 것

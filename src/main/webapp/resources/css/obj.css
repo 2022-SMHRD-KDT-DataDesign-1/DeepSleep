@@ -21,7 +21,10 @@
   body { font-family: sans-serif; }
   
   .gallery-cell {
-    width: 25%;
+  /* width : 25 -> 66 변경 yj */
+    width: 66%;
+   
+   
     height: 200px;
     margin-right: 20px;
     counter-increment: gallery-cell;
@@ -73,6 +76,8 @@ label:before {
   line-height: 28px;
   transition-duration: 0.4s;
   transform: scale(0);
+    /* yj */
+  margin-left:245px
 }
 
 label img {
@@ -94,6 +99,9 @@ label img {
   content: "✓";
   background-color: rgb(115, 100, 253);
   transform: scale(1);
+  
+    /* yj */
+  margin-left:245px
 }
 
 :checked + label img {

@@ -43,7 +43,7 @@ public class BoardController {
 	 * return "tables"; }
 	 */
 	
-	@GetMapping("tables")
+	@GetMapping("index")
 	public String boardList(Model model,Member m,HttpSession session) {
 		System.out.println("게시글 전체보기 실행");
 		
@@ -62,7 +62,7 @@ public class BoardController {
 				}
 		}
 		
-		return "tables";
+		return "index";
 	}
 	
 	// 삭제기능
@@ -70,7 +70,7 @@ public class BoardController {
 	public String boardDelete(@RequestParam("id") int id) {
 		boardmapper.boardDelete(id);
 		System.out.println("게시판 id : " + id);
-		return "redirect:/tables";
+		return "redirect:/index";
 	}
 	
 	// 월별 업로드 기능
