@@ -4,11 +4,11 @@
    	
    	<select id="boardList" parameterType="int" resultType="kr.board.entity.Board">
 		<!-- select * from repository where user_idx = #{user_idx} order by date	 -->
-		select id,category,detected_object,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,date, user_idx from repository where user_idx = #{user_idx} order by date	 
+		select id,category,detected_object,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,date, user_idx from repository where user_idx = #{user_idx} order by date desc	 
 	</select>
 	
 	<select id="adminList" resultType="kr.board.entity.Board">
-		select id,img_id,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,result_label,edit_label from editLabel order by id
+		select id,img_id,substring_index(image_path,"\\",-1) as image_path,substring_index(substring_index(result_path, '\\', -2), '\\', 1) as result_path1,substring_index(result_path,"\\",-1) as result_path2,result_label,edit_label from editLabel order by id desc
 	</select>
 	
 	<delete id="boardDelete" parameterType="int">
@@ -28,7 +28,7 @@
 	</select>
 	
 	<select id="allChartDay" resultType="kr.board.entity.Board">
-		select day(date) as day, count(day(date)) as dnt from repository  where date between date_sub(now(),interval 6 day) and now() group by day(date) order by day
+		select day(date) as day, count(day(date)) as dnt from repository  where date between date_sub(now(),interval 7 day) and now() group by day(date) order by day
 	</select>
 	
 </mapper>

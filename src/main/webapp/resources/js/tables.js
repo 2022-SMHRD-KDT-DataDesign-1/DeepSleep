@@ -21,6 +21,7 @@ function viewImage(img){
  imgWin=window.open("","",O); 
  imgWin.document.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
  imgWin.document.write("<body topmargin=0 leftmargin=0>");
- imgWin.document.write("<img src="+img+" onclick='self.close()' style='cursor:pointer;' title ='클릭하시면 창이 닫힙니다.'>");
+ imgWin.document.write("<img src="+img+" onclick='self.close()' style='cursor:pointer; width:100%; height:600px; object-fit:fill' title ='클릭하시면 창이 닫힙니다.'>");
+ imgWin.resizeTo(900,670);
  imgWin.document.close();
-}
+} 

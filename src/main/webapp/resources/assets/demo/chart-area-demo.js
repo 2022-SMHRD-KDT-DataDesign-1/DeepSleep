@@ -29,6 +29,17 @@ function getGraph1() {
 			console.log(dayList);
 			console.log(dntList);
 
+			maxValue = dntList[0];
+			for (let i = 0; i < dntList.length; i++) {
+				if (maxValue < dntList[i]) {
+					maxValue = dntList[i];
+				}
+			}
+
+			maxValue = maxValue + (10 - (maxValue % 10));
+
+			console.log(maxValue);
+
 
 			/*기본 차트*/
 			var ctx = document.getElementById("myAreaChart");
@@ -48,7 +59,7 @@ function getGraph1() {
 							'rgba(153, 102, 255, 0.5)',
 							'rgba(255, 159, 64, 0.5)',
 							'rgba(255, 000, 000, 0.5)'],
-						boardWidth:2,
+						boardWidth: 2,
 						pointRadius: 5,
 						pointBackgroundColor: [
 							'rgba(255, 99, 132, 0.5)',
@@ -89,8 +100,8 @@ function getGraph1() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 10,
-								maxTicksLimit: 5
+								max: maxValue,
+								maxTicksLimit: 10
 							},
 							gridLines: {
 								color: "rgba(0, 0, 0, .125)",

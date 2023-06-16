@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
 
-$(document).ready(function(){
+$(document).ready(function() {
 	getGraph3();
 });
 
@@ -13,22 +13,34 @@ function getGraph3() {
 	let dayList = [];
 	let dntList = [];
 	var user_idx = $("#user_id").val();
-	
+
 	$.ajax({
 		url: "allChartDay.do",
 		type: "get",
 		dataType: "json",
 		success: function(data) {
-			
+
 			for (let i = 0; i < data.length; i++) {
 				dayList.push(data[i].day);
 				dntList.push(data[i].dnt);
 			}
+
 			console.log(dayList);
 			console.log(dntList);
+
+			maxValue = dntList[0];
 			
-			
-/*기본 차트*/
+			for (let i = 0; i < dntList.length; i++) {
+				if (maxValue < dntList[i]) {
+					maxValue = dntList[i];
+				}
+			}
+
+			maxValue = maxValue + (10 - (maxValue % 10));
+
+			console.log(maxValue);
+
+			/*기본 차트*/
 			var ctx = document.getElementById("allAreaChart");
 			var myLineChart = new Chart(ctx, {
 				type: 'line',
@@ -46,7 +58,7 @@ function getGraph3() {
 							'rgba(153, 102, 255, 0.5)',
 							'rgba(255, 159, 64, 0.5)',
 							'rgba(255, 000, 000, 0.5)'],
-						boardWidth:2,
+						boardWidth: 2,
 						pointRadius: 5,
 						pointBackgroundColor: [
 							'rgba(255, 99, 132, 0.5)',
@@ -87,8 +99,8 @@ function getGraph3() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 10,
-								maxTicksLimit: 5
+								max: maxValue,
+								maxTicksLimit: 10
 							},
 							gridLines: {
 								color: "rgba(0, 0, 0, .125)",
@@ -101,10 +113,10 @@ function getGraph3() {
 				}
 			});
 			/*차트 끝*/
-	
+
 		},
-		error:function(){
-		
+		error: function() {
+
 		},
 		// ajax 끝나기 전에 async:false 처리 해야 비동기화 해서 선언된 배열에 값 넣을 수 있음
 		async: false

@@ -51,11 +51,22 @@ function getGraph2() {
 				} 
 			}
 			
-			let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12]
+			let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
+			
+			a = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
+			maxValue = a[0];
+			for(let i = 0 ; i < a.length ; i++){
+				if(maxValue < a[i]) {
+					maxValue = a[i];
+				}
+			}
+			
+			maxValue = maxValue + (10 -(maxValue % 10));
 			
 			console.log(monthList);
 			console.log(mntList);
 			
+			console.log(maxValue);
 			
 			/*기본 차트*/
 			var ctx = document.getElementById("myBarChart");
@@ -112,7 +123,7 @@ function getGraph2() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 50,
+								max: maxValue,
 								maxTicksLimit: 10
 							},
 							gridLines: {
