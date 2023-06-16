@@ -45,26 +45,27 @@
 			id="sidebarToggle" href="#!">
 			<i class="fas fa-bars"></i>
 		</button>
-		
+
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle navuser" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fas fa-user fa-fw"></i>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-end navuserSub"	aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="${contextPath}/index"><i class="fa-regular fa-hard-drive"></i> 보관함</a></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle navuser" id="navbarDropdown"
+				href="#" role="button" data-bs-toggle="dropdown"
+				aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
+			</a>
+				<ul class="dropdown-menu dropdown-menu-end navuserSub"
+					aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="${contextPath}/index">보관함</a></li>
 					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="${contextPath}/logout.do"><i class="fa-solid fa-arrow-right-from-bracket"></i> 로그아웃</a></li>
-				</ul>
-			</li>
+					<li><a class="dropdown-item" href="${contextPath}/logout.do">로그아웃</a></li>
+				</ul></li>
 		</ul>
 	</nav>
 	<div id="layoutSidenav">
 		<div id="layoutSidenav_nav">
 			<nav class="sb-sidenav accordion sb-sidenav-dark"
 				id="sidenavAccordion">
-				
+
 				<!-- 사이드바 수정 -->
 				<div class="sb-sidenav-menu">
 					<div class="nav">
@@ -76,17 +77,23 @@
 						</a>
 
 						<div class="sb-sidenav-menu-heading">마이페이지</div>
+
+						<a class="nav-link" href="${contextPath}/charts">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 통계
+						</a> <a class="nav-link" href="${contextPath}/index">
+
 						<a class="nav-link" href="${contextPath}/index">
+
 							<div class="sb-nav-link-icon">
 								<i class="fa-regular fa-hard-drive"></i>
 							</div> 보관함
-						</a>
-						<a class="nav-link" href="${contextPath}/labeledit">
+						</a> <a class="nav-link" href="${contextPath}/labeledit">
 							<div class="sb-nav-link-icon">
 								<i class="fa-solid fa-pencil"></i>
 							</div> 라벨링 수정
-						</a>
-						<a class="nav-link" href="${contextPath}/objectdetection">
+						</a> <a class="nav-link" href="${contextPath}/objectdetection">
 							<div class="sb-nav-link-icon">
 								<i class="fa-solid fa-tags fa-rotate-270"></i>
 							</div> 라벨링 결과
@@ -94,21 +101,24 @@
 					</div>
 				</div>
 				<!-- 사이드바 수정 -->
-				
+
 				<div class="sb-sidenav-footer">
 					&nbsp;<br>
-					<div class="small"><strong>객체탐지 키워드 종류 20가지</strong></div>
-					01. tv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02. car<br>
-					03. bus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04. cat<br> 
+					<div class="small">
+						<strong>객체탐지 키워드 종류 20가지</strong>
+					</div>
+					01.
+					tv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02.
+					car<br> 03.
+					bus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04. cat<br>
 					05. dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06. bed<br>
 					07. ship&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08. bird<br>
 					09. tree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. train<br>
-					11. zebra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12. chair<br>
-					13. table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14. apple<br>
-					15. banana&nbsp;&nbsp;&nbsp;&nbsp;16. person<br>
-					17. giraffe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18. airplane<br>
-					19. elephant &nbsp;20. bicycle<br>
-					&nbsp;<br>
+					11. zebra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12. chair<br> 13.
+					table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14. apple<br>
+					15. banana&nbsp;&nbsp;&nbsp;&nbsp;16. person<br> 17.
+					giraffe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18. airplane<br> 19.
+					elephant &nbsp;20. bicycle<br> &nbsp;<br>
 				</div>
 			</nav>
 		</div>
@@ -137,24 +147,27 @@
                                 </svg>
 							Object Detection
 						</div>
-						
-							<div class="card-body" id="upload" style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
-								<!-- 이미지 슬라이드 for문으로 만들기 -->
-								<div id="cellDiv" class="celldiv">
-									<!-- 페이지 업로드 되면서 결과 동적 구현 -->
-								</div>
-								<!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
-								<div class="btnsty">
-									<button id="downloadBtn" type="button" style="color:#fff; border-color:#fff;"
-										class="btn btn-outline-primary">
-										<a id="hiddenA" download>다운로드</a>
-									</button>
-									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
-										onclick="repository()">보관함 저장</button>
-									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
-										onclick="editLabel()">라벨 수정</button>
-								</div>
+
+						<div class="card-body" id="upload"
+							style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
+							<!-- 이미지 슬라이드 for문으로 만들기 -->
+							<div id="cellDiv" class="celldiv">
+								<!-- 페이지 업로드 되면서 결과 동적 구현 -->
 							</div>
+							<!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
+							<div class="btnsty">
+								<button id="downloadBtn" type="button"
+									style="color: #fff; border-color: #fff;"
+									class="btn btn-outline-primary" onclick="zipDownload()">
+									다운로드</button>
+								<button type="button" class="btn btn-outline-primary"
+									style="color: #fff; border-color: #fff;" onclick="repository()">보관함
+									저장</button>
+								<button type="button" class="btn btn-outline-primary"
+									style="color: #fff; border-color: #fff;" onclick="editLabel()">라벨
+									수정</button>
+							</div>
+						</div>
 
 					</div>
 				</div>
