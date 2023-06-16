@@ -310,7 +310,7 @@ svg {
 
 /* yj */
 img{
-	width:100%;
+	width:auto; /*전체 수정x*/
   height: 200px;
   border-radius: 10px;
 }
@@ -3654,7 +3654,8 @@ textarea.form-control-lg {
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  /* color: var(--bs-nav-link-color); */
+  color: #fff !important;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -10980,7 +10981,7 @@ body {
   margin: 0;
 }
 .sb-topnav.navbar-dark #sidebarToggle {
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 .sb-topnav.navbar-light #sidebarToggle {
   color: #212529;
@@ -11033,17 +11034,17 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
-  color: rgba(255, 255, 255, 0.5);
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
-  color: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
-  color: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
   color: rgba(255, 255, 255, 0.25);
@@ -11057,9 +11058,9 @@ body {
 .sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
   color: #fff;
 }
-.sb-sidenav-dark .sb-sidenav-footer {
+/* .sb-sidenav-dark .sb-sidenav-footer {
   background-color: #343a40;
-}
+} */
 
 .sb-sidenav-light {
   background-color: #f8f9fa;
@@ -11269,7 +11270,8 @@ body {
 
 #footer {
     padding: 25px 0;
-    background-color: #343a40;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ 	background-blend-mode: multiply;
     color: #fff;
     font-size: 20px;
     display: block;

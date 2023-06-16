@@ -63,26 +63,27 @@
 							</div> 이미지 업로드
 						</a>
 
-						<div class="sb-sidenav-menu-heading">오토라벨링??</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseLayouts" aria-expanded="false"
-							aria-controls="collapseLayouts">
+						<div class="sb-sidenav-menu-heading">마이페이지</div>
+						<a class="nav-link" href="${contextPath}/charts">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> 마이페이지
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 통계
 						</a>
-
-						<div class="collapse" id="collapseLayouts"
-							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="${contextPath}/index">보관함</a> <a
-									class="nav-link" href="${contextPath}/objectdetection">라벨링
-									결과</a>
-							</nav>
-						</div>
+						<a class="nav-link" href="${contextPath}/index">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 보관함
+						</a>
+						<a class="nav-link" href="${contextPath}/labeledit">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 라벨링 수정
+						</a>
+						<a class="nav-link" href="${contextPath}/objectdetection">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 라벨링 결과
+						</a>
 					</div>
 				</div>
 				<!-- 사이드바 수정 -->
@@ -104,7 +105,7 @@
 				</div>
 			</nav>
 		</div>
-		<!-- nav 시작  -->
+		<!-- nav 시작 -->
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
@@ -122,8 +123,8 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-area me-1"></i> Total User Daily
-											Upload
+											<i class="fas fa-chart-area me-1"></i> 총 사용자 일별 업로드 수
+											
 										</div>
 										<div class="card-body">
 											<canvas id="allAreaChart" width="100%" height="70"></canvas>
@@ -133,8 +134,8 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-bar me-1"></i> Total User Monthly
-											Upload
+											<i class="fas fa-chart-bar me-1"></i> 총 사용자 월별 업로드 수
+											
 										</div>
 										<div class="card-body">
 											<canvas id="allBarChart" width="100%" height="70"></canvas>
@@ -146,7 +147,7 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-area me-1"></i> Daily Upload
+											<i class="fas fa-chart-area me-1"></i> 일별 업로드 수
 										</div>
 										<div class="card-body">
 											<canvas id="myAreaChart" width="100%" height="70"></canvas>
@@ -156,7 +157,7 @@
 								<div class="col-xl-6">
 									<div class="card mb-4">
 										<div class="card-header">
-											<i class="fas fa-chart-bar me-1"></i> Monthly Upload
+											<i class="fas fa-chart-bar me-1"></i> 월별 업로드 수
 										</div>
 										<div class="card-body">
 											<canvas id="myBarChart" width="100%" height="70"></canvas>
@@ -175,7 +176,7 @@
 						<c:choose>
 							<c:when test="${empty mvo}">
 								<div class="card mb-4">
-									<div class="card-header">Auto Label</div>
+									<div class="card-header">오토 라벨</div>
 									<div class="card-body">
 										<p>
 											"<a href="${contextPath}/">로그인</a> 하세요."
@@ -184,7 +185,7 @@
 							</c:when>
 							<c:when test="${mvo.email eq 'admin'}">
 								<div class="card mb-4">
-								<div class="card-header">Total User's Edit Label</div>
+								<div class="card-header">수정된 라벨</div>
 								<div class="card-body">
 									<table id="datatablesSimple">
 										<thead>
@@ -216,7 +217,7 @@
 							</c:when>
 							<c:when test="${mvo.email ne 'admin'}">
 								<div class="card mb-4">
-									<div class="card-header">Auto Label</div>
+									<div class="card-header">오토 라벨</div>
 									<div class="card-body">
 										<table id="datatablesSimple">
 											<thead>

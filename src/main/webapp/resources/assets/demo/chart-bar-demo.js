@@ -11,8 +11,8 @@ $(document).ready(function(){
 
 function getGraph2() {
 	let monthList = ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"];
-	let mntList = [];
-	let  January=0; let February=0; let March=0; let April=0; let May=0; let June=0; let July=0; let August=0; let September=0; let October=0; let November=0; let December=0;
+	let  J1=0; let F2=0; let M3=0; let A4=0; let M5=0; let J6=0; let J7=0; let A8=0; let S9=0; let O10=0; let N11=0; let D12=0;
+	let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
 	var user_idx = $("#user_id").val();
 	
 	$.ajax({
@@ -22,79 +22,36 @@ function getGraph2() {
 		dataType: "json",
 		success: function(data) {
 			console.log(user_idx);
+		
 			for (let i = 0; i < data.length; i++) {
 				if(data[i].month == 1){
-					mntList.push(January += data[i].mnt);					
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 2){
-					mntList.push(February += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 3){
-					mntList.push(March += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 4){
-					mntList.push(April += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 5){
-					mntList.push(May += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 6){
-					mntList.push(June += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 7){
-					mntList.push(July += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 8){
-					mntList.push(August += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 9){
-					mntList.push(September += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 10){
-					mntList.push(October += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 11){
-					mntList.push(November += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-				
-				if(data[i].month == 12){
-					mntList.push(December += data[i].mnt);		
-				} else if(data[i].month != 1){
-					mntList.push(January += 0);					
-				}
-			}	
+					J1 = data[i].mnt;		
+				} else if(data[i].month == 2){
+					F2 = data[i].mnt;		
+				} else if (data[i].month == 3){
+					M3 = data[i].mnt;
+				} else if (data[i].month == 4){
+					A4 = data[i].mnt;	
+				} else if (data[i].month == 5){
+					M5 = data[i].mnt;
+				} else if (data[i].month == 6){
+					J6 = data[i].mnt;
+				} else if (data[i].month == 7){
+					J7 = data[i].mnt;
+				} else if (data[i].month == 8){
+					A8 = data[i].mnt;
+				} else if (data[i].month == 9){
+					S9 = data[i].mnt;	
+				} else if (data[i].month == 10){
+					O10 = data[i].mnt;
+				} else if (data[i].month == 11){
+					N11 = data[i].mnt;
+				} else if (data[i].month == 12){
+					D12 = data[i].mnt;
+				} 
+			}
+			
+			let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12]
 			
 			console.log(monthList);
 			console.log(mntList);
@@ -114,13 +71,25 @@ function getGraph2() {
 							'rgba(255, 206, 86, 0.5)',
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
+							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 99, 132, 0.5)',
+							'rgba(54, 162, 235, 0.5)',
+							'rgba(255, 206, 86, 0.5)',
+							'rgba(75, 192, 192, 0.5)',
+							'rgba(153, 102, 255, 0.5)',
 							'rgba(255, 159, 64, 0.5)'],
 						borderColor: ['rgb(255, 99, 132,1.5)',
 							'rgba(54, 162, 235, 1.5)',
 							'rgba(255, 206, 86, 1.5)',
 							'rgba(75, 192, 192, 1.5)',
 							'rgba(153, 102, 255, 1.5)',
-							'rgba(255, 159, 64, 1.5)'],
+							'rgba(255, 159, 64, 1.5)',
+							'rgba(255, 99, 132, 0.5)',
+							'rgba(54, 162, 235, 0.5)',
+							'rgba(255, 206, 86, 0.5)',
+							'rgba(75, 192, 192, 0.5)',
+							'rgba(153, 102, 255, 0.5)',
+							'rgba(255, 159, 64, 0.5)'],
 						data: mntList,		// y축
 					}],	
 				},
@@ -140,7 +109,7 @@ function getGraph2() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 100,
+								max: 50,
 								maxTicksLimit: 10
 							},
 							gridLines: {

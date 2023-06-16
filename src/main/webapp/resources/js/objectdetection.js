@@ -4,20 +4,20 @@ let jsonRes = JSON.parse(localStorage.getItem('jsonRes')); // 로컬스토리지
 console.log(jsonRes)
 
 document.getElementById('downloadBtn').addEventListener('click', () => {
-   // 체크된 이미지 목록 가져오기
-   checkArr = checkedImg();
+	// 체크된 이미지 목록 가져오기
+	checkArr = checkedInputImg();
 
-   // 체크된 이미지 다운로드
-   checkArr.forEach(e => {
+	// 체크된 이미지 다운로드
+	checkArr.forEach(e => {
 
-      let img = $(`label[for='${e}']`).children('img').eq(0); // 선택된 이미지
-      console.log(img.attr("id"));
+		let img = $(`label[for='${e}']`).children('img').eq(0); // 선택된 이미지
+		console.log(img.attr("id"));
 
-      $('#hiddenA').prop('href', img.attr('src'));
-      console.log(img.attr('src'))
-      // $('#hiddenA').click();
-      console.log('다운로드 완료??')
-   })
+		$('#hiddenA').prop('href', img.attr('src'));
+		console.log(img.attr('src'))
+		// $('#hiddenA').click();
+		console.log('다운로드 완료??')
+	})
 })
 
 
@@ -45,14 +45,14 @@ jsonRes.forEach(k => {
    let htmlDiv2 = ""; // 결과 태그 (안 태그)
 
    for (var i = 0; i < imageArr.length; i++) {
-      let original_id = annoArr[i].original_id; // 고유 아이디
-      let arr = imageArr[i].file_name.split("\\"); // \ 기준으로 경로 나누기
-      resImageName = arr[arr.length - 1]; // 결과 이미지명
-      resFileName = arr[arr.length - 2]; // 결과 이미지가 저장되는 파일명
+	  let original_id = annoArr[i].original_id; // 고유 아이디
+	  let arr = imageArr[i].file_name.split("\\"); // \ 기준으로 경로 나누기
+	  resImageName = arr[arr.length - 1]; // 결과 이미지명
+	  resFileName = arr[arr.length - 2]; // 결과 이미지가 저장되는 파일명
 
-      htmlDiv2 += `<div class="gallery-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"></label></div>`
+	  htmlDiv2 += `<div class="gallery-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"></label></div>`
 
-      b++;
+	  b++;
 
    }
    $(`#resDiv${a}`).append(htmlDiv2).trigger("create");
@@ -61,134 +61,84 @@ jsonRes.forEach(k => {
 
 });
 
-/* 선택된 이미지 id값 가져오는 함수 */
-function checkedImg() {
-   let checkBox = $('.optionCheck') // 체크박스 클래스
-   let checkArr = []; // 체크된 input태크 id값 담을 배열
+/* 선택된 이미지 input태그 id값 가져오는 함수 */
+function checkedInputImg() {
+	let checkBox = $('.optionCheck') // 체크박스 클래스
+	let checkArr = []; // 체크된 input태크 id값 담을 배열
 
-   for (var i = 0; i < checkBox.length; i++) {
-      // checked 여부 확인
-      if (checkBox[i].checked) {
-         checkArr.push(checkBox.eq(i).attr('id')) // 체크된 input태크 id값 추가
-      }
-   }
+	for (var i = 0; i < checkBox.length; i++) {
+		// checked 여부 확인
+		if (checkBox[i].checked) {
+			checkArr.push(checkBox.eq(i).attr('id')) // 체크된 input태크 id값 추가
+		}
+	}
 
-   return checkArr;
+	return checkArr
+}
+
+/* 선택된 이미지 태그 id값 가져오는 함수 */
+function checkedImgID() {
+	checkArr = checkedInputImg();
+	let checkIdArr = []; // 체크 이미지 아이디 배열
+
+	checkArr.forEach(e => {
+		let imgID = $(`label[for='${e}']`).children('img').eq(0).attr("id"); // 선택된 이미지
+		checkIdArr.push(imgID);
+	})
+
+	return checkIdArr
+
 }
 
 
 /* 선택된 이미지 repository에 저장 */
 // 카테고리, 감지객체, 원본 사진 경로, 결과물 파일 경로
 let repository = () => {
-   console.log("보관함 저장 ck")
+	console.log("보관함 저장 ck")
 
-   // 체크된 이미지 목록 가져오기
-   checkArr = checkedImg();
+	let checkIdArr = checkedImgID(); // 체크 이미지 아이디값
+	console.log(checkIdArr)
 
-   let checkIdArr = []; // 체크 이미지 아이디 배열
+	checkIdArr.forEach(k => { // 체크 아이디 리스트
 
-   let repJsonArr = []; // db로 보낼 json 목록 담는 배열
-   // 체크된 이미지 id값 가져오기
-   checkArr.forEach(e => {
-      let imgID = $(`label[for='${e}']`).children('img').eq(0).attr("id"); // 선택된 이미지
-      checkIdArr.push(imgID);
-   })
-   console.log(checkIdArr);
-   console.log("에러확인1");
+		let repJson = new Object(); //  카테고리, 감지객체, 원본 사진 경로, 결과물 파일 경로 담을 json 객체 생성
 
+		jsonRes.forEach(i => { // json 리스트
+			// 아이디 값이 일치하면 json에서 값 꺼내고 db로 보낼 json 생성하기
+			let imageArr = i.images
+			let annoArr = i.annotations
 
-   checkIdArr.forEach(k => { // 체크 아이디 리스트
+			for (var j = 0; j < imageArr.length; j++) {
+				if (annoArr[j].original_id == k) {
+					console.log(annoArr[j].original_id)
+					repJson.category = localStorage.getItem('cate')
+					repJson.detected_object = annoArr[j].label_name
+					repJson.image_path = annoArr[j].original_img
+					repJson.result_path = imageArr[j].file_name
 
-      let repJson = new Object(); //  카테고리, 감지객체, 원본 사진 경로, 결과물 파일 경로 담을 json 객체 생성
+					repJsonArr.push(repJson); // 배열 추가
+				}
 
-      jsonRes.forEach(i => { // json 리스트
-         // 아이디 값이 일치하면 json에서 값 꺼내고 db로 보낼 json 생성하기
-         let imageArr = i.images
-         let annoArr = i.annotations
+			}
 
-         for (var j = 0; j < imageArr.length; j++) {
-            if (annoArr[j].original_id == k) {
-               console.log(annoArr[j].original_id)
-               repJson.category = localStorage.getItem('cate')
-               repJson.detected_object = annoArr[j].label_name
-               repJson.image_path = annoArr[j].original_img
-               repJson.result_path = imageArr[j].file_name
-               
-               
-               
-               /*repJson.category = localStorage.getItem('cate')
-               repJson.detected_object = annoArr[j].label_name
-               let oriArr = annoArr[j].original_img.split("\\");
-               let resArr = imageArr[j].file_name.split("\\");
-               repJson.image_path = oriArr[oriArr.length -1]
-               repJson.result_path = resArr[resArr.length -1]*/
+		})
 
-               repJsonArr.push(repJson); // 배열 추가
-            }
+	});
 
-         }
+	console.log(repJsonArr);
+	// db로 저장할 json -> controller로 전송
+	$.ajax({
+		url: "repositorySave",
+		type: "post",
+		contentType: "application/json",
+		dataType: "text",
+		data: JSON.stringify(repJsonArr),
+		success: function(d) {
+			console.log(d)
+		},
+		error: function(e) {
+			console.log("실패")
+		}
 
-      })
-
-   });
-
-   console.log(repJsonArr);
-   // db로 저장할 json -> controller로 전송
-   $.ajax({
-      url: "repositorySave",
-      type: "post",
-      contentType: "application/json",
-      dataType: "text",
-      data: JSON.stringify(repJsonArr),
-      success: function(d) {
-         console.log(d)
-      },
-      error: function(e) {
-         console.log("실패")
-      }
-
-   });
+	});
 }
-
-
-/* test 성공하면 삭제할 것 */
-/*let repository = () => {
-
-   let repJsonArr = [];
-
-   let repJson1 = new Object();
-   let repJson2 = new Object();
-   repJson1.category = localStorage.getItem('cate')
-   repJson1.detected_object = "cat"
-   repJson1.image_path = "test1"
-   repJson1.result_path = "test1"
-   repJson1.user_idx = 0
-
-   repJsonArr.push(repJson1);
-
-   repJson2.category = localStorage.getItem('cate')
-   repJson2.detected_object = "dog"
-   repJson2.image_path = "test2"
-   repJson2.result_path = "test2"
-   repJson2.user_idx = 0
-
-   repJsonArr.push(repJson2);
-
-   console.log(JSON.stringify(repJsonArr))
-
-
-   $.ajax({
-     url: "repositorySave",
-     type: "post",
-     contentType: "application/json",
-     dataType: "text",
-     data: JSON.stringify(repJsonArr),
-     success: function(d) {
-       console.log("성공")
-     },
-     error: function(e) {
-       console.log("실패")
-     }
-
-   });
-}*/

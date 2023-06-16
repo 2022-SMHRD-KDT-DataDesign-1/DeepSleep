@@ -56,28 +56,30 @@
 						<a class="nav-link" href="${contextPath}/imageupload">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
-							</div> 이미지업로드
+							</div> 이미지 업로드
 						</a>
-						
-						<div class="sb-sidenav-menu-heading">오토라벨링??</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseLayouts" aria-expanded="false"
-							aria-controls="collapseLayouts">
+
+						<div class="sb-sidenav-menu-heading">마이페이지</div>
+						<a class="nav-link" href="${contextPath}/charts">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> 마이페이지
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 통계
 						</a>
-						
-						<div class="collapse" id="collapseLayouts"
-							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="${contextPath}/index">보관함</a>
-								<a class="nav-link" href="${contextPath}/objectdetection">라벨링 결과</a>
-							</nav>
-						</div>
+						<a class="nav-link" href="${contextPath}/index">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 보관함
+						</a>
+						<a class="nav-link" href="${contextPath}/labeledit">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 라벨링 수정
+						</a>
+						<a class="nav-link" href="${contextPath}/objectdetection">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 라벨링 결과
+						</a>
 					</div>
 				</div>
 				<!-- 사이드바 수정 -->				
@@ -145,8 +147,8 @@
                                 </div>
                                 <!-- 버튼 -->
                                 <div class="btnsty">
-                                	<button type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
-                                	<button type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
+                                	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
+                                	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
                                 </div>
                                 <div class="addInput" onclick="keyDetection()">
 
