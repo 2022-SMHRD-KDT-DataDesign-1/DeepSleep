@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import kr.board.entity.EditLabel;
 import kr.board.entity.Member;
 import kr.board.entity.Repository;
 import kr.board.mapper.MemberMapper;
@@ -186,4 +187,47 @@ public class UploadController {
 		// 끝
 
 	}
+	
+	@ResponseBody
+	@PostMapping("editLabel")
+	public void editLabel(@RequestBody HashMap<String, Object> param, HttpSession session) {
+		System.out.println(param);
+		
+		String img_id = "";
+		String image_path = "";
+		String result_path = "";
+		String result_label = "";
+		String edit_label = "";
+		
+		for (String key : param.keySet()) {
+			System.out.println(key + ": " + param.get(key));
+			if (key.equals("img_id")) {
+				img_id = (String) param.get(key);
+			} else if (key.equals("image_path")) {
+				image_path = (String) param.get(key);
+			} else if (key.equals("result_path")) {
+				result_path = (String) param.get(key);
+			} 
+			else if (key.equals("result_label")) {
+				result_label = (String) param.get(key);
+			}
+			else if (key.equals("edit_label")) {
+				edit_label = (String) param.get(key);
+			}
+		}
+		
+		EditLabel e = new EditLabel();
+		e.setImg_id(img_id);
+		e.setImage_path(image_path);
+		e.setResult_path(result_path);
+		e.setResult_label(result_label);
+		e.setEdit_label(edit_label);
+		
+		memberMapper.editLabel(e);
+		
+	}
+	
+	
+	
+	
 }
