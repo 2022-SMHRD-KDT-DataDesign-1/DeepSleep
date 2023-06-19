@@ -146,7 +146,11 @@
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection(); startStopwatch();">전체 객체</button>
                                 </div>
+<<<<<<< HEAD
                                 <div class="addInput" onclick="startStopwatch()">
+=======
+                                <div class="addInput">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep.git
 
                                 </div>
                             </div>

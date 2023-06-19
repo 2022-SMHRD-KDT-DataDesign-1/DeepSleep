@@ -39,7 +39,7 @@ jsonRes.forEach(k => {
    let resFileName; // 결과 이미지가 저장되는 파일명
 
    // 겉 태그
-   let htmlDiv1 = `<div id="resDiv${a}" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>`;
+   let htmlDiv1 = `<div id="resDiv${a}" class="carousel resdiv" data-flickity='{ "groupCells": true }'>`;
    $('#cellDiv').append(htmlDiv1).trigger("create"); // resDiv 추가
 
    let htmlDiv2 = ""; // 결과 태그 (안 태그)
@@ -50,7 +50,7 @@ jsonRes.forEach(k => {
      resImageName = arr[arr.length - 1]; // 결과 이미지명
      resFileName = arr[arr.length - 2]; // 결과 이미지가 저장되는 파일명
 
-     htmlDiv2 += `<div class="gallery-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"></label></div>`
+     htmlDiv2 += `<div class="carousel-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"><div><p>${annoArr[i].label_name}</p></div></label></div>`
 
      b++;
 

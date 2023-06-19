@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 
 function getGraph3() {
-	let dayList = [];
-	let dntList = [];
+	let dayList = [];      	// 라벨 리스트
+	let dntList = [];		// 데이터 리스트
 	var user_idx = $("#user_id").val();
 
 	$.ajax({
@@ -27,7 +27,8 @@ function getGraph3() {
 
 			console.log(dayList);
 			console.log(dntList);
-
+			
+			// 데이터 리스트 중 최고값
 			maxValue = dntList[0];
 			
 			for (let i = 0; i < dntList.length; i++) {
@@ -35,7 +36,8 @@ function getGraph3() {
 					maxValue = dntList[i];
 				}
 			}
-
+			
+			
 			maxValue = maxValue + (10 - (maxValue % 10));
 
 			console.log(maxValue);
@@ -45,7 +47,7 @@ function getGraph3() {
 			var myLineChart = new Chart(ctx, {
 				type: 'line',
 				data: {
-					labels: dayList,	// x축
+					labels: dayList,	// x축 (라벨 리스트)
 					datasets: [{
 						label: "업로드 수",
 						lineTension: 0.3,
@@ -80,7 +82,7 @@ function getGraph3() {
 							'rgba(255, 000, 000, 0.5)'],
 						pointHitRadius: 50,
 						pointBorderWidth: 2,
-						data: dntList,	// y축
+						data: dntList,	// y축 (데이터 리스트)
 					}],
 				},
 				options: {
@@ -99,7 +101,7 @@ function getGraph3() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: maxValue,
+								max: maxValue,		// 데이터의 최고값 + (10-(최고값%10))
 								maxTicksLimit: 10
 							},
 							gridLines: {

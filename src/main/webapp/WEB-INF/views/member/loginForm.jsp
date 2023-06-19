@@ -45,6 +45,17 @@
   <script type="text/javascript">
   
   	/* 로그인 */
+  	
+	function enterkey(){
+		if(window.event.keyCode == 13) { 	// 13 == enter
+			login();
+		}
+	}
+	
+  	function clickkey(){
+  		login();
+  	}
+  	
   	 function login() {
   		var email = $("#email").val();
   		var password = $("#password").val();
@@ -73,12 +84,6 @@
   		});
   	} 
   	
-	function enterkey(){
-		if(window.event.keyCode == 13) { 	// 13 == enter
-			login();
-		}
-	}
-  	
 		</script>
 </head>
 
@@ -104,7 +109,7 @@
 					<span id='fl' style="color:red;"></span>
 				</div>
 				<div class="form-group">
-					<button onclick="login()"  type="button" class="LoginBtn">Start</button>
+					<button onclick="clickkey()"  type="button" class="LoginBtn">Start</button>
 				</div>
 				<div class="memberinfo">
 				<a id="fp" href= "${contextPath}/forgetPwForm">Forget password?</a>
