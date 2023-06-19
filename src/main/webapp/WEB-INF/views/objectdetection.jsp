@@ -32,6 +32,12 @@
 <!-- flickity -->
 <link rel="stylesheet"
 	href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<!-- 라이브러리 수정 -->	
+<link rel="stylesheet"
+   href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 <!-- 라벨링 결과 -->
 <link href="./css/obj.css" rel="stylesheet">
 </head>
@@ -147,13 +153,15 @@
                                 </svg>
 							Object Detection
 						</div>
-<<<<<<< HEAD
+
 						
 							<div class="card-body" id="upload" style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
 								<!-- 이미지 슬라이드 for문으로 만들기 -->
+								<div>
 								<div id="cellDiv" class="celldiv">
 									<!-- 페이지 업로드 되면서 결과 동적 구현 -->
 									
+								</div>
 								</div>
 								<!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
 								<div class="btnsty">
@@ -166,7 +174,7 @@
 									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
 										onclick="editLabel()">라벨 수정</button>
 								</div>
-=======
+
 
 						<div class="card-body" id="upload"
 							style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
