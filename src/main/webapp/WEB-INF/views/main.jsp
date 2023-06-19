@@ -161,7 +161,7 @@
 					</div>
 				</div>
 				<div class="col-md-8 to-animate">
-					<img src="images/samImg.gif" class="img-responsive img-rounded" alt="Free HTML5 Template">
+					<img src="images/metaSAM.gif" class="img-responsive img-rounded" alt="Free HTML5 Template">
 				</div>
 				<div class="col-md-4 to-animate">
 					<h2>How we got started</h2>

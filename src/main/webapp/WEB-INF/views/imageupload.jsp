@@ -146,7 +146,7 @@
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
                                 </div>
-                                <div class="addInput" onclick="keyDetection()">
+                                <div class="addInput">
 
                                 </div>
                             </div>
