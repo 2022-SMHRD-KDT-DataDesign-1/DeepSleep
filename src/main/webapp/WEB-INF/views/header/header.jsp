@@ -7,7 +7,7 @@
 <header role="banner" id="fh5co-header">
         <div class="container">
             <div class="navbar-header">
-				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Deep Sleep">ILEM</a> <!-- 브랜드명 수정-->
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Deep Sleep">Deep Sleep</a> <!-- 브랜드명 수정-->
 			</div>
       	</div>
 </header>

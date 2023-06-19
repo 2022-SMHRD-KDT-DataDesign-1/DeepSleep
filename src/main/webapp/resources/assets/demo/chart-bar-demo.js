@@ -51,11 +51,22 @@ function getGraph2() {
 				} 
 			}
 			
-			let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12]
+			let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
+			
+			a = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
+			maxValue = a[0];
+			for(let i = 0 ; i < a.length ; i++){
+				if(maxValue < a[i]) {
+					maxValue = a[i];
+				}
+			}
+			
+			maxValue = maxValue + (10 -(maxValue % 10));
 			
 			console.log(monthList);
 			console.log(mntList);
 			
+			console.log(maxValue);
 			
 			/*기본 차트*/
 			var ctx = document.getElementById("myBarChart");
@@ -72,24 +83,27 @@ function getGraph2() {
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
 							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 000, 000, 0.5)',
+							'rgba(153, 255, 255, 0.5)',
+							'rgba(255, 255, 102, 0.5)',
+							'rgba(204, 255, 102, 0.5)',
+							'rgba(204, 000, 255, 0.5)',
+							'rgba(255, 153, 153, 0.5)'
+							],
+						borderColor: [
 							'rgba(255, 99, 132, 0.5)',
 							'rgba(54, 162, 235, 0.5)',
 							'rgba(255, 206, 86, 0.5)',
 							'rgba(75, 192, 192, 0.5)',
 							'rgba(153, 102, 255, 0.5)',
-							'rgba(255, 159, 64, 0.5)'],
-						borderColor: ['rgb(255, 99, 132,1.5)',
-							'rgba(54, 162, 235, 1.5)',
-							'rgba(255, 206, 86, 1.5)',
-							'rgba(75, 192, 192, 1.5)',
-							'rgba(153, 102, 255, 1.5)',
-							'rgba(255, 159, 64, 1.5)',
-							'rgba(255, 99, 132, 0.5)',
-							'rgba(54, 162, 235, 0.5)',
-							'rgba(255, 206, 86, 0.5)',
-							'rgba(75, 192, 192, 0.5)',
-							'rgba(153, 102, 255, 0.5)',
-							'rgba(255, 159, 64, 0.5)'],
+							'rgba(255, 159, 64, 0.5)',
+							'rgba(255, 000, 000, 0.5)',
+							'rgba(153, 255, 255, 0.5)',
+							'rgba(255, 255, 102, 0.5)',
+							'rgba(204, 255, 102, 0.5)',
+							'rgba(204, 000, 255, 0.5)',
+							'rgba(255, 153, 153, 0.5)'
+							],
 						data: mntList,		// y축
 					}],	
 				},
@@ -109,7 +123,7 @@ function getGraph2() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								max: 50,
+								max: maxValue,
 								maxTicksLimit: 10
 							},
 							gridLines: {

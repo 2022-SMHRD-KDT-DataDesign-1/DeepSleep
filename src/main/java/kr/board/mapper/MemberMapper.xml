@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.board.mapper.MemberMapper">
-   
-   <insert id="SignUp" parameterType="kr.board.entity.Member">
-   		insert into user (email, password, nickname) values (#{email}, #{password}, #{nickname}) 
-   </insert>
-   
-   <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
-		   select * from user where email=#{email} and password=#{password}
-   </select>
 
-   <select id="registerCheck" parameterType="String" resultType="kr.board.entity.Member">
-   			select * from user where email=#{email}
-   </select>
-   
-   <update id="forgetPw" parameterType="kr.board.entity.Member">
-   		update user set password=#{password} where email=#{email}
-   </update>
-    
-   <insert id = "downLoad" parameterType="java.util.List">
-   		insert into repository (category, detected_object, image_path, result_path, date, user_idx) values
-   		<foreach collection="list" item="item" separator=",">
-   			(#{item.category}, #{item.detected_object}, #{item.image_path}, #{item.result_path}, now(), #{item.user_idx})
-   		</foreach>
-   </insert>
-   
+	<insert id="SignUp" parameterType="kr.board.entity.Member">
+		insert into user (email, password, nickname) values (#{email}, #{password},
+		#{nickname})
+	</insert>
+
+	<select id="login" parameterType="kr.board.entity.Member"
+		resultType="kr.board.entity.Member">
+		select * from user where email=#{email} and password=#{password}
+	</select>
+
+	<select id="registerCheck" parameterType="String"
+		resultType="kr.board.entity.Member">
+		select * from user where email=#{email}
+	</select>
+
+	<update id="forgetPw" parameterType="kr.board.entity.Member">
+		update user set password=#{password} where email=#{email}
+	</update>
+
+	<insert id="downLoad" parameterType="java.util.List">
+		insert into repository (category, detected_object, image_path,
+		result_path, date, user_idx) values
+		<foreach collection="list" item="item" separator=",">
+			(#{item.category}, #{item.detected_object}, #{item.image_path},
+			#{item.result_path}, now(), #{item.user_idx})
+		</foreach>
+	</insert>
+
+	<insert id="editLabel" parameterType="kr.board.entity.EditLabel">
+		insert into editLabel (img_id, image_path, result_path, result_label, edit_label) values (#{img_id}, #{image_path}, #{result_path}, #{result_label}, #{edit_label})
+	</insert>
+
 </mapper>
