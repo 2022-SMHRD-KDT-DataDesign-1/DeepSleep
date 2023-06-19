@@ -48,13 +48,13 @@
 	border: 0;
 	border-radius: 5px;
 	outline: none;
-	background-color: #8ec5fc;
+	background-color: #fff;
 }
 </style>
 </head>
 <body class="sb-nav-fixed">
 	<!-- nav 시작  -->
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
@@ -135,6 +135,7 @@
 			</nav>
 		</div>
 		<!-- nav 시작  -->
+
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
@@ -160,9 +161,7 @@
 							Object Detection
 						</div>
 						<form action="${contextPath}/downLoad.do">
-							<div
-								style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;"
-								class="card-body" id="upload">
+							<div class="card-body" id="upload">
 
 								<!-- 라벨링 결과 -->
 								<link href="./css/obj.css" rel="stylesheet">

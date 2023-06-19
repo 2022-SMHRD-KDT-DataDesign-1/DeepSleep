@@ -22,7 +22,7 @@
 </head>
 <body class="sb-nav-fixed">
        <!-- nav 시작  -->
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
@@ -146,7 +146,7 @@
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
                                 </div>
-                                <div class="addInput" onclick="keyDetection()">
+                                <div class="addInput">
 
                                 </div>
                             </div>
