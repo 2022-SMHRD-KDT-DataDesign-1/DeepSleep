@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Deep Sleep - Image Labeling Every Moment</title>
+	<title>Deep Sleep - Image Labeling Every Moment.</title>
 	<link rel="shortcut icon" href="images/logo.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
