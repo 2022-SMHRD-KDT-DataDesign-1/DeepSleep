@@ -72,40 +72,34 @@
             id="sidenavAccordion">
 
             <!-- 사이드바 수정 -->
-            <div class="sb-sidenav-menu">
-               <div class="nav">
-                  <div class="sb-sidenav-menu-heading">오토라벨링</div>
-                  <a class="nav-link" href="${contextPath}/imageupload">
-                     <div class="sb-nav-link-icon">
-                        <i class="fa-regular fa-image"></i>
-                     </div> 이미지 업로드
-                  </a>
+				<div class="sb-sidenav-menu">
+					<div class="nav">
+						<div class="sb-sidenav-menu-heading">오토라벨링</div>
+						<a class="nav-link" href="${contextPath}/imageupload">
+							<div class="sb-nav-link-icon">
+								<i class="fa-regular fa-image"></i>
+							</div> 이미지 업로드
+						</a>
 
-                  <div class="sb-sidenav-menu-heading">마이페이지</div>
-
-                  <a class="nav-link" href="${contextPath}/charts">
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                     </div> 통계
-                  </a> <a class="nav-link" href="${contextPath}/index">
-
-                  <a class="nav-link" href="${contextPath}/index">
-
-                     <div class="sb-nav-link-icon">
-                        <i class="fa-regular fa-hard-drive"></i>
-                     </div> 보관함
-                  </a> <a class="nav-link" href="${contextPath}/labeledit">
-                     <div class="sb-nav-link-icon">
-                        <i class="fa-solid fa-pencil"></i>
-                     </div> 라벨링 수정
-                  </a> <a class="nav-link" href="${contextPath}/objectdetection">
-                     <div class="sb-nav-link-icon">
-                        <i class="fa-solid fa-tags fa-rotate-270"></i>
-                     </div> 라벨링 결과
-                  </a>
-               </div>
-            </div>
-            <!-- 사이드바 수정 -->
+						<div class="sb-sidenav-menu-heading">마이페이지</div>
+						<a class="nav-link" href="${contextPath}/index">
+							<div class="sb-nav-link-icon">
+								<i class="fa-regular fa-hard-drive"></i>
+							</div> 보관함
+						</a>
+						<a class="nav-link" href="${contextPath}/labeledit">
+							<div class="sb-nav-link-icon">
+								<i class="fa-solid fa-pencil"></i>
+							</div> 라벨링 수정
+						</a>
+						<a class="nav-link" href="${contextPath}/objectdetection">
+							<div class="sb-nav-link-icon">
+								<i class="fa-solid fa-tags fa-rotate-270"></i>
+							</div> 라벨링 결과
+						</a>
+					</div>
+				</div>
+				<!-- 사이드바 수정 -->
 
             <div class="sb-sidenav-footer">
                &nbsp;<br>
@@ -153,8 +147,7 @@
                      Object Detection
                   </div>
 
-                  <div class="card-body" id="upload"
-                     style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
+                  <div class="card-body" id="upload">
                      <!-- 이미지 슬라이드 for문으로 만들기 -->
                      <div id="cellDiv" class="celldiv">
                         <!-- 페이지 업로드 되면서 결과 동적 구현 -->

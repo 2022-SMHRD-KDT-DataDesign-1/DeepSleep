@@ -50,7 +50,7 @@ jsonRes.forEach(k => {
      resImageName = arr[arr.length - 1]; // 결과 이미지명
      resFileName = arr[arr.length - 2]; // 결과 이미지가 저장되는 파일명
 
-     htmlDiv2 += `<div class="carousel-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"><div><p>${annoArr[i].label_name}</p></div></label></div>`
+     htmlDiv2 += `<div class="carousel-cell"><input type="checkbox" id="myCheckbox${b}" class="optionCheck" /><label for="myCheckbox${b}"><img id="${original_id}" src="/filepath/${resFileName}/${resImageName}"><div><p class="labelName">${annoArr[i].label_name}</p></div></label></div>`
 
      b++;
 

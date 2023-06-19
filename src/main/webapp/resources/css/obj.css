@@ -119,3 +119,12 @@ label img {
 .resdiv {
 	margin-bottom: 40px;
 }
+
+.labelName{
+	position: relative;
+	text-align: center;
+	color:#fff;
+	font-size:25px;
+	font-weight:500;
+	top: -15px;
+}
