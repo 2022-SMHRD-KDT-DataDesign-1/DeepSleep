@@ -300,6 +300,9 @@ let allDetection = () => {
 				$(".modalLoading").fadeIn();
 			},
 			complete: function() {
+				// 타이머 리셋
+				resetStopwatch();
+				
 				// 로딩 중 모달창 없애기
 				$(".modalLoading").fadeOut();
 			},

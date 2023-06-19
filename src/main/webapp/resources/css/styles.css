@@ -13,7 +13,7 @@
  
  /*네브바 색*/
  #navbg{
- 	background-color: #0d1048 !important;
+ 	background-color: #13101f !important;
  }
  
  
@@ -11284,7 +11284,7 @@ body {
 #footer {
     padding: 25px 0;
     /* background-color: #1F3C88; */
-    background-color:#0e0b45;
+    background-color:#13101f;
  	background-blend-mode: multiply;
     color: #fff;
     font-size: 20px;
