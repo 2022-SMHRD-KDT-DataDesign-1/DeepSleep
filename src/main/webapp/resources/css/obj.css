@@ -87,6 +87,7 @@ label img {
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
   border-radius: 5px;
+  padding: 10px;
   
 }
 

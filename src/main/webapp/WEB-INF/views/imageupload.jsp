@@ -144,9 +144,9 @@
                                 <!-- 버튼 -->
                                 <div class="btnsty">
                                 	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary" id="key1">키워드 입력</button>
-                                	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection()">전체 객체</button>
+                                	<button style="color:#fff; border-color:#fff;" type="button" class="btn btn-outline-primary addInput2" onclick="allDetection(); startStopwatch();">전체 객체</button>
                                 </div>
-                                <div class="addInput" onclick="keyDetection()">
+                                <div class="addInput" onclick="startStopwatch()">
 
                                 </div>
                             </div>
@@ -174,6 +174,7 @@
 				<div class="loadText">
 		  	    	<span>ILEM에서 제공하는 객체탐지 키워드는 20가지 입니다.</span><br>
 		        	<span>자세한 내용은 사이드바 하단에서 확인할 수 있습니다.</span>
+		        	<p class="elapsed-time-text">00:00</p>
 		    	</div>
 		    </div>
 		</div>
@@ -198,6 +199,9 @@
         <!-- loading -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <!-- loading -->
+        
+        <!-- timer  -->
+        <script src="./js/timer.js"></script>
         
         
        

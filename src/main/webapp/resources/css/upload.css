@@ -252,3 +252,16 @@ img:before {
   font-size: 20px;
   font-weight: 600;
 }
+
+/* timer */
+.elapsed-time-text {
+	position: relative;
+    left: 30px;
+    margin: 0;
+    text-align: center;
+    font-size: 20px !important;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

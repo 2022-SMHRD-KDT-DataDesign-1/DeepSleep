@@ -351,11 +351,14 @@ let keywordInput = () => {
 
 				window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동         
 			},
-			beforeSend: function() {
+			beforeSend: function() {		
 				// 로딩 중 모달창 띄우기
 				$(".modalLoading").fadeIn();
 			},
 			complete: function() {
+				// 타이며 리셋
+				 resetStopwatch();
+				
 				// 로딩 중 모달창 없애기
 				$(".modalLoading").fadeOut();
 			},
