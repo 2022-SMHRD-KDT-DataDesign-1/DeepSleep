@@ -44,7 +44,7 @@
     </head>
     <body class="sb-nav-fixed">
        <!-- nav 시작  -->
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header">
+                            <div class="card-header" style="color:white">
                                 <!-- 이미지 아이콘 -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
                                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
