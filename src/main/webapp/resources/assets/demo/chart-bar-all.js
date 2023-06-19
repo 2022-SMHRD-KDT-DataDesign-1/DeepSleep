@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 
 function getGraph4() {
-	let monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	let mntList = [];
+	let monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];		// 라벨리스트
+	let mntList = [];	// 데이터 리스트
 	let January = 0; let February = 0; let March = 0; let April = 0; let May = 0; let June = 0; let July = 0; let August = 0; let September = 0; let October = 0; let November = 0; let December = 0;
 	var user_idx = $("#user_id").val();
 

@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 function getGraph2() {
 	let monthList = ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"];
-	let  J1=0; let F2=0; let M3=0; let A4=0; let M5=0; let J6=0; let J7=0; let A8=0; let S9=0; let O10=0; let N11=0; let D12=0;
+	let J1=0; let F2=0; let M3=0; let A4=0; let M5=0; let J6=0; let J7=0; let A8=0; let S9=0; let O10=0; let N11=0; let D12=0;
 	let mntList = [J1,F2,M3,A4,M5,J6,J7,A8,S9,O10,N11,D12];
 	var user_idx = $("#user_id").val();
 	
