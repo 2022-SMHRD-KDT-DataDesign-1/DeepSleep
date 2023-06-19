@@ -13,7 +13,7 @@
  
  /*네브바 색*/
  #navbg{
- 	background-color: #3C407F !important;
+ 	background-color: #0d1048 !important;
  }
  
  
@@ -4266,7 +4266,7 @@ textarea.form-control-lg {
   padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
   margin-bottom: 0;
   color: var(--bs-card-cap-color);
-  background-color: #6868AC !important;
+  background-color: #CEDDEF !important;
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 .card-header:first-child {
@@ -10885,7 +10885,7 @@ body {
 /*바탕 색*/
 #layoutSidenav {
   display: flex;
-  background-color: #EBEFFE;
+  background-color: #f4f4f4;
 }
 #layoutSidenav #layoutSidenav_nav {
   flex-basis: 225px;
@@ -11045,7 +11045,7 @@ body {
 
 /*사이드바 색*/
 .sb-sidenav-dark {
-  background-color: #6868AC;
+  background-color: #0d1048;
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -11283,7 +11283,8 @@ body {
 /*푸터 색*/
 #footer {
     padding: 25px 0;
-    background-color: #3C407F ;
+    /* background-color: #1F3C88; */
+    background-color:#0e0b45;
  	background-blend-mode: multiply;
     color: #fff;
     font-size: 20px;

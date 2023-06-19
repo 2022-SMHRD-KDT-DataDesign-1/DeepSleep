@@ -37,7 +37,7 @@
 </head>
 <body class="sb-nav-fixed">
 	<!-- nav 시작  -->
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
@@ -77,15 +77,7 @@
 						</a>
 
 						<div class="sb-sidenav-menu-heading">마이페이지</div>
-
-						<a class="nav-link" href="${contextPath}/charts">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> 통계
-						</a> <a class="nav-link" href="${contextPath}/index">
-
 						<a class="nav-link" href="${contextPath}/index">
-
 							<div class="sb-nav-link-icon">
 								<i class="fa-regular fa-hard-drive"></i>
 							</div> 보관함
@@ -147,33 +139,12 @@
                                 </svg>
 							Object Detection
 						</div>
-<<<<<<< HEAD
-						
-							<div class="card-body" id="upload" style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
-								<!-- 이미지 슬라이드 for문으로 만들기 -->
-								<div id="cellDiv" class="celldiv">
-									<!-- 페이지 업로드 되면서 결과 동적 구현 -->
-									
-								</div>
-								<!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
-								<div class="btnsty">
-									<button id="downloadBtn" type="button" style="color:#fff; border-color:#fff;"
-										class="btn btn-outline-primary">
-										<a id="hiddenA" download>다운로드</a>
-									</button>
-									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
-										onclick="repository()">보관함 저장</button>
-									<button type="button" class="btn btn-outline-primary" style="color:#fff; border-color:#fff;"
-										onclick="editLabel()">라벨 수정</button>
-								</div>
-=======
 
 						<div class="card-body" id="upload"
-							style="background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;">
+							style="background-color: #5893D4; !important">
 							<!-- 이미지 슬라이드 for문으로 만들기 -->
 							<div id="cellDiv" class="celldiv">
 								<!-- 페이지 업로드 되면서 결과 동적 구현 -->
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep.git
 							</div>
 							<!-- 이 버튼들을 이미지를 클릭시 나타나게 할지 흠... 다운로드 클릭시 이미지 선택창 나오게,,, -->
 							<div class="btnsty">
