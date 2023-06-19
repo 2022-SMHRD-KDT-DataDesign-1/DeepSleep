@@ -1,12 +1,18 @@
 // 키워드 입력 함수
 $(document).ready(function() {
 	$('#key1').one('click', function() {
-		$('.addInput').append(
-			'<input style="color:#000; background-color:#fff;" placeholder="  영어만 입력해주세요!" type="text" value="" id="inputstyle"><button style="color:#fff; border-color:#fff;" type="submit" value="입력" class="btn btn-outline-primary" id = "key" onclick="keywordInput()">입력</button>'
-		);
+		if (fileArr.length == 0) {
+			window.location.reload()
+			alert("이미지를 업로드해주세요.")
+		} else {
+			$('.addInput').append(
+				'<input style="color:#000; background-color:#fff;" placeholder="  영어만 입력해주세요!" type="text" value="" id="inputstyle"><button style="color:#fff; border-color:#fff;" type="submit" value="입력" class="btn btn-outline-primary" id = "key" onclick="keywordInput()">입력</button>'
+			);
+		}
 	});
 });
 //  
+
 
 const droppable = document.querySelector(".droppable");
 const list = document.querySelector(".list");
@@ -77,6 +83,7 @@ list.addEventListener("dragleave", e => {
 
 
 let fileArr = new Array(); // 업로드 이미지 정보 담는 배열
+let imgID = new Array(); // 이미지 아이디 담는 배열
 
 // 이미지 드래그 완료 이벤트
 list.addEventListener("drop", e => {
@@ -87,21 +94,22 @@ list.addEventListener("drop", e => {
 
 	// fileArr에 fileData 추가하기
 	fileArr[fileArr.length] = files[0];
+	imgID[imgID.length] = files[0].lastModified;
 
-	console.log(files[0])
+	// console.log(files[0].lastModified)
 
 	reader.readAsDataURL(files[0]);
 
 	reader.addEventListener("load", () => {
 		sadly++;
 		if (sadly > 1) return;
-		itemMarkup(files[0], reader.result, offsetX, offsetY);
+		itemMarkup(files[0], reader.result, offsetX, offsetY, files[0].lastModified);
 	});
 
 	droppable.classList.remove("is-over");
 });
 
-const itemMarkup = (file, url, x, y) => {
+const itemMarkup = (file, url, x, y, imgID) => {
 	const item = document.createElement("div");
 	const id = Math.random()
 		.toString(36)
@@ -111,7 +119,7 @@ const itemMarkup = (file, url, x, y) => {
 	item.setAttribute("id", id);
 	item.innerHTML = `
     <div class="item-img">
-      <img src="${url}" />
+      <img id="${imgID}" src="${url}" />
     </div>
     <div class="item-details">
       <div class="item-name">${file.name}</div>
@@ -218,6 +226,21 @@ const itemMarkup = (file, url, x, y) => {
 const deleteItem = e => {
 	const parent = e.target.parentNode;
 	const children = parent.querySelectorAll(":scope > *");
+	const img = parent.firstChild.nextSibling.firstChild.nextSibling
+	console.log(img.getAttribute("id"))
+
+	for (var i = 0; imgID.length; i++) {
+		console.log("오류체크 1")
+		if (img.getAttribute("id") == imgID[i]) {
+			console.log("오류체크 2")
+			console.log(imgID[i])
+			fileArr = fileArr.filter(function(_, index) {
+				return index !== i
+			});
+			console.log("오류체크 3")
+			break;
+		}
+	}
 
 	const deletetl = gsap.timeline({
 		onComplete: () => {
@@ -235,12 +258,6 @@ const deleteItem = e => {
 			"-=.15"
 		);
 
-	// 삭제 했을 때 fileArr에서 삭제.. 어케함 
-	console.log('삭제 ck')
-
-
-	// fileArr = fileArr.filter((element) => element !== e.target.dataTransfer[0]);
-
 };
 
 
@@ -250,42 +267,49 @@ let allDetection = () => {
 	let jsonRes;
 
 	var formdata = new FormData(); // 업로드 이미지명 담을 객체 생성
-
+	
+	console.log(fileArr)
+	
 	for (var i = 0; i < fileArr.length; i++) {
 		formdata.append('uploadFile[]', fileArr[i]) // 업로드 이미지명 담아주기
 	}
 
-	// 결과 로딩 모션 추가할 것
+	if (fileArr.length == 0) {
+		// 이미지 업로드 없이 버튼 클릭
+		alert("이미지를 업로드해주세요")
+	} else {
 
-	$.ajax({
-		url: "http://127.0.0.1:5000/objectDetectionModel", // 모델링 돌아가는 플라스크 서버 (전체 객체)
-		type: "POST",
-		enctype: 'multipart/form-data',
-		processData: false,
-		contentType: false,
-		data: formdata,
-		success: function(r) {
-			jsonRes = JSON.stringify(r)
-			console.log(jsonRes)
-			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
-			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
-			localStorage.setItem('cate', "Auto-Labeling"); // 로컬스토리지에 카테고리
-			
-			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
-		},
-		beforeSend: function(){
-         // 로딩 중 모달창 띄우기
-           $(".modalLoading").fadeIn();    
-      },
-      	complete: function(){
-         // 로딩 중 모달창 없애기
-         $(".modalLoading").fadeOut(); 
-      },
-		error: function(e) {
-			console.log("에러")
-			// 에러났을 때 모션 추가할 것
-		}
-	});
+		$.ajax({
+			url: "http://127.0.0.1:5000/objectDetectionModel", // 모델링 돌아가는 플라스크 서버 (전체 객체)
+			type: "POST",
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formdata,
+			success: function(r) {
+				jsonRes = JSON.stringify(r)
+				console.log(jsonRes)
+				window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
+				localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
+				localStorage.setItem('cate', "Auto-Labeling"); // 로컬스토리지에 카테고리
+
+				window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동         
+			},
+			beforeSend: function() {
+				// 로딩 중 모달창 띄우기
+				$(".modalLoading").fadeIn();
+			},
+			complete: function() {
+				// 로딩 중 모달창 없애기
+				$(".modalLoading").fadeOut();
+			},
+			error: function(e) {
+				console.log("에러")
+				// 에러났을 때 모션 추가할 것
+			}
+		});
+	}
+
 
 }
 
@@ -298,45 +322,47 @@ let keywordInput = () => {
 	let keyword = $('#inputstyle').val() // 입력 키워드
 
 	var formdata = new FormData(); // 업로드 이미지명 담을 객체 생성
+	
+	console.log(fileArr)
 
 	for (var i = 0; i < fileArr.length; i++) {
 		formdata.append('uploadFile[]', fileArr[i]) // 업로드 이미지명 담아주기
 	}
 	formdata.append('keyword', keyword) // 키워드 담아주기
 
-	// 결과 로딩 모션 추가할 것
+	if (keyword == "") {
+		// 이미지 업로드 없이 버튼 클릭
+		alert("키워드를 입력해주세요")
+	} else {
 
-	$.ajax({
-		url: "http://127.0.0.1:5000/keywordModel", // 모델링 돌아가는 플라스크 서버 (키워드)
-		type: "POST",
-		enctype: 'multipart/form-data',
-		processData: false,
-		contentType: false,
-		data: formdata,
-		success: function(r) {
-			jsonRes = JSON.stringify(r)
-			console.log(jsonRes)
-			window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
-			localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
-			localStorage.setItem('cate', "Keyword"); // 로컬스토리지에 카테고리
+		$.ajax({
+			url: "http://127.0.0.1:5000/keywordModel", // 모델링 돌아가는 플라스크 서버 (키워드)
+			type: "POST",
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formdata,
+			success: function(r) {
+				jsonRes = JSON.stringify(r)
+				console.log(jsonRes)
+				window.localStorage.removeItem('jsonRes'); // 로컬스토리지 비워두기
+				localStorage.setItem('jsonRes', jsonRes); // 로컬스토리지에 결과 json 저장
+				localStorage.setItem('cate', "Keyword"); // 로컬스토리지에 카테고리
 
-			window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동			
-		},
-		beforeSend: function(){
-         // 로딩 중 모달창 띄우기
-           $(".modalLoading").fadeIn();    
-      },
-      	complete: function(){
-         // 로딩 중 모달창 없애기
-         $(".modalLoading").fadeOut(); 
-      },
-		error: function(e) {
-			console.log("에러")
-			// 에러났을 때 모션 추가할 것
-		}
-	});
-
-
-
-
+				window.location.href = "/controller/objectdetection"; // 결과확인 페이지로 이동         
+			},
+			beforeSend: function() {
+				// 로딩 중 모달창 띄우기
+				$(".modalLoading").fadeIn();
+			},
+			complete: function() {
+				// 로딩 중 모달창 없애기
+				$(".modalLoading").fadeOut();
+			},
+			error: function(e) {
+				console.log("에러")
+				// 에러났을 때 모션 추가할 것
+			}
+		});
+	}
 }
