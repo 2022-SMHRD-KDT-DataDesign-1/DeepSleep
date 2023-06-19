@@ -23,6 +23,32 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+<<<<<<< HEAD
+        <!-- flickity -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <style>
+			.btnsty{
+			  display: inline-block;
+			  width: 100%; 
+			  text-align: center;
+			}
+			
+			.addInput{
+			  text-align: center;
+			}
+			
+			#inputstyle{
+			  border: 0;
+			  border-radius: 5px;
+			  outline: none;
+			  background-color: #8ec5fc;
+			}
+		</style>
+    </head>
+    <body class="sb-nav-fixed">
+       <!-- nav 시작  -->
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
+=======
 <!-- 부트스트랩 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -55,6 +81,7 @@
 <body class="sb-nav-fixed">
 	<!-- nav 시작  -->
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep.git
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
@@ -135,6 +162,27 @@
 			</nav>
 		</div>
 		<!-- nav 시작  -->
+<<<<<<< HEAD
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">라벨 수정</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="#">마이페이지</a></li>
+                            <li class="breadcrumb-item active">라벨링 수정</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                라벨링이 잘못된 이미지를 선택하고 라벨을 수정해주세요. 수정된 데이터는 관리자에게 전송됩니다.
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header" style="color:white">
+                                <!-- 이미지 아이콘 -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                    <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+=======
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
@@ -156,6 +204,7 @@
 									d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                                     <path
 									d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep.git
                                 </svg>
 							Object Detection
 						</div>

@@ -73,6 +73,12 @@
   		});
   	} 
   	
+	function enterkey(){
+		if(window.event.keyCode == 13) { 	// 13 == enter
+			login();
+		}
+	}
+  	
 		</script>
 </head>
 
@@ -85,20 +91,20 @@
 		<div class="LoginForm">
 		<div class="LF">
 			<h1 align="center">Login</h1>
-			<form action="${contextPath}/login.do" method="post">		
+			<form action="${contextPath}/login.do" method="post" name="login">		
 				<div class="form-group">
 					<label for="email">Email</label> 
 					<input type="text" name="email" id="email" class="form-control" placeholder="Enter Email" maxlength="20">
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label> 
-					<input type="password" name="password" id="password" class="form-control" placeholder="Enter password" maxlength="20">
+					<input onkeyup="enterkey()" type="password" name="password" id="password" class="form-control" placeholder="Enter password" maxlength="20">
 				</div>
 				<div class="form-group">
 					<span id='fl' style="color:red;"></span>
 				</div>
 				<div class="form-group">
-					<button onclick="login()" type="button" class="LoginBtn">Start</button>
+					<button onclick="login()"  type="button" class="LoginBtn">Start</button>
 				</div>
 				<div class="memberinfo">
 				<a id="fp" href= "${contextPath}/forgetPwForm">Forget password?</a>

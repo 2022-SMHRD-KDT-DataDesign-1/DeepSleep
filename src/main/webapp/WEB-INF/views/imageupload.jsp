@@ -22,7 +22,7 @@
 </head>
 <body class="sb-nav-fixed">
        <!-- nav 시작  -->
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id = "navbg">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
 		<!-- Sidebar Toggle-->
