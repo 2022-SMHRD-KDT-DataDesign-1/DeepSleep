@@ -664,10 +664,10 @@
 					<a href="https://bit.ly/43tz00u" target="_blank" class="news-card__card-link"></a>
 					<img src="images/bdimg4.jpg" alt="" class="news-card__image">
 					<div class="news-card__text-wrapper">
-						<h2 class="news-card__title">6월 1주<br>글로벌 데이터산업 뉴스</h2>
-						<div class="news-card__post-date">Jun 07, 2023</div>
+						<h2 class="news-card__title">6월 2주<br>글로벌 데이터산업 뉴스</h2>
+						<div class="news-card__post-date">Jun 13, 2023</div>
 						<div class="news-card__details-wrapper">
-							<p class="news-card__excerpt">EU 규제 당국, 데이터 공유 관련 반독점 규제 완화&hellip;</p>
+							<p class="news-card__excerpt">영국-미국, 개인정보 데이터 보호 프레임워크 확대 &hellip;</p>
 							<a href="https://bit.ly/43tz00u" target="_blank" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
 						</div>
 					</div>
@@ -677,10 +677,10 @@
 					<a href="https://bit.ly/42tVHjF" target="_blank" class="news-card__card-link"></a>
 					<img src="images/bdimg5.jpg" alt="" class="news-card__image">
 					<div class="news-card__text-wrapper">
-						<h2 class="news-card__title">5월 5주<br>글로벌 데이터산업 뉴스</h2>
-						<div class="news-card__post-date">May 30, 2023</div>
+						<h2 class="news-card__title">6월 1주<br>글로벌 데이터산업 뉴스</h2>
+						<div class="news-card__post-date">Jun 07, 2023</div>
 						<div class="news-card__details-wrapper">
-							<p class="news-card__excerpt">중국-상하이협력기구 빅데이터센터 공식 출범&hellip;</p>
+							<p class="news-card__excerpt">EU 규제 당국, 데이터 공유 관련 반독점 규제 완화</p>
 							<a href="https://bit.ly/42tVHjF" target="_blank" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
 						</div>
 					</div>
@@ -690,10 +690,10 @@
 					<a href="https://bit.ly/3WTOnN0" target="_blank" class="news-card__card-link"></a>
 					<img src="images/bdimg3.jpg" alt="" class="news-card__image">
 					<div class="news-card__text-wrapper">
-						<h2 class="news-card__title">5월 4주<br>글로벌 데이터산업 뉴스</h2>
-						<div class="news-card__post-date">May 23, 2023</div>
+						<h2 class="news-card__title">5월 5주<br>글로벌 데이터산업 뉴스</h2>
+						<div class="news-card__post-date">May 30, 2023</div>
 						<div class="news-card__details-wrapper">
-							<p class="news-card__excerpt">프랑스 데이터 보호당국, 'AI에 대한 실행 계획'발표&hellip;</p>
+							<p class="news-card__excerpt">중국-상하이협력기구 빅데이터센터 공식 출범&hellip;</p>
 							<a href="https://bit.ly/3WTOnN0" target="_blank" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
 						</div>
 					</div>

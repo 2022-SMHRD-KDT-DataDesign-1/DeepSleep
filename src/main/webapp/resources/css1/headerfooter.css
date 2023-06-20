@@ -184,7 +184,8 @@ footer,header{
 
 #footer {
     padding: 25px 0;
-    background-color: #13101f;
+    background-color: #3C407F;
+    background-blend-mode: multiply;
     color: #fff;
     font-size: 20px;
     display: block;
@@ -195,3 +196,6 @@ footer,header{
   padding-bottom: 0;
 }
 
+.stDeep{
+	color: #6173f4 !important;
+}

@@ -14,7 +14,7 @@
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
 				<div class="col-md-12">
-					<p class="copyright text-center">&copy; 2023 <a href="${contextPath}/"><strong>Deep Sleep</strong></a>. All Rights Reserved. 
+					<p class="copyright text-center">&copy; 2023 <a href="${contextPath}/"><strong class="stDeep">Deep Sleep</strong></a>. All Rights Reserved. 
 				</div>
 			</div>
 		</div>
