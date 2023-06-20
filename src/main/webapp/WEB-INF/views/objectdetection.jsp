@@ -28,13 +28,9 @@
    rel="stylesheet"
    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
    crossorigin="anonymous">
-
 <!-- flickity -->
-<!-- <link rel="stylesheet"
-   href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
-   
-<link rel="stylesheet"
-   href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<!-- flickity js -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <!-- 라벨링 결과 -->
@@ -42,7 +38,7 @@
 </head>
 <body class="sb-nav-fixed">
    <!-- nav 시작  -->
-   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id="navbg">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="${contextPath}/index">ILEM</a>
       <!-- Sidebar Toggle-->
@@ -127,7 +123,7 @@
             <div class="container-fluid px-4">
                <h1 class="mt-4">라벨링 결과</h1>
                <ol class="breadcrumb mb-4">
-                  <li class="breadcrumb-item"><a href="#">마이페이지</a></li>
+                  <li class="breadcrumb-item">마이페이지</li>
                   <li class="breadcrumb-item active">라벨링 결과</li>
                </ol>
                <div class="card mb-4">
@@ -176,9 +172,6 @@
    <!-- gsap 애니메이션 js보다 위에 둘 것 -->
    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-
-   <!-- flickity js -->
-   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

@@ -107,7 +107,7 @@
 				<div class="container-fluid px-4">
 					<h1 class="mt-4">보관함</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="index.html">마이페이지</a></li>
+						<li class="breadcrumb-item">마이페이지</li>
 						<li class="breadcrumb-item active">보관함</li>
 					</ol>
 					<form action="#">
