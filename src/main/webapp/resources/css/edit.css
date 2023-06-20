@@ -78,7 +78,7 @@ label:before {
   transition-duration: 0.4s;
   transform: scale(0);
     /* yj */
-  margin-left:245px
+  margin-left:31vw
 }
 
 label img {
@@ -102,7 +102,7 @@ label img {
   transform: scale(1);
   
     /* yj */
-  margin-left:245px
+  margin-left:31vw
 }
 
 :checked + label img {

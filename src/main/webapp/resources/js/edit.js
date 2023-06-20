@@ -60,7 +60,7 @@ imgArr.forEach(k => {
 				let arr = imageArr[j].file_name.split("\\");
 				let resFileName = arr[arr.length - 2];
 				let resImageName = arr[arr.length - 1];
-				divHtml += `<div class="gallery-cell"><input type="radio" value="${a}" class="optionCheck" id="myCheckbox${a}" name = "imgsel"><label for="myCheckbox${a}"><img id=${k} src="/filepath/${resFileName}/${resImageName}"></label></div>`
+				divHtml += `<div class="gallery-cell"><input type="radio" value="${a}" class="optionCheck" id="myCheckbox${a}" name = "imgsel" style = "display: none;"><label for="myCheckbox${a}"><img id=${k} src="/filepath/${resFileName}/${resImageName}"></label></div>`
 				a++;
 			}
 

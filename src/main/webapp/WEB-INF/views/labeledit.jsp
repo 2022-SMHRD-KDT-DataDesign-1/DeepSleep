@@ -66,7 +66,7 @@
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle navuser" id="navbarDropdown"
+				class="nav-link dropdown-toggle navuser" id="navbarDropdown" style="left:111em;"
 				href="#" role="button" data-bs-toggle="dropdown"
 				aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
 			</a>
@@ -165,6 +165,7 @@
 
 								<!-- 라벨링 결과 -->
 								<link href="./css/obj.css" rel="stylesheet">
+								<link href="./css/edit.css" rel="stylesheet">
 
 								<!-- 이중 for 문 -->
 								<!-- 여기 for 문 -->

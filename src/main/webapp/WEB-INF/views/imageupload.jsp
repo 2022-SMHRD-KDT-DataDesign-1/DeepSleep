@@ -34,7 +34,7 @@
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle navuser" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<a class="nav-link dropdown-toggle navuser" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="left:111em;">
 					<i class="fas fa-user fa-fw"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end navuserSub"	aria-labelledby="navbarDropdown">
