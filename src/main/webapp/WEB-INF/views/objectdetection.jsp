@@ -27,14 +27,14 @@
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
    rel="stylesheet"
    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-   crossorigin="anonymous">
+   crossorigin="anonymous" />
 <!-- flickity -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link href="https://unpkg.com/flickity@2.3.0/dist/flickity.css" rel="stylesheet" />
 <!-- flickity js -->
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://unpkg.com/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
 
 <!-- 라벨링 결과 -->
-<link href="./css/obj.css" rel="stylesheet">
+<link href="css/obj.css" rel="stylesheet" />
 </head>
 <body class="sb-nav-fixed">
    <!-- nav 시작  -->
