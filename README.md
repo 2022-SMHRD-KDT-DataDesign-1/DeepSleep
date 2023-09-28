@@ -53,7 +53,7 @@ SAM(Segment Anything Model)과 GROUNDING DINO를 활용한 이미지 오토라�
   사용자의 로컬 컴퓨터에 zip 파일로 저장
   | 이미지 선택 | 로컬 저장 |
   | :------------: | :-------------: |
-  | <img src="https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep/assets/122238744/c53751c3-c0db-480c-85f4-0d060d0a8b37" /> | <img style="width:1900px;" src="https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep/assets/122238744/4820d270-f340-4627-906c-a5357cf9a35a" /> |
+  | <img src="https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep/assets/122238744/e706dfbb-81c8-4266-96c4-4d73e2e2f8ff" /> | <img style="width:1900px;" src="https://github.com/2022-SMHRD-KDT-DataDesign-1/DeepSleep/assets/122238744/4820d270-f340-4627-906c-a5357cf9a35a" /> |
   
 <br><br>
 ## 🖥 시스템 아키텍처
